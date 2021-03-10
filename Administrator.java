@@ -4,7 +4,7 @@
  */
 public class Administrator extends User{
     private String phoneNumber;
-    private String  email;
+    private String email;
 
     /**
      * Default Constructor for admin
@@ -13,6 +13,39 @@ public class Administrator extends User{
 
     }
 
+    //getter section
+    /**
+     * get Phone Number
+     * @return String phoneNumber
+     */
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    /**
+     * get Email
+     * @return String email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    //setter section
+    /**
+     * set Phone Number 
+     * @param String phoneNumber
+     */
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    /**
+     * set Email
+     * @param String email
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    //methods section
     /**
      * void method for deleting a crime
      */
