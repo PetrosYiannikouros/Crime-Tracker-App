@@ -15,7 +15,8 @@
         "victims":[],
         "evidence":[],
         "isSolved":false,
-        "crimeList":[]
+        "crimeList":[],
+        "PersonOfInterest":["154"]
     },{
         "type":["Personal"],
         "descriptionOfCrime":"murder",
@@ -32,6 +33,7 @@
         "victims":[],
         "evidence":[],
         "isSolved":false,
-        "crimeList":[]
+        "crimeList":[],
+        "PersonOfInterest":["54"]
     }
 ]
