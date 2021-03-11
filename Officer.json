@@ -3,23 +3,23 @@
         "firstName":"Reed",
         "lastName":"Wopne",
         "userName":"WopRe",
-        "Password":"offy246",
-        "Precinct":"Columbia",
-        "Department":"State Police",
+        "password":"offy246",
+        "precinct":"Columbia",
+        "department":"State Police",
         "crimeList":[],
         "yearsServed":4,
-        "Rank":"Lieutenant",
+        "rank":"Lieutenant",
         "badgeNumber":"245"
     },{
         "firstName":"Wade",
         "lastName":"Opal",
         "userName":"WaOpal",
-        "Password":"otreach265",
-        "Precinct":"York",
-        "Department":"County Police",
+        "password":"otreach265",
+        "precinct":"York",
+        "department":"County Police",
         "crimeList":[],
         "yearsServed":2,
-        "Rank":"Officer",
+        "rank":"Officer",
         "badgeNumber":"158"
     }
 ]
