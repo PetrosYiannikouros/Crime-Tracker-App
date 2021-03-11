@@ -1,0 +1,25 @@
+[
+    {
+        "firstName":"Reed",
+        "lastName":"Wopne",
+        "userName":"WopRe",
+        "Password":"offy246",
+        "Precinct":"Columbia",
+        "Department":"State Police",
+        "crimeList":[],
+        "yearsServed":4,
+        "Rank":"Lieutenant",
+        "badgeNumber":"245"
+    },{
+        "firstName":"Wade",
+        "lastName":"Opal",
+        "userName":"WaOpal",
+        "Password":"otreach265",
+        "Precinct":"York",
+        "Department":"County Police",
+        "crimeList":[],
+        "yearsServed":2,
+        "Rank":"Officer",
+        "badgeNumber":"158"
+    }
+]
