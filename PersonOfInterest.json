@@ -1,0 +1,35 @@
+[
+    {
+        "firstName":"Ricky",
+        "lastName":"Erks",
+        "deceased": false,
+        "nickName":"Rat",
+        "age":25,
+        "weight":215,
+        "height":74,
+        "race":"White",
+        "dateofBirth":"July 15, 1996",
+        "tattooed":true,
+        "tattooList":[],
+        "hasCar":true,
+        "licensePlateNum":"0GQ801",
+        "story":[],
+        "infoProvided":[]
+    },{
+        "firstName":"Santon",
+        "lastName":"Motts",
+        "deceased": false,
+        "nickName":"Tinkler",
+        "age":37,
+        "weight":235,
+        "height":65,
+        "race":"African",
+        "dateofBirth":"April 25, 1984",
+        "tattooed":true,
+        "tattooList":[],
+        "hasCar":false,
+        "licensePlateNum":"",
+        "story":[],
+        "infoProvided":[]
+    }
+]
