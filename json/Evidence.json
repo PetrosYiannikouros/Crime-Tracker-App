@@ -3,14 +3,12 @@
         "type": "Camera Footage",
         "description": "Footage of Tresspass given by owner.",
         "amount": 1,
-        "caseNumber": 5,
-        "processed": true
+        "caseNumber": 5
     },
     {
         "type": "Forensics",
         "description": "Hair of alleged murderer found on scene. Tested for DNA.",
         "amount": 1,
-        "caseNumber": 67,
-        "processed": true
+        "caseNumber": 67
     }
 ]

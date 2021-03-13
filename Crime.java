@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,23 +9,34 @@ public class Crime {
     String pattern = "dd-MM-yyyy HH:mm";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
+    private int caseNumber;
     private TypesOfCrimes type;
     private String description;
     private SimpleDateFormat date;
     private String address;
-    private int caseNumber;
-    private Officer firstOnScene;
-    private List<Person> suspects;
-    private List<Person> criminals;
+    private Officer assigned;
+    private List<Person> personsOfInterest;
     private List<Person> witnesses;
     private List<Person> victims;
-    private List<Evidence> evidence;
+    private List<Evidence> evidenceList;
     private boolean isSolved;
 
     /**
      * Constructor for Crime object
      */
-    public Crime() {
+    public Crime(int caseNumber, TypesOfCrimes type, String description, SimpleDateFormat date, String address,
+            Officer assigned, boolean isSolved) {
+        this.type = type;
+        this.description = description;
+        this.date = date;
+        this.address = address;
+        this.caseNumber = caseNumber;
+        personsOfInterest = new ArrayList<>();
+        witnesses = new ArrayList<>();
+        victims = new ArrayList<>();
+        evidenceList = new ArrayList<>();
+        personsOfInterest = new ArrayList<>();
+        isSolved = false;
     }
 
     /**
@@ -37,27 +49,18 @@ public class Crime {
     }
 
     /**
-     * Accessor for suspects
+     * Accessor for persons of interest
      * 
-     * @return suspects for a specific case
+     * @return list of persons of interest for a specific case
      */
-    public List<Person> getSuspects() {
-        return suspects;
-    }
-
-    /**
-     * Accessor for criminals
-     * 
-     * @return suspects for a specific case
-     */
-    public List<Person> getCriminal() {
-        return criminals;
+    public List<Person> getPersonsOfInterest() {
+        return personsOfInterest;
     }
 
     /**
      * Accessor for witnesses
      * 
-     * @return witnesses for a specific case
+     * @return list of witnesses for a specific case
      */
     public List<Person> getWitnesses() {
         return witnesses;
@@ -66,7 +69,7 @@ public class Crime {
     /**
      * Accessor for victims
      * 
-     * @return victims for a specific case
+     * @return list of victims for a specific case
      */
     public List<Person> getVictims() {
         return victims;
@@ -75,26 +78,19 @@ public class Crime {
     /**
      * Accessor for evidence
      * 
-     * @return evidence for a specific case
+     * @return list of evidence for a specific case
      */
-    public List<Evidence> getEvidence() {
-        return evidence;
+    public List<Evidence> getEvidenceList() {
+        return evidenceList;
     }
 
     /**
-     * Add suspect to crime
+     * Add person of interest to crime
      * 
-     * @param suspect associated to crime
+     * @param personOfInterest associated to crime
      */
-    public void addSuspect(Person suspect) {
-    }
-
-    /**
-     * Add criminal to crime
-     * 
-     * @param criminal associated to crime
-     */
-    public void addCriminal(Person criminal) {
+    public void addPersonOfInterest(Person personOfInterest) {
+        personsOfInterest.add(personOfInterest);
     }
 
     /**
@@ -103,6 +99,7 @@ public class Crime {
      * @param witness associated to crime
      */
     public void addWitness(Person witness) {
+        witnesses.add(witness);
     }
 
     /**
@@ -111,6 +108,7 @@ public class Crime {
      * @param victim associated to crime
      */
     public void addVictim(Person victim) {
+        victims.add(victim);
     }
 
     /**
@@ -119,6 +117,7 @@ public class Crime {
      * @param evidence associate to crime
      */
     public void addEvidence(Evidence evidence) {
+        evidenceList.add(evidence);
     }
 
     /**
@@ -132,11 +131,44 @@ public class Crime {
      * Will display all contents of a particular crime
      */
     public void displayCrime() {
+        System.out.println("Case number: " + caseNumber);
+        System.out.println("Type: " + this.type);
+        System.out.println("Description: " + this.description);
+        System.out.println("Date occurred: " + this.date);
+        System.out.println("Location occurred: " + this.address);
+        System.out.println("Officer assigned: " + this.assigned);
+        System.out.println("Person(s) of Interest:");
+        if (personsOfInterest.isEmpty())
+            System.out.println("None");
+        else
+            for (Person personOfInterest : personsOfInterest)
+                System.out.println("Details from display or toString of class");
+        System.out.println("Witness(es):");
+        if (witnesses.isEmpty())
+            System.out.println("None");
+        else
+            for (Person witness : witnesses)
+                System.out.println("Details from display or toString of class");
+        System.out.println("Victim(s):");
+        if (victims.isEmpty())
+            System.out.println("None");
+        else
+            for (Person victim : victims)
+                System.out.println("Details from display or toString of class");
+        System.out.println("Evidence:");
+        if (witnesses.isEmpty())
+            System.out.println("None");
+        else
+            for (Evidence evidence : evidenceList)
+                System.out.println("Details from display or toString of class");
+        String answer = isSolved ? "Yes" : "No";
+        System.out.println("Is case solved? " + answer);
     }
 
     /**
      * May delete crime for possible errors. Only Admins may use this
      */
     private void deleteCrime() {
+        // future functionality
     }
 }
