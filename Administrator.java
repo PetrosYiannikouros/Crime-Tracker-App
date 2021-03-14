@@ -9,8 +9,10 @@ public class Administrator extends User{
     /**
      * Default Constructor for admin
      */
-    public Administrator() {
-
+    public Administrator(String firstName, String lastName, String userName, String password, String precint, String department, String phoneNumber, String email) {
+        super(firstName, lastName, userName, password, precint, department);
+        this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
     //getter section

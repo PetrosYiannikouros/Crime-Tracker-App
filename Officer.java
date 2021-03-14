@@ -10,8 +10,15 @@ public class Officer extends User {
     /**
      * Default constructor for Officer
      */
-    public Officer() {
-
+    public Officer()
+    {
+        
+    }
+    public Officer(String firstName, String lastName, String userName, String password, String precint, String department, int yearsServed, String rank, String badgeNumber) {
+        super(firstName, lastName, userName, password, precint, department);
+        this.yearsServed = yearsServed;
+        this.rank = rank;
+        this.badgeNumber = badgeNumber;
     }
 
     //getter section

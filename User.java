@@ -5,6 +5,8 @@
  * collects user info
  */
 import java.util.List;
+import java.util.ArrayList;
+
 public class User {
     private String firstName;
     private String lastName;
@@ -14,9 +16,22 @@ public class User {
     private String department;
     private List<Crime> crimeList;
 
-    public User() {
+    public User()
+    {
+        
+    }
+
+    public User(String firstName, String lastName, String userName, String password, String precint, String department) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        crimeList = new ArrayList<>();
+        this.password = password;
+        this.precint = precint;
+        this.department = department;
 
     }
+    
     //getter section
     /**
      * first name getter

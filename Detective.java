@@ -2,6 +2,7 @@
  * class for Detective
  * extention of Officer
  */
+import java.util.ArrayList;
 import java.util.List;
 public class Detective extends Officer{
     private int activeCases;
@@ -12,8 +13,15 @@ public class Detective extends Officer{
     /**
      * Default Constructor
      */
-    public Detective() {
-         
+    public Detective(String firstName, String lastName, String userName, String password, String precint, String department, int yearsServed, String rank, String badgeNumber, int activeCases, int solvedCases) {
+        super(firstName, lastName, userName, password, precint, department, yearsServed, rank, badgeNumber);
+        this.activeCases = activeCases;
+        this.solvedCases = solvedCases;
+        if(activeCases > 0)
+        {
+            activeCase = true;
+        }
+        activeCaseList = new ArrayList<>();
     }
 
     //getter section
