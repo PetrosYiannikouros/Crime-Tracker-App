@@ -16,7 +16,15 @@ public class Witness extends Person {
     /**
      * Constructor of witness object
      */
-    public Witness() {
+    public Witness() 
+    {
+
+    }
+
+    public Witness(String firstName, String lastName, String location)
+    {
+        super(firstName, lastName);
+        this.location = location;
     }
 
     /**

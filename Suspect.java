@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,7 +10,16 @@ public class Suspect extends PersonOfInterest {
     /**
      * Constructor for suspect object
      */
-    public Suspect() {
+    public Suspect() 
+    {
+
+    }
+
+    public Suspect(String firstName, String lastName,String pattern, String nickName, int age, int weight, String height, String race, String carDescription)
+    {
+        super(firstName, lastName, pattern, nickName, age, weight, height, race, carDescription);
+        reasons = new ArrayList<>();
+
     }
 
     /**

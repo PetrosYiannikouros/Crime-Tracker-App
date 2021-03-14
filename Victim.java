@@ -9,11 +9,19 @@ import java.util.List;
 public class Victim extends Person {
     private List<String> stories;
     private List<String> familyMembers;
+    private String phoneNumber;
 
     /**
      * default constructor
      */
-    public Victim() {
+    public Victim() 
+    {
+
+    }
+    public Victim (String firstName, String lastName,  String phoneNumber)
+    {
+        super(firstName, lastName);
+        this.phoneNumber = phoneNumber;
     }
 
     /**

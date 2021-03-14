@@ -9,24 +9,41 @@ public class PersonOfInterest extends Person {
 
     private String nickName;
     private int age;
-    private double weight;
+    private int weight;
     //i think height should be a string
-    private double height;
+    private String height;
     private String race;
     private SimpleDateFormat dateOfBirth;
     private boolean tattooed;
     //why is this not just list
     private ArrayList tattoos;
     private boolean hasCar;
-    private String licensePlate;
+    private String carDescription;
     private ArrayList story;
     private ArrayList infoProvided;
 
     /**
      * default constructor for POI
      */
-    public PersonOfInterest() {
+    public PersonOfInterest() 
+    {
 
+    }
+    public PersonOfInterest(String firstName, String lastName, String pattern, String nickName, int age, int weight, String height, String race, String licensePlate)
+    {
+        super(firstName, lastName);
+        this.pattern = pattern;
+        this.nickName = nickName;
+        this.age = 0;
+        this.weight = 0;
+        this.height = height;
+        this.race = race;
+        this.hasCar = hasCar;
+
+        if(hasCar)
+        {
+            this.carDescription = carDescription;
+        }
     }
 
     //getter section
@@ -55,7 +72,7 @@ public class PersonOfInterest extends Person {
      * get POI's height
      * @return double height
      */
-    public double getHeight() {
+    public String getHeight() {
         return height;
     }
     /**
@@ -97,8 +114,8 @@ public class PersonOfInterest extends Person {
      * get POI's license plate
      * @return String licensePlate
      */
-    public String getLicensePlate() {
-        return licensePlate;
+    public String getCarDescription() {
+        return carDescription;
     }
     /**
      * get storys/ alibi from POI
@@ -135,14 +152,14 @@ public class PersonOfInterest extends Person {
      * set weight for POI
      * @param double weight
      */
-    public void setWeight(double weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
     /**
      * set height for POI
      * @param double height
      */
-    public void setHeight(double height) {
+    public void setHeight(String height) {
         this.height = height;
     }
     /**
@@ -188,8 +205,8 @@ public class PersonOfInterest extends Person {
      * set License plate for POI
      * @param String licensePlate
      */
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
+    public void setCarDescription(String carDescription) {
+        this.carDescription = carDescription;
     }
     /**
      * set story for POI

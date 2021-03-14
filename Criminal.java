@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,7 +14,22 @@ public class Criminal extends PersonOfInterest {
     /**
      * Constructor for creating a criminal object
      */
-    public Criminal() {
+    public Criminal() 
+    {
+
+    }
+
+    public Criminal(String firstName, String lastName,String pattern, String nickName, int age, int weight, String height, String race, String carDescription, String vehicle, double shoeSize, int numOfCrimes)
+    {
+        super(firstName, lastName, pattern, nickName, age, weight, height, race, carDescription);
+        this.vehicle = vehicle;
+        this.shoeSize = shoeSize;
+        this.numOfCrimes = numOfCrimes;
+        if(inJail)
+        {
+            this.inJail = inJail;
+        }
+        convictions = new ArrayList<>();
     }
 
     /**
