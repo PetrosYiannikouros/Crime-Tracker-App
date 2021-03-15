@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Person class
  * used for creating people
@@ -7,6 +9,7 @@ public abstract class Person {
     private String firstName;
     private String lastName;
     private boolean deceased;
+    protected List<Integer> caseNums;
 
     /**
      * default constructor for person
@@ -19,7 +22,9 @@ public abstract class Person {
     {
         this.firstName = firstName;
         this.lastName = lastName;
+        //default is not deceased
         this.deceased = false;
+        
     }
 
     //getter section
@@ -47,6 +52,10 @@ public abstract class Person {
         return this.deceased;
     }
 
+    public List<Integer> getCases () {
+        return caseNums;
+    }
+
     //setter section
     /**
      * set First Name
@@ -70,6 +79,10 @@ public abstract class Person {
         this.deceased = deceased;
     }
     
+
+    public void addCase(Integer caseNum){
+            caseNums.add(caseNum);
+    }
     /**
      * toString for person
      */
