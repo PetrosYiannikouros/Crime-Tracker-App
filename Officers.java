@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+//plural for officer
 public class Officers {
     private static Officers officers = null;
     private static ArrayList<Officer> officerList = new ArrayList<Officer>();
