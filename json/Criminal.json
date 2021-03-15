@@ -1,0 +1,30 @@
+[
+    {
+        "firstName": "Bam",
+        "lastName": "Margera",
+        "pattern": "loves vandalism",
+        "nickName": "Sk8r boi",
+        "age": 69,
+        "weight": 180,
+        "height": "5'11\"",
+        "race": "White",
+        "carDescription": "pink smart car",
+        "vehicle": "smart car", 
+        "shoeSize": 10.5,
+        "numOfCrimes": 7
+    },
+    {
+        "firstName": "Steve",
+        "lastName": "Harvey",
+        "pattern": "n/a",
+        "nickName": "Family Feud Guy",
+        "age": 64,
+        "weight": 200,
+        "height": "6'1\"",
+        "race": "African American",
+        "carDescription": "white convertiable",
+        "vehicle": "mercedes amg", 
+        "shoeSize": 10.5,
+        "numOfCrimes": 2
+    }
+]
