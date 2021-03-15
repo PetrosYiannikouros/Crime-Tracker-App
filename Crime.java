@@ -25,12 +25,13 @@ public class Crime {
      * Constructor for Crime object
      */
     public Crime(int caseNumber, TypesOfCrimes type, String description, SimpleDateFormat date, String address,
-            Officer assigned, boolean isSolved) {
+            Officer assigned) {
+        this.caseNumber = caseNumber;
         this.type = type;
         this.description = description;
         this.date = date;
         this.address = address;
-        this.caseNumber = caseNumber;
+        this.assigned = assigned;
         personsOfInterest = new ArrayList<>();
         witnesses = new ArrayList<>();
         victims = new ArrayList<>();
@@ -46,6 +47,51 @@ public class Crime {
      */
     public int getCaseNumber() {
         return caseNumber;
+    }
+
+    /**
+     * Accessor for type of crime enum
+     * 
+     * @return type of crime
+     */
+    public TypesOfCrimes getType() {
+        return this.type;
+    }
+
+    /**
+     * Accessor for description of crime
+     * 
+     * @return description of crime
+     */
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * Accessor for date of crime
+     * 
+     * @return date of crime
+     */
+    public SimpleDateFormat getDate() {
+        return date;
+    }
+
+    /**
+     * Accessor for address of crime
+     * 
+     * @return address of crime
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    /**
+     * Accessor for assigned officer
+     * 
+     * @return assigned officer for crime
+     */
+    public Officer getAssigned() {
+        return assigned;
     }
 
     /**
@@ -82,6 +128,24 @@ public class Crime {
      */
     public List<Evidence> getEvidenceList() {
         return evidenceList;
+    }
+
+    /**
+     * Accessor for boolean value isSolved
+     * 
+     * @return isSolved boolean value
+     */
+    public boolean getIsSolved() {
+        return isSolved;
+    }
+
+    /**
+     * Mutator for boolean value isSolved
+     * 
+     * @param isSolved input whether crime is solved or not
+     */
+    public void setIsSolved(boolean isSolved) {
+        this.isSolved = isSolved;
     }
 
     /**
@@ -125,44 +189,6 @@ public class Crime {
      */
     public void setSolved(boolean isSolved) {
         this.isSolved = isSolved;
-    }
-
-    /**
-     * Will display all contents of a particular crime
-     */
-    public void displayCrime() {
-        System.out.println("Case number: " + caseNumber);
-        System.out.println("Type: " + this.type);
-        System.out.println("Description: " + this.description);
-        System.out.println("Date occurred: " + this.date);
-        System.out.println("Location occurred: " + this.address);
-        System.out.println("Officer assigned: " + this.assigned);
-        System.out.println("Person(s) of Interest:");
-        if (personsOfInterest.isEmpty())
-            System.out.println("None");
-        else
-            for (Person personOfInterest : personsOfInterest)
-                System.out.println("Details from display or toString of class");
-        System.out.println("Witness(es):");
-        if (witnesses.isEmpty())
-            System.out.println("None");
-        else
-            for (Person witness : witnesses)
-                System.out.println("Details from display or toString of class");
-        System.out.println("Victim(s):");
-        if (victims.isEmpty())
-            System.out.println("None");
-        else
-            for (Person victim : victims)
-                System.out.println("Details from display or toString of class");
-        System.out.println("Evidence:");
-        if (witnesses.isEmpty())
-            System.out.println("None");
-        else
-            for (Evidence evidence : evidenceList)
-                System.out.println("Details from display or toString of class");
-        String answer = isSolved ? "Yes" : "No";
-        System.out.println("Is case solved? " + answer);
     }
 
     /**
