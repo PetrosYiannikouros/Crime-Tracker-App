@@ -14,13 +14,19 @@ public class PersonOfInterest extends Person {
     private String height;
     private String race;
     private SimpleDateFormat dateOfBirth;
+    private String naturalHairColor;
+    private String hairLength;
+    private boolean facialHair;
+    private String facialHairDesc;
+    private String clothesDesc;
     private boolean tattooed;
     //why is this not just list
-    private ArrayList tattoos;
+    private List<String> tattoos;
     private boolean hasCar;
-    private String carDescription;
-    private ArrayList story;
-    private ArrayList infoProvided;
+    private String carSpecs;
+    private String licensePlate;
+    private String story;
+    private List<String> infoProvided;
 
     /**
      * default constructor for POI
@@ -29,21 +35,33 @@ public class PersonOfInterest extends Person {
     {
 
     }
-    public PersonOfInterest(String firstName, String lastName, String pattern, String nickName, int age, int weight, String height, String race, String licensePlate)
-    {
+    public PersonOfInterest(String firstName, String lastName, 
+                    String pattern, String nickName, int age, int weight, 
+                    String height, String race, String naturalHairColor, String hairLength, 
+                    boolean facialHair, String facialHairDesc, String clothesDesc,
+                    boolean hasCar, String carSpecs, String licensePlate, String story) {
         super(firstName, lastName);
         this.pattern = pattern;
         this.nickName = nickName;
-        this.age = 0;
-        this.weight = 0;
+        this.age = age;
+        this.weight = weight;
         this.height = height;
         this.race = race;
-        this.hasCar = hasCar;
+        this.naturalHairColor = naturalHairColor;
+        this.hairLength = hairLength;
+        this.facialHair = facialHair;
+        if(facialHair) {
+            this.facialHairDesc = facialHairDesc;
+        }
 
+        this.clothesDesc = clothesDesc;
+        this.hasCar = hasCar;
         if(hasCar)
         {
-            this.carDescription = carDescription;
+            this.carSpecs = carSpecs;
+            this.licensePlate = licensePlate;
         }
+        this.story = story;
     }
 
     //getter section
