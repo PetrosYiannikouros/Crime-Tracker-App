@@ -3,7 +3,7 @@
  * used for creating people
  * going to be an extension to many
  */
-public class Person {
+public abstract class Person {
     private String firstName;
     private String lastName;
     private boolean deceased;
@@ -11,11 +11,11 @@ public class Person {
     /**
      * default constructor for person
      */
-    public Person() 
+    protected Person() 
     {
 
     }
-    public Person (String firstName, String lastName)
+    protected Person (String firstName, String lastName)
     {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -28,14 +28,14 @@ public class Person {
      * @return String firstName
      */
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
     /**
      * get Last Name
      * @return String lastName
      */
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
     /**
      * is Deceased boolean
@@ -44,7 +44,7 @@ public class Person {
      * false = alive
      */
     public boolean isDeceased() {
-        return deceased;
+        return this.deceased;
     }
 
     //setter section
@@ -74,6 +74,6 @@ public class Person {
      * toString for person
      */
     public String toString() {
-        return null;
+        return "";
     }
 }
