@@ -15,11 +15,32 @@ public class Suspect extends PersonOfInterest {
 
     }
 
-    public Suspect(String firstName, String lastName,String pattern, String nickName, int age, int weight, String height, String race, String carDescription)
+    public Suspect(String firstName, String lastName, boolean deceased, List<String> caseNums,
+                String pattern, Integer id, String nickName, int age, int weight, 
+                String height, String race, String naturalHairColor, String hairLength, 
+                boolean facialHair, String facialHairDesc, String clothesDesc,
+                boolean hasCar, String carSpecs, String licensePlate, String story, List<String> reasons)
     {
-        super(firstName, lastName, pattern, nickName, age, weight, height, race, carDescription);
-        reasons = new ArrayList<>();
+        super(firstName, lastName, deceased, caseNums, pattern, id, nickName, age, weight, height, race, naturalHairColor, 
+            hairLength, facialHair, facialHairDesc, clothesDesc, hasCar, carSpecs, licensePlate, story);
+        this.reasons = reasons;
 
+    }
+
+    /**
+     * 
+     * @return
+     */
+    public List<String> getReasons() {
+        return this.reasons;
+    }
+
+    /**
+     * 
+     * @param reasons
+     */
+    public void setReasons(List<String> reasons) {
+        this.reasons = reasons;
     }
 
     /**
@@ -28,5 +49,6 @@ public class Suspect extends PersonOfInterest {
      * @param reason why he/she is suspected
      */
     public void addReason(String reason) {
+        reasons.add(reason);
     }
 }
