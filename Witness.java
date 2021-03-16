@@ -9,7 +9,7 @@ public class Witness extends Person {
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
     private boolean proof;
-    private List<String> stories;
+    private String story;
     private String location;
     private SimpleDateFormat timeOfEvent;
 
@@ -21,18 +21,83 @@ public class Witness extends Person {
 
     }
 
-    public Witness(String firstName, String lastName, String location)
+    public Witness(String firstName, String lastName, boolean deceased,
+                List<Integer> caseNums, boolean proof,
+                String story, String location, SimpleDateFormat timeOfEvent)
     {
-        super(firstName, lastName);
+        super(firstName, lastName, deceased, caseNums);
+        this.proof = proof;
+        this.story = story;
+        this.location = location;
+        this.timeOfEvent = timeOfEvent;
+
+    }
+
+//getters -----------------------------------------------------
+    
+    /**
+     * 
+     * @return
+     */
+    public boolean hasProof() {
+        return this.proof;
+    }
+
+    /**
+     * 
+     * @return
+     */
+    public String getStory() {
+        return this.story;
+    }
+
+    /**
+     * 
+     * @return
+     */
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * 
+     * @return
+     */
+    public SimpleDateFormat getTimeOfEvent() {
+        return this.timeOfEvent;
+    }
+
+    //setters -----------------------------------------------------
+    
+    /**
+     * 
+     * @param familyMembers
+     */
+    public void setProof(boolean proof) {
+        this.proof = proof;
+    }
+
+    /**
+     * 
+     * @param story
+     */
+    public void setStory(String story) {
+        this.story = story;
+    }
+
+    /**
+     * 
+     * @param number
+     */
+    public void setLocation(String location) {
         this.location = location;
     }
 
     /**
-     * Adds account to the totality of witness's tale
      * 
-     * @param story of what happened (at least partially)
+     * @param description
      */
-    public void addStory(String story) {
+    public void setTimeOfEvent(SimpleDateFormat timeOfEvent) {
+        this.timeOfEvent = timeOfEvent;
     }
-
 }
