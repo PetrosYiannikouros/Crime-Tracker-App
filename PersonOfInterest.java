@@ -2,7 +2,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
-public class PersonOfInterest extends Person {
+public abstract class PersonOfInterest extends Person {
     String pattern = "dd-MM-yyyy";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 

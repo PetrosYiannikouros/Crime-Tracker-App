@@ -21,7 +21,7 @@ public class Suspect extends PersonOfInterest {
                 boolean facialHair, String facialHairDesc, String clothesDesc,
                 boolean hasCar, String carSpecs, String licensePlate, String story, List<String> reasons)
     {
-        super(firstName, lastName, pattern, nickName, age, weight, height, race, naturalHairColor, 
+        super(firstName, lastName, deceased, caseNums, pattern, id, nickName, age, weight, height, race, naturalHairColor, 
             hairLength, facialHair, facialHairDesc, clothesDesc, hasCar, carSpecs, licensePlate, story);
         this.reasons = reasons;
 
