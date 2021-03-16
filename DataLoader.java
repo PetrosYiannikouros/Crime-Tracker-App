@@ -23,13 +23,23 @@ public class DataLoader extends DataConstants{
                 String lastName = (String)officerJSON.get(OFFICER_LAST_NAME);
                 String userName = (String)officerJSON.get(OFFICER_USERNAME);
                 String password = (String)officerJSON.get(OFFICER_PASSWORD);
-                String precint = (String)officerJSON.get(OFFICER_PRECINT);
+                String precinct = (String)officerJSON.get(OFFICER_PRECINCT);
                 String department = (String)officerJSON.get(OFFICER_DEPARTMENT);
-                int yearsServed = (Integer)officerJSON.get(OFFICER_YEARS_SERVED);
+                int yearsServed = ((Long)officerJSON.get(OFFICER_YEARS_SERVED)).intValue();
                 String rank = (String)officerJSON.get(OFFICER_RANK);
                 String badgeNumber = (String)officerJSON.get(OFFICER_BADGE_NUMBER);
                 officers.add(new Officer(firstName, lastName, userName, password,
-                precint, department, yearsServed, rank, badgeNumber));
+                precinct, department, yearsServed, rank, badgeNumber));
+                System.out.println(OFFICER_FIRST_NAME + ": " + firstName +
+                "\n" + OFFICER_LAST_NAME + ": " + lastName +
+                "\n" + OFFICER_USERNAME + ": " + userName + 
+                "\n" + OFFICER_PASSWORD + ": " + password +
+                "\n" + OFFICER_PRECINCT + ": " + precinct + 
+                "\n" + OFFICER_DEPARTMENT + ": " + department +
+                "\n" + OFFICER_YEARS_SERVED + ": " + yearsServed +
+                "\n" + OFFICER_RANK + ": " + rank +
+                "\n" + OFFICER_BADGE_NUMBER + ": " + badgeNumber + 
+                "\n" + "***************************");  
             }
             return officers;
         }   catch(Exception e) {

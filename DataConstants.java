@@ -5,7 +5,7 @@ public abstract class DataConstants {
     protected static final String OFFICER_LAST_NAME = "lastName";
     protected static final String OFFICER_USERNAME = "userName";
     protected static final String OFFICER_PASSWORD = "password";
-    protected static final String OFFICER_PRECINT = "precint";
+    protected static final String OFFICER_PRECINCT = "precinct";
     protected static final String OFFICER_DEPARTMENT = "department";
     protected static final String OFFICER_YEARS_SERVED = "yearsServed";
     protected static final String OFFICER_RANK = "rank";
