@@ -65,8 +65,11 @@ public class PersonOfInterest extends Person {
         this.story = story;
     }
 
-    //getter section
-
+    //getter section -----------------------------------------------
+    /**
+     * get POI's id
+     * @return Integer id
+     */
     public Integer getID() {
         return this.id;
     }
@@ -76,57 +79,105 @@ public class PersonOfInterest extends Person {
      * @return string nickName
      */
     public String getNickName() {
-        return nickName;
+        return this.nickName;
     }
+
     /**
      *get POI's age
      * @return int age
      */
     public int getAge() {
-        return age;
+        return this.age;
     }
+
     /**
      * get POI's weight
      * @return double weight
      */
     public double getWeight() {
-        return weight;
+        return this.weight;
     }
+
     /**
      * get POI's height
      * @return double height
      */
     public String getHeight() {
-        return height;
+        return this.height;
     }
+
     /**
      * get POI's race
      * @return String race
      */
     public String getRace() {
-        return race;
+        return this.race;
     }
+
     /**
      * get POI's date of birth
      * @return date dateOfBirth
      */
     public SimpleDateFormat getDateOfBirth() {
-        return dateOfBirth;
+        return this.dateOfBirth;
     }
+
+    /**
+     * 
+     * @return
+     */
+    public String getNaturalHairColor() {
+        return this.naturalHairColor;
+    }
+
+    /**
+     * 
+     * @return
+     */
+    public String getHairLength() {
+        return this.hairLength;
+    }
+
+    /**
+     * 
+     * @return
+     */
+    public boolean isFacialHair() {
+        return this.facialHair;
+    }
+
+    /**
+     * 
+     * @return
+     */
+    public String getFacialHairDesc() {
+        return this.facialHairDesc;
+    }
+
+    /**
+     * 
+     * @return
+     */
+    public String getClothesDesc() {
+        return this.clothesDesc;
+    }
+
     /**
      * get status or whether POI is tattoed or not
      * @return boolean tattooed
      */
     public boolean isTattooed() {
-        return tattooed;
+        return this.tattooed;
     }
+
     /**
      * get list of POI's tattoos
      * @return ArrayList tattoos
      */
-    public ArrayList getTattoos() {
-        return tattoos;
+    public List<String> getTattoos() {
+        return this.tattoos;
     }
+
     /**
      * get status of whether POI has car or not
      * @return boolean hasCar
@@ -134,29 +185,48 @@ public class PersonOfInterest extends Person {
     public boolean isHasCar() {
         return hasCar;
     }
+
     /**
-     * get POI's license plate
-     * @return String licensePlate
+     * get POI's car specifications
+     * @return String desription of carSpecs
      */
-    public String getCarDescription() {
-        return carDescription;
+    public String getCarSpecs() {
+        return this.carSpecs;
     }
+
     /**
-     * get storys/ alibi from POI
-     * @return ArrayList story
+     * 
+     * @return
      */
-    public ArrayList getStory() {
+    public String getLicense() {
+        return this.licensePlate;
+    }
+
+    /**
+     * get story/alibi from POI
+     * @return String story
+     */
+    public String getStory() {
         return story;
     }
+
     /**
      * get info provided about POI
      * @return
      */
-    public ArrayList getInfoProvided() {
+    public List<String> getInfoProvided() {
         return infoProvided;
     }
 
-    //setter section 
+    //setter section -----------------------------------------------
+
+    /**
+     * 
+     * @param id
+     */
+    public void setID(Integer id) {
+        this.id = id;
+    }
 
     /**
      * set nick name for POI
@@ -165,6 +235,7 @@ public class PersonOfInterest extends Person {
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
+
     /**
      * set age for POI
      * @param int age
@@ -172,6 +243,7 @@ public class PersonOfInterest extends Person {
     public void setAge(int age) {
         this.age = age;
     }
+
     /**
      * set weight for POI
      * @param double weight
@@ -179,6 +251,7 @@ public class PersonOfInterest extends Person {
     public void setWeight(int weight) {
         this.weight = weight;
     }
+
     /**
      * set height for POI
      * @param double height
@@ -186,6 +259,7 @@ public class PersonOfInterest extends Person {
     public void setHeight(String height) {
         this.height = height;
     }
+
     /**
      * set race for POI
      * @param String race
@@ -193,6 +267,7 @@ public class PersonOfInterest extends Person {
     public void setRace(String race) {
         this.race = race;
     }
+
     /**
      * set date of birth for POI
      * @param date dateOfBirth
@@ -200,6 +275,47 @@ public class PersonOfInterest extends Person {
     public void setDateOfBirth(SimpleDateFormat dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
+
+    /**
+     * 
+     * @param naturalHairColor
+     */
+    public void setNaturalHairColor(String naturalHairColor) {
+        this.naturalHairColor = naturalHairColor;
+    }
+
+    /**
+     * 
+     * @param hairLength
+     */
+    public void setHairLength(String hairLength) {
+        this.hairLength = hairLength;
+    }
+
+    /**
+     * 
+     * @param facialHair
+     */
+    public void setFacialHair(boolean facialHair) {
+        this.facialHair = facialHair;
+    }
+
+    /**
+     * 
+     * @param facialHairDesc
+     */
+    public void setFacialHairDesc(String facialHairDesc) {
+        this.facialHairDesc = facialHairDesc;
+    }
+
+    /**
+     * 
+     * @param clothesDesc
+     */
+    public void setClothesDesc(String clothesDesc) {
+        this.clothesDesc = clothesDesc;
+    }
+
     /**
      * set tattoo status for POI
      * true = tattooed
@@ -209,15 +325,17 @@ public class PersonOfInterest extends Person {
     public void setTattooed(boolean tattooed) {
         this.tattooed = tattooed;
     }
+
     /**
      * create array list of tatttoos
      * probably not needed
      * an append would be more apporpiate
      * @param ArrayList tattoos
      */
-    public void setTattoos(ArrayList tattoos) {
+    public void setTattoos(List<String> tattoos) {
         this.tattoos = tattoos;
     }
+
     /**
      * set status of wheter POI has a vehicle or not
      * @param boolean hasCar
@@ -225,27 +343,38 @@ public class PersonOfInterest extends Person {
     public void setHasCar(boolean hasCar) {
         this.hasCar = hasCar;
     }
+
     /**
      * set License plate for POI
      * @param String licensePlate
      */
-    public void setCarDescription(String carDescription) {
-        this.carDescription = carDescription;
+    public void setCarSpecs(String carSpecs) {
+        this.carSpecs = carSpecs;
     }
+
+    /**
+     * 
+     * @param license
+     */
+    public void setLicense(String license) {
+        this.licensePlate = license;
+    }
+
     /**
      * set story for POI
      * an append would be more apporpiate
-     * @param ArrayList story
+     * @param String story
      */
-    public void setStory(ArrayList story) {
+    public void setStory(String story) {
         this.story = story;
     }
+
     /**
      * setter info provided about POI
      * an append would be morea apporpiate
-     * @param ArrayList infoProvided
+     * @param List<String> infoProvided
      */
-    public void setInfoProvided(ArrayList infoProvided) {
+    public void setInfoProvided(List<String> infoProvided) {
         this.infoProvided = infoProvided;
     }
 }
