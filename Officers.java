@@ -19,7 +19,7 @@ public class Officers {
         return officerList;
     }
 
-    public void addPerson(String firstName, String lastName, String userName,
+    public void addOfficer(String firstName, String lastName, String userName,
     String password, String precint, String department, int yearsServed,
     String rank, String badgeNumber) {
         officerList.add(new Officer(firstName, lastName, userName,
