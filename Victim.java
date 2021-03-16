@@ -7,7 +7,7 @@ import java.util.List;
  * extends class person
  */
 public class Victim extends Person {
-    private List<String> stories;
+    private String story;
     private List<String> familyMembers;
     private String phoneNumber;
 
@@ -18,9 +18,13 @@ public class Victim extends Person {
     {
 
     }
-    public Victim (String firstName, String lastName,  String phoneNumber)
+    public Victim (String firstName, String lastName, 
+                boolean deceased, List<Integer> caseNums, String story,
+                List<String> familyMembers,  String phoneNumber)
     {
-        super(firstName, lastName);
+        super(firstName, lastName, deceased, caseNums);
+        this.story = story;
+        this.familyMembers = familyMembers;
         this.phoneNumber = phoneNumber;
     }
 
@@ -30,8 +34,8 @@ public class Victim extends Person {
      * @param list
      * @return list of description of criminal
      */
-    public List<String> descriptionOfCriminal(List <String> list) {
-        return null;
+    public List<String> descriptionOfCriminal(List<String> list) {
+        return;
     }
 
 }
