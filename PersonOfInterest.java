@@ -6,7 +6,7 @@ public class PersonOfInterest extends Person {
     String pattern = "dd-MM-yyyy";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
-
+    private int id;
     private String nickName;
     private int age;
     private int weight;
@@ -36,12 +36,13 @@ public class PersonOfInterest extends Person {
 
     }
     public PersonOfInterest(String firstName, String lastName, 
-                    String pattern, String nickName, int age, int weight, 
+                    String pattern, Integer id, String nickName, int age, int weight, 
                     String height, String race, String naturalHairColor, String hairLength, 
                     boolean facialHair, String facialHairDesc, String clothesDesc,
                     boolean hasCar, String carSpecs, String licensePlate, String story) {
         super(firstName, lastName);
         this.pattern = pattern;
+        this.id = id;
         this.nickName = nickName;
         this.age = age;
         this.weight = weight;
@@ -65,6 +66,11 @@ public class PersonOfInterest extends Person {
     }
 
     //getter section
+
+    public Integer getID() {
+        return this.id;
+    }
+
     /**
      * get POI's nickname
      * @return string nickName
