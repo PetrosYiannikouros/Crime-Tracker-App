@@ -1,44 +1,28 @@
 import java.util.List;
 
 /**
- * Victim class
- * creates victim
- * adds stories and family members
- * extends class person
+ * Victim class creates victim adds stories and family members extends class
+ * person
  */
 public class Victim extends Person {
-    private String story;
     private List<String> familyMembers;
-    private String phoneNumber;
     private String criminalDesc;
 
     /**
      * default constructor
      */
-    public Victim() 
-    {
+    public Victim() {
 
     }
-    public Victim (String firstName, String lastName, 
-                boolean deceased, List<Integer> caseNums, String story,
-                List<String> familyMembers,  String phoneNumber, String criminalDesc)
-    {
-        super(firstName, lastName, deceased, caseNums);
-        this.story = story;
+
+    public Victim(String firstName, String lastName, String phoneNumber, List<String> familyMembers,
+            String criminalDesc) {
+        super(firstName, lastName, phoneNumber);
         this.familyMembers = familyMembers;
-        this.phoneNumber = phoneNumber;
         this.criminalDesc = criminalDesc;
     }
 
-    //getters -----------------------------------------------------
-
-    /**
-     * 
-     * @return
-     */
-    public String getStory() {
-        return this.story;
-    }
+    // getters -----------------------------------------------------
 
     /**
      * 
@@ -52,27 +36,11 @@ public class Victim extends Person {
      * 
      * @return
      */
-    public String getPhoneNumber() {
-        return this.phoneNumber;
-    }
-
-    /**
-     * 
-     * @return
-     */
     public String getCriminalDesc() {
         return this.criminalDesc;
     }
 
-    //setters -----------------------------------------------------
-
-    /**
-     * 
-     * @param story
-     */
-    public void setStory(String story) {
-        this.story = story;
-    }
+    // setters -----------------------------------------------------
 
     /**
      * 
@@ -84,20 +52,11 @@ public class Victim extends Person {
 
     /**
      * 
-     * @param number
-     */
-    public void setPhoneNumber(String number) {
-        this.phoneNumber = number;
-    }
-
-    /**
-     * 
      * @param description
      */
     public void setCriminalDesc(String description) {
         this.criminalDesc = description;
     }
-
 
     /**
      * 
@@ -106,5 +65,4 @@ public class Victim extends Person {
     public void addFamilyMember(String familyMember) {
         familyMembers.add(familyMember);
     }
-
 }

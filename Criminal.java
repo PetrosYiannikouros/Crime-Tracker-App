@@ -7,32 +7,25 @@ import java.util.List;
 public class Criminal extends PersonOfInterest {
     private boolean inJail;
     private List<String> convictions;
-    private String vehicle;
     private double shoeSize;
     private int numOfCrimes; // just get size of convictions
 
     /**
      * Constructor for creating a criminal object
      */
-    public Criminal() 
-    {
+    public Criminal() {
 
     }
 
-    public Criminal(String firstName, String lastName, boolean deceased, List<String> caseNums,
-                String pattern, Integer id, String nickName, int age, int weight, 
-                String height, String race, String naturalHairColor, String hairLength, 
-                boolean facialHair, String facialHairDesc, String clothesDesc,
-                boolean hasCar, String carSpecs, String licensePlate, String story,
-                boolean inJail, List<String> convictions, String vehicle, double shoeSize, int numOfCrimes)
-    {
-        super(firstName, lastName, deceased, caseNums, pattern, id, nickName, age, weight, height, race, naturalHairColor, 
-        hairLength, facialHair, facialHairDesc, clothesDesc, hasCar, carSpecs, licensePlate, story);
+    public Criminal(String firstName, String lastName, String phoneNumber, int id, String nickName, int age, int weight,
+            String height, String race, String naturalHairColor, String hairLength, String facialHairDesc,
+            String clothesDesc, boolean hasCar, String carSpecs, String licensePlate, boolean inJail, double shoeSize) {
+        super(firstName, lastName, phoneNumber, id, nickName, age, weight, height, race, naturalHairColor, hairLength,
+                facialHairDesc, clothesDesc, hasCar, carSpecs, licensePlate);
         this.inJail = inJail;
-        this.convictions = convictions;
-        this.vehicle = vehicle;
+        this.convictions = new ArrayList<>();
         this.shoeSize = shoeSize;
-        this.numOfCrimes = numOfCrimes;
+        this.numOfCrimes = this.convictions.size();
     }
 
     // getters ---------------------------------------------------
@@ -51,14 +44,6 @@ public class Criminal extends PersonOfInterest {
      */
     public List<String> getConvictions() {
         return this.convictions;
-    }
-
-    /**
-     * 
-     * @return
-     */
-    public String getVehicle() {
-        return this.vehicle;
     }
 
     /**
@@ -97,14 +82,6 @@ public class Criminal extends PersonOfInterest {
 
     /**
      * 
-     * @param vehicle
-     */
-    public void setVehicle(String vehicle) {
-        this.vehicle = vehicle;
-    }
-
-    /**
-     * 
      * @param shoeSize
      */
     public void setShoeSize(double shoeSize) {
@@ -118,7 +95,6 @@ public class Criminal extends PersonOfInterest {
     public void setNumOfCrimes(int crimeNum) {
         this.numOfCrimes = crimeNum;
     }
-
 
     /**
      * Adding convictions to a criminal

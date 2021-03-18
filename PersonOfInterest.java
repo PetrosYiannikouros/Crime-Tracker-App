@@ -2,6 +2,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
+
 public abstract class PersonOfInterest extends Person {
     String pattern = "dd-MM-yyyy";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -10,38 +11,30 @@ public abstract class PersonOfInterest extends Person {
     private String nickName;
     private int age;
     private int weight;
-    //i think height should be a string
     private String height;
     private String race;
     private SimpleDateFormat dateOfBirth;
     private String naturalHairColor;
     private String hairLength;
-    private boolean facialHair;
     private String facialHairDesc;
     private String clothesDesc;
     private boolean tattooed;
-    //why is this not just list
     private List<String> tattoos;
     private boolean hasCar;
     private String carSpecs;
     private String licensePlate;
-    private String story;
-    private List<String> infoProvided;
 
     /**
      * default constructor for POI
      */
-    public PersonOfInterest() 
-    {
+    public PersonOfInterest() {
 
     }
-    public PersonOfInterest(String firstName, String lastName, 
-                    String pattern, Integer id, String nickName, int age, int weight, 
-                    String height, String race, String naturalHairColor, String hairLength, 
-                    boolean facialHair, String facialHairDesc, String clothesDesc,
-                    boolean hasCar, String carSpecs, String licensePlate, String story) {
-        super(firstName, lastName);
-        this.pattern = pattern;
+
+    public PersonOfInterest(String firstName, String lastName, String phoneNumber, int id, String nickName, int age,
+            int weight, String height, String race, String naturalHairColor, String hairLength, String facialHairDesc,
+            String clothesDesc, boolean hasCar, String carSpecs, String licensePlate) {
+        super(firstName, lastName, phoneNumber);
         this.id = id;
         this.nickName = nickName;
         this.age = age;
@@ -50,24 +43,19 @@ public abstract class PersonOfInterest extends Person {
         this.race = race;
         this.naturalHairColor = naturalHairColor;
         this.hairLength = hairLength;
-        this.facialHair = facialHair;
-        if(facialHair) {
-            this.facialHairDesc = facialHairDesc;
-        }
-
+        this.facialHairDesc = facialHairDesc;
         this.clothesDesc = clothesDesc;
         this.hasCar = hasCar;
-        if(hasCar)
-        {
+        if (hasCar) {
             this.carSpecs = carSpecs;
             this.licensePlate = licensePlate;
         }
-        this.story = story;
     }
 
-    //getter section -----------------------------------------------
+    // getter section -----------------------------------------------
     /**
      * get POI's id
+     * 
      * @return Integer id
      */
     public Integer getID() {
@@ -76,6 +64,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * get POI's nickname
+     * 
      * @return string nickName
      */
     public String getNickName() {
@@ -83,7 +72,8 @@ public abstract class PersonOfInterest extends Person {
     }
 
     /**
-     *get POI's age
+     * get POI's age
+     * 
      * @return int age
      */
     public int getAge() {
@@ -92,6 +82,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * get POI's weight
+     * 
      * @return double weight
      */
     public double getWeight() {
@@ -100,6 +91,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * get POI's height
+     * 
      * @return double height
      */
     public String getHeight() {
@@ -108,6 +100,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * get POI's race
+     * 
      * @return String race
      */
     public String getRace() {
@@ -116,6 +109,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * get POI's date of birth
+     * 
      * @return date dateOfBirth
      */
     public SimpleDateFormat getDateOfBirth() {
@@ -142,14 +136,6 @@ public abstract class PersonOfInterest extends Person {
      * 
      * @return
      */
-    public boolean isFacialHair() {
-        return this.facialHair;
-    }
-
-    /**
-     * 
-     * @return
-     */
     public String getFacialHairDesc() {
         return this.facialHairDesc;
     }
@@ -164,6 +150,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * get status or whether POI is tattoed or not
+     * 
      * @return boolean tattooed
      */
     public boolean isTattooed() {
@@ -172,6 +159,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * get list of POI's tattoos
+     * 
      * @return ArrayList tattoos
      */
     public List<String> getTattoos() {
@@ -180,6 +168,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * get status of whether POI has car or not
+     * 
      * @return boolean hasCar
      */
     public boolean isHasCar() {
@@ -188,6 +177,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * get POI's car specifications
+     * 
      * @return String desription of carSpecs
      */
     public String getCarSpecs() {
@@ -202,23 +192,7 @@ public abstract class PersonOfInterest extends Person {
         return this.licensePlate;
     }
 
-    /**
-     * get story/alibi from POI
-     * @return String story
-     */
-    public String getStory() {
-        return story;
-    }
-
-    /**
-     * get info provided about POI
-     * @return
-     */
-    public List<String> getInfoProvided() {
-        return infoProvided;
-    }
-
-    //setter section -----------------------------------------------
+    // setter section -----------------------------------------------
 
     /**
      * 
@@ -230,6 +204,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * set nick name for POI
+     * 
      * @param String nickName
      */
     public void setNickName(String nickName) {
@@ -238,6 +213,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * set age for POI
+     * 
      * @param int age
      */
     public void setAge(int age) {
@@ -246,6 +222,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * set weight for POI
+     * 
      * @param double weight
      */
     public void setWeight(int weight) {
@@ -254,6 +231,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * set height for POI
+     * 
      * @param double height
      */
     public void setHeight(String height) {
@@ -262,6 +240,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * set race for POI
+     * 
      * @param String race
      */
     public void setRace(String race) {
@@ -270,6 +249,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * set date of birth for POI
+     * 
      * @param date dateOfBirth
      */
     public void setDateOfBirth(SimpleDateFormat dateOfBirth) {
@@ -294,14 +274,6 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * 
-     * @param facialHair
-     */
-    public void setFacialHair(boolean facialHair) {
-        this.facialHair = facialHair;
-    }
-
-    /**
-     * 
      * @param facialHairDesc
      */
     public void setFacialHairDesc(String facialHairDesc) {
@@ -317,9 +289,8 @@ public abstract class PersonOfInterest extends Person {
     }
 
     /**
-     * set tattoo status for POI
-     * true = tattooed
-     * false = no tattoos
+     * set tattoo status for POI true = tattooed false = no tattoos
+     * 
      * @param booleam tattooed
      */
     public void setTattooed(boolean tattooed) {
@@ -327,9 +298,9 @@ public abstract class PersonOfInterest extends Person {
     }
 
     /**
-     * create array list of tatttoos
-     * probably not needed
-     * an append would be more apporpiate
+     * create array list of tatttoos probably not needed an append would be more
+     * apporpiate
+     * 
      * @param ArrayList tattoos
      */
     public void setTattoos(List<String> tattoos) {
@@ -338,6 +309,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * set status of wheter POI has a vehicle or not
+     * 
      * @param boolean hasCar
      */
     public void setHasCar(boolean hasCar) {
@@ -346,6 +318,7 @@ public abstract class PersonOfInterest extends Person {
 
     /**
      * set License plate for POI
+     * 
      * @param String licensePlate
      */
     public void setCarSpecs(String carSpecs) {
@@ -358,23 +331,5 @@ public abstract class PersonOfInterest extends Person {
      */
     public void setLicense(String license) {
         this.licensePlate = license;
-    }
-
-    /**
-     * set story for POI
-     * an append would be more apporpiate
-     * @param String story
-     */
-    public void setStory(String story) {
-        this.story = story;
-    }
-
-    /**
-     * setter info provided about POI
-     * an append would be morea apporpiate
-     * @param List<String> infoProvided
-     */
-    public void setInfoProvided(List<String> infoProvided) {
-        this.infoProvided = infoProvided;
     }
 }

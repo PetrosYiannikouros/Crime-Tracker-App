@@ -16,16 +16,13 @@ public class Witness extends Person {
     /**
      * Constructor of witness object
      */
-    public Witness() 
-    {
+    public Witness() {
 
     }
 
-    public Witness(String firstName, String lastName, boolean deceased,
-                List<Integer> caseNums, boolean proof,
-                String story, String location, SimpleDateFormat timeOfEvent)
-    {
-        super(firstName, lastName, deceased, caseNums);
+    public Witness(String firstName, String lastName, String phoneNumber, List<Integer> caseNums, boolean proof,
+            String story, String location, SimpleDateFormat timeOfEvent) {
+        super(firstName, lastName, phoneNumber);
         this.proof = proof;
         this.story = story;
         this.location = location;
@@ -33,8 +30,8 @@ public class Witness extends Person {
 
     }
 
-//getters -----------------------------------------------------
-    
+    // getters -----------------------------------------------------
+
     /**
      * 
      * @return
@@ -67,8 +64,8 @@ public class Witness extends Person {
         return this.timeOfEvent;
     }
 
-    //setters -----------------------------------------------------
-    
+    // setters -----------------------------------------------------
+
     /**
      * 
      * @param familyMembers

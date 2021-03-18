@@ -10,21 +10,16 @@ public class Suspect extends PersonOfInterest {
     /**
      * Constructor for suspect object
      */
-    public Suspect() 
-    {
+    public Suspect() {
 
     }
 
-    public Suspect(String firstName, String lastName, boolean deceased, List<String> caseNums,
-                String pattern, Integer id, String nickName, int age, int weight, 
-                String height, String race, String naturalHairColor, String hairLength, 
-                boolean facialHair, String facialHairDesc, String clothesDesc,
-                boolean hasCar, String carSpecs, String licensePlate, String story, List<String> reasons)
-    {
-        super(firstName, lastName, deceased, caseNums, pattern, id, nickName, age, weight, height, race, naturalHairColor, 
-            hairLength, facialHair, facialHairDesc, clothesDesc, hasCar, carSpecs, licensePlate, story);
-        this.reasons = reasons;
-
+    public Suspect(String firstName, String lastName, String phoneNumber, int id, String nickName, int age, int weight,
+            String height, String race, String naturalHairColor, String hairLength, String facialHairDesc,
+            String clothesDesc, boolean hasCar, String carSpecs, String licensePlate, boolean inJail, double shoeSize) {
+        super(firstName, lastName, phoneNumber, id, nickName, age, weight, height, race, naturalHairColor, hairLength,
+                facialHairDesc, clothesDesc, hasCar, carSpecs, licensePlate);
+        this.reasons = new ArrayList<>();
     }
 
     /**
