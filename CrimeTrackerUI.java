@@ -3,7 +3,8 @@ import java.util.List;
 
 public class CrimeTrackerUI {
     public static void main(String[] args) {
-        System.out.println("Compiled!");
+        Officers officers = Officers.getInstance();
+        officers.addOfficer("Sam", "Smith", "Sammyboy", "asdf1234", "North Columbia", "State", 10, "Sergeant", "513");
     }
 
     public static void promptForUsernameAndPassword() {

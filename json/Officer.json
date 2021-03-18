@@ -1,25 +1,35 @@
 [
     {
-        "firstName":"Reed",
-        "lastName":"Wopne",
-        "userName":"WopRe",
-        "password":"offy246",
-        "precinct":"Columbia",
-        "department":"State Police",
-        "crimeList":[],
-        "yearsServed":4,
-        "rank":"Lieutenant",
-        "badgeNumber":"245"
-    },{
-        "firstName":"Wade",
-        "lastName":"Opal",
-        "userName":"WaOpal",
-        "password":"otreach265",
-        "precinct":"York",
-        "department":"County Police",
-        "crimeList":[],
-        "yearsServed":2,
-        "rank":"Officer",
-        "badgeNumber":"158"
+        "firstName": "Reed",
+        "lastName": "Wopne",
+        "precinct": "Columbia",
+        "password": "offy246",
+        "yearsServed": 4,
+        "rank": "Lieutenant",
+        "badgeNumber": "245",
+        "userName": "WopRe",
+        "department": "State Police"
+    },
+    {
+        "firstName": "Wade",
+        "lastName": "Opal",
+        "precinct": "York",
+        "password": "otreach265",
+        "yearsServed": 2,
+        "rank": "Officer",
+        "badgeNumber": "158",
+        "userName": "WaOpal",
+        "department": "County Police"
+    },
+    {
+        "firstName": "Sam",
+        "lastName": "Smith",
+        "precinct": "North Columbia",
+        "password": "asdf1234",
+        "yearsServed": 10,
+        "rank": "Sergeant",
+        "badgeNumber": "513",
+        "userName": "Sammyboy",
+        "department": "State"
     }
 ]
