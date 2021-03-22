@@ -1,6 +1,7 @@
 import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
@@ -156,10 +157,13 @@ public class DataLoader extends DataConstants {
             for (int i = 0; i < victimsJSON.size(); ++i) {
                 JSONObject victimJSON = (JSONObject) victimsJSON.get(i);
                 String firstName = (String) victimJSON.get(VICTIM_FIRST_NAME);
-                String lastName = (String) officerJSON.get(OFFICER_LAST_NAME);
-                officers.add(new Officer(firstName, lastName, userName, password, precinct, department, yearsServed,
-                        rank, badgeNumber));
-                System.out.println(OFFICER_ID + ": " + id + "\n" + OFFICER_FIRST_NAME + ": " + firstName + "\n"
+                String lastName = (String) victimJSON.get(VICTIM_LAST_NAME);
+                String phoneNumber = (String) victimJSON.get(VICTIM_PHONE_NUMBER);
+                List<String> listData = new List<String>();
+                JSONArray fam = (JSONArray) victimJSON.get(VICTIM_FAMILY_MEMBER);
+                listdata.add("asd");
+                victims.add(new Victim(firstName, lastName));
+                System.out.println(OFFICER_FIRST_NAME + ": " + firstName + "\n"
                         + OFFICER_LAST_NAME + ": " + lastName + "\n"
                         + "***************************");
             }
@@ -170,3 +174,5 @@ public class DataLoader extends DataConstants {
         return null;
     }
 }
+String firstName, String lastName, String phoneNumber, List<String> familyMembers,
+            String criminalDesc
