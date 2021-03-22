@@ -97,4 +97,28 @@ public abstract class DataConstants {
     protected static final String ADMINISTRATOR_DEPARTMENT = "department";
     protected static final String ADMINISTRATOR_PHONE_NUMBER = "phoneNumber";
     protected static final String ADMINISTRATOR_EMAIL = "email";
+
+    //Crime
+    protected static final String CRIME_FILE_NAME = "json/Crime.json";
+    protected static final String CRIME_TYPE = "type";
+    protected static final String CRIME_DESCRIPTION = "descriptionOfCrime";
+    protected static final String CRIME_DATE = "date";
+    protected static final String CRIME_ADDRESS = "address";
+    protected static final String CRIME_FIRST_ON_SCENE_FIRST_NAME = "firstOnSceneFN";
+    protected static final String CRIME_LAST_ON_SCENE_LAST_NAME = "firstOnSceneLN";
+    protected static final String CRIME_SUSPECTS = "suspects";
+    protected static final String CRIME_CRIMINALS = "criminals";
+    protected static final String CRIME_WITNESSES = "witnesses";
+    protected static final String CRIME_VICTIMS = "victims";
+    protected static final String CRIME_EVIDENCE = "evidence";
+    protected static final String CRIME_IS_SOLVED = "isSolved";
+    protected static final String CRIME_CRIME_LIST = "crimeList";
+    protected static final String CRIME_PERSON_OF_INTEREST = "person"
 }
+
+
+        "victims":[],
+        "evidence":[],
+        "isSolved":false,
+        "crimeList":[],
+        "PersonOfInterest":["154"]
