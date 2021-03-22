@@ -1,0 +1,21 @@
+[
+    {
+        "id": "cef0cbf3-6458-4f13-a418-ee4d7e7505dd",
+        "firstName": "Michael",
+        "lastName": "Helix", 
+        "userName": "bigMike69",
+        "password": "asedf",
+        "precint"
+    },
+    {
+
+    }
+]
+private UUID id;
+    private String firstName;
+    private String lastName;
+    private String userName;
+    private String password;
+    private String precint;
+    private String department;
+    private List<Crime> crimeList;
