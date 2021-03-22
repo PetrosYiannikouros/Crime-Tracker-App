@@ -53,4 +53,13 @@ public abstract class DataConstants {
     protected static final String CRIMINAL_LICENSE_PLATE_NUM = "licensePlate";
     protected static final String CRIMINAL_IN_JAIL = "inJail";
     protected static final String CRIMINAL_CONVICTIONS = "convictions";
+
+
+    protected static final String VICTIM_FILE_NAME = "Crime-Tracker-App/json/Victim.json";
+    protected static final String VICTIM = "victim";
+    protected static final String FIRST_NAME = "firstName";
+    protected static final String LAST_NAME = "lastName";
+    protected static final String PHONE_NUMBER = "phoneNumber";
+    protected static final String FAMILY_MEMBER = "familyMember";
+    protected static final String CRIMINAL_DESCRIPTION = "criminalDesc";
 }
