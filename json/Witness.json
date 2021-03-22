@@ -2,11 +2,21 @@
     {
         "firstName": "Ryan",
         "lastName": "Sheckler",
-        "location": "Jakes on Devine"
+        "phoneNumber": "765-908-0933",
+        "caseNums": [123,111,234],
+        "proof": true,
+        "story": "was walking down the street and saw crime",
+        "location": "Jakes on Devine",
+        "timeOfEvent": "01-12-2021 01:20"
     },
     {
         "firstName": "Tony",
         "lastName": "Hawk",
-        "location": "Jakes on Devine"
+        "phoneNumber": "735-912-0923",
+        "caseNums": [133,321,322],
+        "proof": false,
+        "story": "was walking down the street and saw crime",
+        "location": "Jakes on Devine",
+        "timeOfEvent": "01-10-2020 03:30"
     }
 ]
