@@ -163,7 +163,6 @@ public class DataLoader extends DataConstants {
                 String phoneNumber = (String) victimJSON.get(VICTIM_PHONE_NUMBER);
                 ArrayList<String> familyMembers = (ArrayList<String>) victimJSON.get(VICTIM_FAMILY_MEMBER);
                 String criminalDesc = (String)victimJSON.get(VICTIM_CRIMINAL_DESCRIPTION);
-
                 victims.add(new Victim(firstName, lastName, phoneNumber, familyMembers,
                 criminalDesc));
                 System.out.println("FirstName: " + firstName + 
@@ -202,7 +201,6 @@ public class DataLoader extends DataConstants {
                 String date = (String) witnessJSON.get(WITNESS_TIME_OF_EVENT);
                 Date dattt = new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(date);
                 Date plz = new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(date);
-                //SimpleDateFormat timeOfEvent = (SimpleDateFormat) witnessJSON.get(WITNESS_TIME_OF_EVENT);
                 System.out.println("FirstName: " + firstName + 
                 "\nLastName: " + lastName + "\nPhoneNumber: " + phoneNumber + 
                 "\ncaseNums: " + caseNums + "\nProof: " + proof +
