@@ -4,7 +4,7 @@ public class Users {
     private static ArrayList<User> userList = new ArrayList<User>();
 
     private Users() {
-        userList = DataLoader.loadUser();
+        userList = DataLoader.loadUsers();
     }
 
     public static Users getInstance() {
