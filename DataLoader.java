@@ -146,8 +146,9 @@ public class DataLoader extends DataConstants {
     }
 
 
+
     public static ArrayList<Victim> loadVictims() {
-        ArrayList<Victim> victims = new ArrayList<Victim>();
+        ArrayList<Victim> victims = new ArrayList<>();
 
         try {
             FileReader reader = new FileReader(VICTIM_FILE_NAME);
@@ -159,20 +160,20 @@ public class DataLoader extends DataConstants {
                 String firstName = (String) victimJSON.get(VICTIM_FIRST_NAME);
                 String lastName = (String) victimJSON.get(VICTIM_LAST_NAME);
                 String phoneNumber = (String) victimJSON.get(VICTIM_PHONE_NUMBER);
-                List<String> listData = new List<String>();
-                JSONArray fam = (JSONArray) victimJSON.get(VICTIM_FAMILY_MEMBER);
-                listdata.add("asd");
-                victims.add(new Victim(firstName, lastName));
-                System.out.println(OFFICER_FIRST_NAME + ": " + firstName + "\n"
-                        + OFFICER_LAST_NAME + ": " + lastName + "\n"
-                        + "***************************");
+                ArrayList<String> familyMembers = (ArrayList<String>) victimJSON.get(VICTIM_FAMILY_MEMBER);
+                String criminalDesc = (String)victimJSON.get(VICTIM_CRIMINAL_DESCRIPTION);
+
+                victims.add(new Victim(firstName, lastName, phoneNumber, familyMembers,
+                criminalDesc));
+                System.out.println("FirstName: " + firstName + 
+                "\nLastName: " + lastName + "\nPhoneNumber: " + phoneNumber +
+                "\nFamilyMembers: " + familyMembers + "\nCriminal Description: " + criminalDesc + 
+                "\n*************************");
             }
-            return officers;
+            return victims;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
 }
-String firstName, String lastName, String phoneNumber, List<String> familyMembers,
-            String criminalDesc
