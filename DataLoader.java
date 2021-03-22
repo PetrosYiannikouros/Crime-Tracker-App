@@ -2,6 +2,7 @@ import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
@@ -181,6 +182,8 @@ public class DataLoader extends DataConstants {
 
     public static ArrayList<Witness> loadWitnesses() {
         ArrayList<Witness> witnesses = new ArrayList<>();
+        String pattern = "dd-MM-yyyy HH:mm";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
         try {
             FileReader reader = new FileReader(WITNESS_FILE_NAME);
@@ -192,16 +195,22 @@ public class DataLoader extends DataConstants {
                 String firstName = (String) witnessJSON.get(WITNESS_FIRST_NAME);
                 String lastName = (String) witnessJSON.get(WITNESS_LAST_NAME);
                 String phoneNumber = (String) witnessJSON.get(WITNESS_PHONE_NUMBER);
-                
-                ArrayList<String> familyMembers = (ArrayList<String>) victimJSON.get(VICTIM_FAMILY_MEMBER);
-                victims.add(new Victim(firstName, lastName, phoneNumber, familyMembers,
-                criminalDesc));
+                List<Integer> caseNums = (List<Integer>) witnessJSON.get(WITNESS_CASE_NUMS);
+                boolean proof = ((Boolean) witnessJSON.get(WITNESS_PROOF)).booleanValue();
+                String story = (String) witnessJSON.get(WITNESS_STORY); 
+                String location = (String) witnessJSON.get(WITNESS_LOCATION);
+                String date = (String) witnessJSON.get(WITNESS_TIME_OF_EVENT);
+                Date dattt = new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(date);
+                Date plz = new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(date);
+                //SimpleDateFormat timeOfEvent = (SimpleDateFormat) witnessJSON.get(WITNESS_TIME_OF_EVENT);
                 System.out.println("FirstName: " + firstName + 
-                "\nLastName: " + lastName + "\nPhoneNumber: " + phoneNumber +
-                "\nFamilyMembers: " + familyMembers + "\nCriminal Description: " + criminalDesc + 
+                "\nLastName: " + lastName + "\nPhoneNumber: " + phoneNumber + 
+                "\ncaseNums: " + caseNums + "\nProof: " + proof +
+                "\nStory: " + story + "\nLocation: " + 
+                "\nTime: " + plz +
                 "\n*************************");
             }
-            return victims;
+            return witnesses;
         } catch (Exception e) {
             e.printStackTrace();
         }
