@@ -7,8 +7,6 @@ import java.util.List;
 public class Criminal extends PersonOfInterest {
     private boolean inJail;
     private List<String> convictions;
-    private double shoeSize;
-    private int numOfCrimes; // just get size of convictions
 
     /**
      * Constructor for creating a criminal object
@@ -17,15 +15,14 @@ public class Criminal extends PersonOfInterest {
 
     }
 
-    public Criminal(String firstName, String lastName, String phoneNumber, int id, String nickName, int age, int weight,
-            String height, String race, String naturalHairColor, String hairLength, String facialHairDesc,
-            String clothesDesc, boolean hasCar, String carSpecs, String licensePlate, boolean inJail, double shoeSize) {
-        super(firstName, lastName, phoneNumber, id, nickName, age, weight, height, race, naturalHairColor, hairLength,
-                facialHairDesc, clothesDesc, hasCar, carSpecs, licensePlate);
+    public Criminal(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
+            String height, String race, double shoeSize, String naturalHairColor, String hairLength,
+            String facialHairDesc, String clothesDesc, boolean hasCar, String carDescription, String licensePlate,
+            boolean inJail) {
+        super(firstName, lastName, phoneNumber, nickName, age, weight, height, race, shoeSize, naturalHairColor,
+                hairLength, facialHairDesc, clothesDesc, hasCar, carDescription, licensePlate);
         this.inJail = inJail;
         this.convictions = new ArrayList<>();
-        this.shoeSize = shoeSize;
-        this.numOfCrimes = this.convictions.size();
     }
 
     // getters ---------------------------------------------------
@@ -46,22 +43,6 @@ public class Criminal extends PersonOfInterest {
         return this.convictions;
     }
 
-    /**
-     * 
-     * @return
-     */
-    public double getShoeSize() {
-        return this.shoeSize;
-    }
-
-    /**
-     * 
-     * @return
-     */
-    public int getNumOfCrimes() {
-        return this.numOfCrimes;
-    }
-
     // setters ---------------------------------------------------
 
     /**
@@ -78,22 +59,6 @@ public class Criminal extends PersonOfInterest {
      */
     public void setConvictions(List<String> convictions) {
         this.convictions = convictions;
-    }
-
-    /**
-     * 
-     * @param shoeSize
-     */
-    public void setShoeSize(double shoeSize) {
-        this.shoeSize = shoeSize;
-    }
-
-    /**
-     * 
-     * @param crimeNum
-     */
-    public void setNumOfCrimes(int crimeNum) {
-        this.numOfCrimes = crimeNum;
     }
 
     /**

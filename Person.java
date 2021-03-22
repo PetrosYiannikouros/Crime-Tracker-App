@@ -1,15 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Person class used for creating people going to be an extension to many
  */
 public abstract class Person {
+    private UUID id;
     private String firstName;
     private String lastName;
     private boolean deceased;
     private String phoneNumber;
-    private List<String> stories;
     protected List<Integer> caseNums;
 
     /**
@@ -20,11 +21,11 @@ public abstract class Person {
     }
 
     protected Person(String firstName, String lastName, String phoneNumber) {
+        this.id = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.deceased = false; // default is not deceased
         this.phoneNumber = phoneNumber;
-        this.stories = new ArrayList<>();
         this.caseNums = new ArrayList<>();
     }
 
@@ -65,7 +66,11 @@ public abstract class Person {
         return this.phoneNumber;
     }
 
-    public List<Integer> getCases() {
+    public UUID getId() {
+        return this.id;
+    }
+
+    public List<Integer> getCaseNums() {
         return caseNums;
     }
 
@@ -101,11 +106,7 @@ public abstract class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    public void addStory(String story) {
-        stories.add(story);
-    }
-
-    public void addCase(Integer caseNum) {
-        caseNums.add(caseNum);
+    public void addCase(Crime crime) {
+        caseNums.add(crime.getCaseNumber());
     }
 }

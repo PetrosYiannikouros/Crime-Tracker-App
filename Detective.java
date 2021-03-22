@@ -1,87 +1,80 @@
+
 /**
  * class for Detective
  * extention of Officer
  */
 import java.util.ArrayList;
 import java.util.List;
-public class Detective extends Officer{
+
+public class Detective extends Officer {
     private int activeCases;
     private int solvedCases;
-    private boolean activeCase;
-    private List<Crime> activeCaseList;
+    private List<Crime> activeCasesList;
 
     /**
      * Default Constructor
      */
-    public Detective(String firstName, String lastName, String userName, String password, String precint, String department, int yearsServed, String rank, String badgeNumber, int activeCases, int solvedCases) {
+    public Detective(String firstName, String lastName, String userName, String password, String precint,
+            String department, int yearsServed, String rank, String badgeNumber, int activeCases, int solvedCases) {
         super(firstName, lastName, userName, password, precint, department, yearsServed, rank, badgeNumber);
         this.activeCases = activeCases;
         this.solvedCases = solvedCases;
-        if(activeCases > 0)
-        {
-            activeCase = true;
-        }
-        activeCaseList = new ArrayList<>();
+        activeCasesList = new ArrayList<>();
     }
 
-    //getter section
+    // getter section
     /**
      * Getter for active cases
+     * 
      * @return int activeCases
      */
     public int getActiveCases() {
         return activeCases;
     }
+
     /**
      * get number of solved cases by detective
+     * 
      * @return int solvedCases
      */
     public int getSolvedCases() {
         return solvedCases;
     }
-    /**
-     * get status of whether a detective has an active case
-     * @return boolean activeCase
-     */
-    public boolean isActiveCase() {
-        return activeCase;
-    }
+
     /**
      * get the list of active cases for a detective
+     * 
      * @return activeCaseList
      */
     public List<Crime> getActiveCaseList() {
-        return activeCaseList;
+        return activeCasesList;
     }
 
-    //setter section
+    // setter section
     /**
      * setter for number of active cases for a detective
+     * 
      * @param int activeCases
      */
     public void setActiveCases(int activeCases) {
         this.activeCases = activeCases;
     }
+
     /**
      * setter for number of solved cases by a detective
+     * 
      * @param solvedCases
      */
     public void setSolvedCases(int solvedCases) {
         this.solvedCases = solvedCases;
     }
+
     /**
-     * setter for active case status 
-     * @param boolean activeCase
-     */
-    public void setActiveCase(boolean activeCase) {
-        this.activeCase = activeCase;
-    }
-    /**
-     * this isnt right
-     * we are going to need an append
+     * 
+     * 
      * @param activeCaseList
      */
-    public void setActiveCaseList(List<Crime> activeCaseList) {
-        this.activeCaseList = activeCaseList;
+    public void addCase(Crime activeCase) {
+        this.activeCasesList.add(activeCase);
     }
 }

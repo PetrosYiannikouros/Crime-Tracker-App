@@ -1,7 +1,11 @@
 public class main {
     public static void main(String[] args) {
-        Officers test = Officers.getInstance();
-        test.getOfficers();
-        //System.out.println(test.getOfficers());
+        // Criminals test = Criminals.getInstance();
+        // test.getCriminals();
+        Detectives test = Detectives.getInstance();
+        test.getDetectives();
+        // Officers test = Officers.getInstance();
+        // test.getOfficers();
+        // System.out.println(test.getOfficers());
     }
 }

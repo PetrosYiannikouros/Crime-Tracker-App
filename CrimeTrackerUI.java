@@ -1,10 +1,16 @@
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class CrimeTrackerUI {
     public static void main(String[] args) {
-        Officers officers = Officers.getInstance();
-        officers.addOfficer("Sam", "Smith", "Sammyboy", "asdf1234", "North Columbia", "State", 10, "Sergeant", "513");
+        System.out.println(UUID.randomUUID());
+        Detectives detectives = Detectives.getInstance();
+        detectives.addDetective("Tom", "Johnson", "jtom54", "hello8*", "Lexington", "Traffic", 15, "Detective", "863",
+                0, 0);
+        // Officers officers = Officers.getInstance();
+        // officers.addOfficer("Sam", "Smith", "Sammyboy", "asdf1234", "North Columbia",
+        // "State", 10, "Sergeant", "513");
     }
 
     public static void promptForUsernameAndPassword() {

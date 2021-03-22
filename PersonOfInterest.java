@@ -1,19 +1,13 @@
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 
 public abstract class PersonOfInterest extends Person {
-    String pattern = "dd-MM-yyyy";
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
-    private int id;
     private String nickName;
     private int age;
     private int weight;
     private String height;
     private String race;
-    private SimpleDateFormat dateOfBirth;
+    private double shoeSize;
     private String naturalHairColor;
     private String hairLength;
     private String facialHairDesc;
@@ -21,7 +15,7 @@ public abstract class PersonOfInterest extends Person {
     private boolean tattooed;
     private List<String> tattoos;
     private boolean hasCar;
-    private String carSpecs;
+    private String carDescription;
     private String licensePlate;
 
     /**
@@ -31,39 +25,34 @@ public abstract class PersonOfInterest extends Person {
 
     }
 
-    public PersonOfInterest(String firstName, String lastName, String phoneNumber, int id, String nickName, int age,
-            int weight, String height, String race, String naturalHairColor, String hairLength, String facialHairDesc,
-            String clothesDesc, boolean hasCar, String carSpecs, String licensePlate) {
+    public PersonOfInterest(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
+            String height, String race, double shoeSize, String naturalHairColor, String hairLength,
+            String facialHairDesc, String clothesDesc, boolean hasCar, String carDescription, String licensePlate) {
         super(firstName, lastName, phoneNumber);
-        this.id = id;
         this.nickName = nickName;
         this.age = age;
         this.weight = weight;
         this.height = height;
         this.race = race;
+        this.shoeSize = shoeSize;
         this.naturalHairColor = naturalHairColor;
         this.hairLength = hairLength;
         this.facialHairDesc = facialHairDesc;
         this.clothesDesc = clothesDesc;
         this.hasCar = hasCar;
         if (hasCar) {
-            this.carSpecs = carSpecs;
+            this.carDescription = carDescription;
             this.licensePlate = licensePlate;
+        } else {
+            this.carDescription = "Not known or N/A";
+            this.licensePlate = "Not known or N/A";
         }
     }
 
     // getter section -----------------------------------------------
     /**
-     * get POI's id
      * 
-     * @return Integer id
-     */
-    public Integer getID() {
-        return this.id;
-    }
-
-    /**
-     * get POI's nickname
+     * /** get POI's nickname
      * 
      * @return string nickName
      */
@@ -108,12 +97,12 @@ public abstract class PersonOfInterest extends Person {
     }
 
     /**
-     * get POI's date of birth
+     * get POI's shoe size
      * 
-     * @return date dateOfBirth
+     * @return shoe size of type double
      */
-    public SimpleDateFormat getDateOfBirth() {
-        return this.dateOfBirth;
+    public double getShoeSize() {
+        return this.shoeSize;
     }
 
     /**
@@ -171,7 +160,7 @@ public abstract class PersonOfInterest extends Person {
      * 
      * @return boolean hasCar
      */
-    public boolean isHasCar() {
+    public boolean hasCar() {
         return hasCar;
     }
 
@@ -180,8 +169,8 @@ public abstract class PersonOfInterest extends Person {
      * 
      * @return String desription of carSpecs
      */
-    public String getCarSpecs() {
-        return this.carSpecs;
+    public String getCarDesc() {
+        return this.carDescription;
     }
 
     /**
@@ -193,14 +182,6 @@ public abstract class PersonOfInterest extends Person {
     }
 
     // setter section -----------------------------------------------
-
-    /**
-     * 
-     * @param id
-     */
-    public void setID(Integer id) {
-        this.id = id;
-    }
 
     /**
      * set nick name for POI
@@ -247,13 +228,8 @@ public abstract class PersonOfInterest extends Person {
         this.race = race;
     }
 
-    /**
-     * set date of birth for POI
-     * 
-     * @param date dateOfBirth
-     */
-    public void setDateOfBirth(SimpleDateFormat dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setShoeSize(double shoeSize) {
+        this.shoeSize = shoeSize;
     }
 
     /**
@@ -322,7 +298,7 @@ public abstract class PersonOfInterest extends Person {
      * @param String licensePlate
      */
     public void setCarSpecs(String carSpecs) {
-        this.carSpecs = carSpecs;
+        this.carDescription = carSpecs;
     }
 
     /**

@@ -1,30 +1,58 @@
 [
     {
+        "id": "fa1051b1-5324-4932-82dc-276c353e4e08",
         "firstName": "Bam",
         "lastName": "Margera",
-        "pattern": "loves vandalism",
+        "deceased": false,
+        "phoneNumber": "555-783-6918",
         "nickName": "Sk8r boi",
         "age": 69,
         "weight": 180,
         "height": "5'11\"",
         "race": "White",
-        "carDescription": "pink smart car",
-        "vehicle": "smart car", 
-        "shoeSize": 10.5,
-        "numOfCrimes": 7
+        "shoeSize": 10.0,
+        "naturalHairColor": "Black",
+        "hairLength": "Semi-long",
+        "facialHairDesc": "Scruffy",
+        "clothesDesc": "Skater gear",
+        "tattooed": true,
+        "tattooList": [
+            "Skull on chest",
+            "Flames on left leg"
+        ],
+        "hasCar": true,
+        "carDescription": "2006 Red Ferrari",
+        "licensePlate": "AGW874",
+        "inJail": false,
+        "convictions": [
+            "DUI in July 2008",
+            "Public Disorderly in November 2012"
+        ]
     },
     {
+        "id": "2ba174a3-29ab-4aee-8565-1e5883fde430",
         "firstName": "Steve",
         "lastName": "Harvey",
-        "pattern": "n/a",
+        "deceased": false,
+        "phoneNumber": "555-238-3839",
         "nickName": "Family Feud Guy",
         "age": 64,
         "weight": 200,
         "height": "6'1\"",
         "race": "African American",
-        "carDescription": "white convertiable",
-        "vehicle": "mercedes amg", 
-        "shoeSize": 10.5,
-        "numOfCrimes": 2
+        "shoeSize": 13.0,
+        "naturalHairColor": "Black",
+        "hairLength": "Bald",
+        "facialHairDesc": "Clean shaven",
+        "clothesDesc": "Usually in 3-piece suit",
+        "tattooed": false,
+        "tattooList": [],
+        "hasCar": true,
+        "carDescription": "2022 Silver Mercedes AMG",
+        "licensePlate": "FRK491",
+        "inJail": false,
+        "convictions": [
+            "Simple Assault in 2001"
+        ]
     }
 ]
