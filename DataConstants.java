@@ -115,4 +115,8 @@ public abstract class DataConstants {
     protected static final String CRIME_IS_SOLVED = "isSolved";
     protected static final String CRIME_CRIME_LIST = "crimeList";
     protected static final String CRIME_PERSON_OF_INTEREST = "personOfInterest";
+
+    //SUSPECTS 
+    protected static final String SUSPECT_FILE_NAME = "json/Suspect";
+    
 }
