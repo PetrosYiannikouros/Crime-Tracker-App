@@ -1,0 +1,16 @@
+[
+    {
+        "firstName": "Luke",
+        "lastName": "Dowd",
+        "phoneNumber": "864-123-4567",
+        "familyMember": ["Bobby Carp", "Landon Dowd"],
+        "criminalDesc": "6ft, white male, kinda ugly with long hair"
+    },
+    {
+        "firstName": "Joesph",
+        "lastName": "Whitney",
+        "phoneNumber": "864-354-4567",
+        "familyMember": ["Bob Saget", "Romeo Pruvis"],
+        "criminalDesc": "5ft, white female, kinda cute with long brown hair"
+    }
+]
