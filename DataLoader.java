@@ -247,4 +247,35 @@ public class DataLoader extends DataConstants {
         }
         return null;
     }
+
+
+    public static ArrayList<Administrator> loadAdministrators() {
+        ArrayList<Administrator> users = new ArrayList<Administrator>();
+
+        try {
+            FileReader reader = new FileReader(ADMINSTRATOR_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray usersJSON = (JSONArray) new JSONParser().parse(reader);
+
+            for (int i = 0; i < usersJSON.size(); ++i) {
+                JSONObject userJSON = (JSONObject) usersJSON.get(i);
+                String id = (String) userJSON.get(USER_ID);
+                String firstName = (String) userJSON.get(USER_FIRST_NAME);
+                String lastName = (String) userJSON.get(USER_LAST_NAME);
+                String userName = (String) userJSON.get(USER_USERNAME);
+                String password = (String) userJSON.get(USER_PASSWORD);
+                String precinct = (String) userJSON.get(USER_PRECINCT);
+                String department = (String) userJSON.get(USER_DEPARTMENT);
+                users.add(new User(firstName, lastName, userName, password, precinct, department));
+                System.out.println(USER_ID + ": " + id + "\n" + USER_FIRST_NAME + ": " + firstName + "\n"
+                        + USER_LAST_NAME + ": " + lastName + "\n" + USER_USERNAME + ": " + userName + "\n"
+                        + USER_PASSWORD + ": " + password + "\n" + USER_PRECINCT + ": " + precinct + "\n"
+                        + USER_DEPARTMENT + ": " + department + "\n" + "***************************");
+            }
+            return users;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

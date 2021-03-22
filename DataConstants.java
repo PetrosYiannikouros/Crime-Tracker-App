@@ -87,7 +87,7 @@ public abstract class DataConstants {
 
 
     //Admin
-    protected static final String ADMINISTRATOR_FILE_NAME = "json/User.json";
+    protected static final String ADMINISTRATOR_FILE_NAME = "json/Administrator.json";
     protected static final String ADMINISTRATOR_ID = "id";
     protected static final String ADMINISTRATOR_FIRST_NAME = "firstName";
     protected static final String ADMINISTRATOR_LAST_NAME = "lastName";
