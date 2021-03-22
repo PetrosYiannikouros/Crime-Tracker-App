@@ -84,4 +84,17 @@ public abstract class DataConstants {
     protected static final String USER_PASSWORD = "password";
     protected static final String USER_PRECINCT = "precinct";
     protected static final String USER_DEPARTMENT = "department";
+
+
+    //Admin
+    protected static final String ADMINISTRATOR_FILE_NAME = "json/User.json";
+    protected static final String ADMINISTRATOR_ID = "id";
+    protected static final String ADMINISTRATOR_FIRST_NAME = "firstName";
+    protected static final String ADMINISTRATOR_LAST_NAME = "lastName";
+    protected static final String ADMINISTRATOR_USERNAME = "userName";
+    protected static final String ADMINISTRATOR_PASSWORD = "password";
+    protected static final String ADMINISTRATOR_PRECINCT = "precinct";
+    protected static final String ADMINISTRATOR_DEPARTMENT = "department";
+    protected static final String ADMINISTRATOR_PHONE_NUMBER = "phoneNumber";
+    protected static final String ADMINISTRATOR_EMAIL = "email";
 }
