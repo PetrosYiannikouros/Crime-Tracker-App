@@ -228,7 +228,6 @@ public class DataLoader extends DataConstants {
 
             for (int i = 0; i < usersJSON.size(); ++i) {
                 JSONObject userJSON = (JSONObject) usersJSON.get(i);
-                String id = (String) userJSON.get(USER_ID);
                 String firstName = (String) userJSON.get(USER_FIRST_NAME);
                 String lastName = (String) userJSON.get(USER_LAST_NAME);
                 String userName = (String) userJSON.get(USER_USERNAME);
@@ -236,7 +235,7 @@ public class DataLoader extends DataConstants {
                 String precinct = (String) userJSON.get(USER_PRECINCT);
                 String department = (String) userJSON.get(USER_DEPARTMENT);
                 users.add(new User(firstName, lastName, userName, password, precinct, department));
-                System.out.println(USER_ID + ": " + id + "\n" + USER_FIRST_NAME + ": " + firstName + "\n"
+                System.out.println(USER_FIRST_NAME + ": " + firstName + "\n"
                         + USER_LAST_NAME + ": " + lastName + "\n" + USER_USERNAME + ": " + userName + "\n"
                         + USER_PASSWORD + ": " + password + "\n" + USER_PRECINCT + ": " + precinct + "\n"
                         + USER_DEPARTMENT + ": " + department + "\n" + "***************************");
@@ -250,29 +249,34 @@ public class DataLoader extends DataConstants {
 
 
     public static ArrayList<Administrator> loadAdministrators() {
-        ArrayList<Administrator> users = new ArrayList<Administrator>();
+        ArrayList<Administrator> admins = new ArrayList<Administrator>();
 
         try {
-            FileReader reader = new FileReader(ADMINSTRATOR_FILE_NAME);
+            FileReader reader = new FileReader(ADMINISTRATOR_FILE_NAME);
             JSONParser parser = new JSONParser();
-            JSONArray usersJSON = (JSONArray) new JSONParser().parse(reader);
+            JSONArray adminsJSON = (JSONArray) new JSONParser().parse(reader);
 
-            for (int i = 0; i < usersJSON.size(); ++i) {
-                JSONObject userJSON = (JSONObject) usersJSON.get(i);
-                String id = (String) userJSON.get(USER_ID);
-                String firstName = (String) userJSON.get(USER_FIRST_NAME);
-                String lastName = (String) userJSON.get(USER_LAST_NAME);
-                String userName = (String) userJSON.get(USER_USERNAME);
-                String password = (String) userJSON.get(USER_PASSWORD);
-                String precinct = (String) userJSON.get(USER_PRECINCT);
-                String department = (String) userJSON.get(USER_DEPARTMENT);
-                users.add(new User(firstName, lastName, userName, password, precinct, department));
-                System.out.println(USER_ID + ": " + id + "\n" + USER_FIRST_NAME + ": " + firstName + "\n"
-                        + USER_LAST_NAME + ": " + lastName + "\n" + USER_USERNAME + ": " + userName + "\n"
-                        + USER_PASSWORD + ": " + password + "\n" + USER_PRECINCT + ": " + precinct + "\n"
-                        + USER_DEPARTMENT + ": " + department + "\n" + "***************************");
+            for (int i = 0; i < adminsJSON.size(); ++i) {
+                JSONObject adminJSON = (JSONObject) adminsJSON.get(i);
+                String firstName = (String) adminJSON.get(ADMINISTRATOR_FIRST_NAME);
+                String lastName = (String) adminJSON.get(ADMINISTRATOR_LAST_NAME);
+                String userName = (String) adminJSON.get(ADMINISTRATOR_USERNAME);
+                String password = (String) adminJSON.get(ADMINISTRATOR_PASSWORD);
+                String precinct = (String) adminJSON.get(ADMINISTRATOR_PRECINCT);
+                String department = (String) adminJSON.get(ADMINISTRATOR_DEPARTMENT);
+                String phoneNumber = (String) adminJSON.get(ADMINISTRATOR_PHONE_NUMBER);
+                String email = (String) adminJSON.get(ADMINISTRATOR_EMAIL);
+                admins.add(new Administrator(firstName, lastName, userName, password, precinct, department, 
+                phoneNumber, email));
+                System.out.println(ADMINISTRATOR_FIRST_NAME + ": " + firstName + "\n"
+                        + ADMINISTRATOR_LAST_NAME + ": " + lastName + "\n" + ADMINISTRATOR_USERNAME + ": " + userName + "\n"
+                        + ADMINISTRATOR_PASSWORD + ": " + password + "\n" + ADMINISTRATOR_PRECINCT + ": " + precinct + "\n"
+                        + ADMINISTRATOR_DEPARTMENT + ": " + department + "\n" +
+                        ADMINISTRATOR_PHONE_NUMBER + ": " + phoneNumber + "\n" +
+                        ADMINISTRATOR_EMAIL + ": " + email +
+                        "\n***************************");
             }
-            return users;
+            return admins;
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,7 +1,9 @@
 public class main {
     public static void main(String[] args) {
-        Users test = Users.getInstance();
-        test.getUsers();
+        //Users test = Users.getInstance();
+        //test.getUsers();
+        Administrators test = Administrators.getInstance();
+        test.getAdministrators();
         // Criminals test = Criminals.getInstance();
          //test.getCriminals();
        // Witnesses test = Witnesses.getInstance();
