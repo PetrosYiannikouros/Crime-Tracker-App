@@ -15,15 +15,14 @@ public class User {
     private String lastName;
     private String userName;
     private String password;
-    private String precint;
+    private String precinct;
     private String department;
     private List<Crime> crimeList;
-
     public User() {
 
     }
 
-    public User(String firstName, String lastName, String userName, String password, String precint,
+    public User(String firstName, String lastName, String userName, String password, String precinct,
             String department) {
         this.id = UUID.randomUUID();
         this.firstName = firstName;
@@ -31,7 +30,7 @@ public class User {
         this.userName = userName;
         crimeList = new ArrayList<>();
         this.password = password;
-        this.precint = precint;
+        this.precinct = precinct;
         this.department = department;
     }
 
@@ -87,8 +86,8 @@ public class User {
      * 
      * @return precint
      */
-    public String getPrecint() {
-        return precint;
+    public String getPrecinct() {
+        return precinct;
     }
 
     /**
@@ -151,8 +150,8 @@ public class User {
      * 
      * @param String precint
      */
-    public void setPrecint(String precint) {
-        this.precint = precint;
+    public void setPrecinct(String precinct) {
+        this.precinct = precinct;
     }
 
     /**

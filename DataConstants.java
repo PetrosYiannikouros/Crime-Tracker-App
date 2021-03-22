@@ -74,4 +74,7 @@ public abstract class DataConstants {
     protected static final String WITNESS_STORY = "story";
     protected static final String WITNESS_LOCATION = "location";
     protected static final String WITNESS_TIME_OF_EVENT = "timeOfEvent";
+
+    //USER
+    protected static final String USER_FILE_NAME = "json/User.json";
 }

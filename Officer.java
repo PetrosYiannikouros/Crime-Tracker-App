@@ -13,9 +13,9 @@ public class Officer extends User {
 
     }
 
-    public Officer(String firstName, String lastName, String userName, String password, String precint,
+    public Officer(String firstName, String lastName, String userName, String password, String precinct,
             String department, int yearsServed, String rank, String badgeNumber) {
-        super(firstName, lastName, userName, password, precint, department);
+        super(firstName, lastName, userName, password, precinct, department);
         this.yearsServed = yearsServed;
         this.rank = rank;
         this.badgeNumber = badgeNumber;
