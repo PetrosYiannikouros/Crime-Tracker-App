@@ -131,4 +131,10 @@ public class DataWriter extends DataConstants {
 
         return criminalDetails;
     }
+
+    public static void saveVictims() {
+    }
+
+    public static void saveAdministrators() {
+    }
 }
