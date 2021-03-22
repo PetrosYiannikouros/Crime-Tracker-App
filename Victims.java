@@ -24,7 +24,7 @@ public class Victims {
     }
 
     public void addVictim(String firstName, String lastName, String phoneNumber,
-        List<String> familyMembers, String criminalDesc) {
+        ArrayList<String> familyMembers, String criminalDesc) {
         victimList.add(new Victim(firstName, lastName, phoneNumber, 
         familyMembers, criminalDesc));
         DataWriter.saveVictims();
