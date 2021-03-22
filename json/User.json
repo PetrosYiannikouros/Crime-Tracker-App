@@ -5,17 +5,18 @@
         "lastName": "Helix", 
         "userName": "bigMike69",
         "password": "asedf",
-        "precint"
+        "precinct": "South Glens Falls", 
+        "department": "Police Department",
+        "crimeList": []
     },
     {
-
+        "id": "tyf0bgf3-6458-4a13-b418-ii4d7h7505uj",
+        "firstName": "Michael",
+        "lastName": "Jackson", 
+        "userName": "HEHEGuy100",
+        "password": "beatit",
+        "precinct": "Washington DC", 
+        "department": "Police Department",
+        "crimeList": []
     }
 ]
-private UUID id;
-    private String firstName;
-    private String lastName;
-    private String userName;
-    private String password;
-    private String precint;
-    private String department;
-    private List<Crime> crimeList;
