@@ -176,4 +176,35 @@ public class DataLoader extends DataConstants {
         }
         return null;
     }
+
+
+
+    public static ArrayList<Witness> loadWitnesses() {
+        ArrayList<Witness> witnesses = new ArrayList<>();
+
+        try {
+            FileReader reader = new FileReader(WITNESS_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray witnessesJSON = (JSONArray) new JSONParser().parse(reader);
+
+            for (int i = 0; i < witnessesJSON.size(); ++i) {
+                JSONObject witnessJSON = (JSONObject) witnessesJSON.get(i);
+                String firstName = (String) witnessJSON.get(WITNESS_FIRST_NAME);
+                String lastName = (String) witnessJSON.get(WITNESS_LAST_NAME);
+                String phoneNumber = (String) witnessJSON.get(WITNESS_PHONE_NUMBER);
+                
+                ArrayList<String> familyMembers = (ArrayList<String>) victimJSON.get(VICTIM_FAMILY_MEMBER);
+                victims.add(new Victim(firstName, lastName, phoneNumber, familyMembers,
+                criminalDesc));
+                System.out.println("FirstName: " + firstName + 
+                "\nLastName: " + lastName + "\nPhoneNumber: " + phoneNumber +
+                "\nFamilyMembers: " + familyMembers + "\nCriminal Description: " + criminalDesc + 
+                "\n*************************");
+            }
+            return victims;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
