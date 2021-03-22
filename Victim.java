@@ -1,11 +1,11 @@
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Victim class creates victim adds stories and family members extends class
  * person
  */
 public class Victim extends Person {
-    private List<String> familyMembers;
+    private ArrayList<String> familyMembers;
     private String criminalDesc;
 
     /**
@@ -15,7 +15,7 @@ public class Victim extends Person {
 
     }
 
-    public Victim(String firstName, String lastName, String phoneNumber, List<String> familyMembers,
+    public Victim(String firstName, String lastName, String phoneNumber, ArrayList<String> familyMembers,
             String criminalDesc) {
         super(firstName, lastName, phoneNumber);
         this.familyMembers = familyMembers;
@@ -28,7 +28,7 @@ public class Victim extends Person {
      * 
      * @return
      */
-    public List<String> getFamily() {
+    public ArrayList<String> getFamily() {
         return this.familyMembers;
     }
 
@@ -46,7 +46,7 @@ public class Victim extends Person {
      * 
      * @param familyMembers
      */
-    public void setFamilyMembers(List<String> familyMembers) {
+    public void setFamilyMembers(ArrayList<String> familyMembers) {
         this.familyMembers = familyMembers;
     }
 
