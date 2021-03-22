@@ -143,4 +143,31 @@ public class DataLoader extends DataConstants {
         }
         return null;
     }
+
+
+    public static ArrayList<Victim> loadVictims() {
+        ArrayList<Victim> victimss = new ArrayList<Victim>();
+
+        try {
+            FileReader reader = new FileReader(OFFICER_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray officersJSON = (JSONArray) new JSONParser().parse(reader);
+
+            for (int i = 0; i < officersJSON.size(); ++i) {
+                JSONObject officerJSON = (JSONObject) officersJSON.get(i);
+                String id = (String) officerJSON.get(OFFICER_ID);
+                String firstName = (String) officerJSON.get(OFFICER_FIRST_NAME);
+                String lastName = (String) officerJSON.get(OFFICER_LAST_NAME);
+                officers.add(new Officer(firstName, lastName, userName, password, precinct, department, yearsServed,
+                        rank, badgeNumber));
+                System.out.println(OFFICER_ID + ": " + id + "\n" + OFFICER_FIRST_NAME + ": " + firstName + "\n"
+                        + OFFICER_LAST_NAME + ": " + lastName + "\n"
+                        + "***************************");
+            }
+            return officers;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
