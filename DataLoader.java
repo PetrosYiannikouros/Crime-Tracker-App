@@ -146,17 +146,16 @@ public class DataLoader extends DataConstants {
 
 
     public static ArrayList<Victim> loadVictims() {
-        ArrayList<Victim> victimss = new ArrayList<Victim>();
+        ArrayList<Victim> victims = new ArrayList<Victim>();
 
         try {
-            FileReader reader = new FileReader(OFFICER_FILE_NAME);
+            FileReader reader = new FileReader(VICTIM_FILE_NAME);
             JSONParser parser = new JSONParser();
-            JSONArray officersJSON = (JSONArray) new JSONParser().parse(reader);
+            JSONArray victimsJSON = (JSONArray) new JSONParser().parse(reader);
 
-            for (int i = 0; i < officersJSON.size(); ++i) {
-                JSONObject officerJSON = (JSONObject) officersJSON.get(i);
-                String id = (String) officerJSON.get(OFFICER_ID);
-                String firstName = (String) officerJSON.get(OFFICER_FIRST_NAME);
+            for (int i = 0; i < victimsJSON.size(); ++i) {
+                JSONObject victimJSON = (JSONObject) victimsJSON.get(i);
+                String firstName = (String) victimJSON.get(VICTIM_FIRST_NAME);
                 String lastName = (String) officerJSON.get(OFFICER_LAST_NAME);
                 officers.add(new Officer(firstName, lastName, userName, password, precinct, department, yearsServed,
                         rank, badgeNumber));
