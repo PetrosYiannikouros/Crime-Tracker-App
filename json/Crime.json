@@ -1,39 +1,36 @@
 [
     {
-        "type":["Inchoate"],
-        "descriptionOfCrime":"trespass",
-        "date":"08/12/2020",
-        "address":"349 Lake Avenue",
         "caseNumber": 5,
-        "firstOnSceneFN":"Richard",
-        "firstOnSceneLN":"Opry",
-        "detectiveFN":"Steve",
-        "detectiveLN":"Roy",
-        "suspects":[],
-        "criminals":[],
-        "witnesses":[],
-        "victims":[],
-        "evidence":[],
-        "isSolved":false,
-        "crimeList":[],
-        "personOfInterest":["154"]
-    },{
-        "type":["Personal"],
-        "descriptionOfCrime":"murder",
-        "date":"09/04/2008",
-        "address":"4897 Ocean Blvd",
+        "type": "Inchoate",
+        "description": "trespass early morning in high crime area",
+        "date": "08/12/2020 6:50",
+        "address": "349 Lake Avenue",
+        "assignedId": "edf66144-0dcb-40d1-b4f2-6cc1d60b1bc6",
+        "personOfInterestids": [
+            "11e0230f-d81a-4554-a25b-ae37fa7a0a7f"
+        ],
+        "witnessIds": [],
+        "victimIds": [],
+        "evidenceIds": [
+            "246b50d5-2e94-4c21-89a7-3e1d78b7415e"
+        ],
+        "isSolved": false
+    },
+    {
         "caseNumber": 67,
-        "firstOnSceneFN":"Thomas",
-        "firstOnSceneLN":"Echen",
-        "detectiveFN":"Lopert",
-        "detectiveLN":"Cale",
-        "suspects":[],
-        "criminals":[],
-        "witnesses":[],
-        "victims":[],
-        "evidence":[],
-        "isSolved":false,
-        "crimeList":[],
-        "personOfInterest":["54"]
+        "type": "Personal",
+        "description": "murder late night at hotel",
+        "date": "09/04/2008 23:00",
+        "address": "4897 Ocean Blvd",
+        "assignedId": "2a5aea58-6361-4b0f-b48f-1f5189f8be88",
+        "personOfInterestids": [
+            "887c318e-1f17-407b-984e-c429a46d2231"
+        ],
+        "witnessIds": [],
+        "victimIds": [],
+        "evidenceIds": [
+            "acedc38d-8f69-4a68-8225-235e45205f8a"
+        ],
+        "isSolved": false
     }
 ]

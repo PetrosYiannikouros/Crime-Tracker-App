@@ -14,29 +14,28 @@ public class Crime {
     private String description;
     private SimpleDateFormat date;
     private String address;
-    private Officer assigned;
-    private List<Person> personsOfInterest;
-    private List<Person> witnesses;
-    private List<Person> victims;
-    private List<Evidence> evidenceList;
+    private String assignedId;
+    private List<String> personsOfInterestIds;
+    private List<String> witnessIds;
+    private List<String> victimIds;
+    private List<String> evidenceIds;
     private boolean isSolved;
 
     /**
      * Constructor for Crime object
      */
     public Crime(int caseNumber, TypesOfCrimes type, String description, SimpleDateFormat date, String address,
-            Officer assigned) {
+            String assignedId) {
         this.caseNumber = caseNumber;
         this.type = type;
         this.description = description;
         this.date = date;
         this.address = address;
-        this.assigned = assigned;
-        personsOfInterest = new ArrayList<>();
-        witnesses = new ArrayList<>();
-        victims = new ArrayList<>();
-        evidenceList = new ArrayList<>();
-        personsOfInterest = new ArrayList<>();
+        this.assignedId = assignedId;
+        personsOfInterestIds = new ArrayList<>();
+        witnessIds = new ArrayList<>();
+        victimIds = new ArrayList<>();
+        evidenceIds = new ArrayList<>();
         isSolved = false;
     }
 
@@ -86,12 +85,12 @@ public class Crime {
     }
 
     /**
-     * Accessor for assigned officer
+     * Accessor for assigned officer/detective
      * 
-     * @return assigned officer for crime
+     * @return assigned officer/detective for crime
      */
-    public Officer getAssigned() {
-        return assigned;
+    public String getAssignedId() {
+        return assignedId;
     }
 
     /**
@@ -99,8 +98,8 @@ public class Crime {
      * 
      * @return list of persons of interest for a specific case
      */
-    public List<Person> getPersonsOfInterest() {
-        return personsOfInterest;
+    public List<String> getPersonsOfInterestIds() {
+        return personsOfInterestIds;
     }
 
     /**
@@ -108,8 +107,8 @@ public class Crime {
      * 
      * @return list of witnesses for a specific case
      */
-    public List<Person> getWitnesses() {
-        return witnesses;
+    public List<String> getWitnessIds() {
+        return witnessIds;
     }
 
     /**
@@ -117,8 +116,8 @@ public class Crime {
      * 
      * @return list of victims for a specific case
      */
-    public List<Person> getVictims() {
-        return victims;
+    public List<String> getVictimIds() {
+        return victimIds;
     }
 
     /**
@@ -126,8 +125,8 @@ public class Crime {
      * 
      * @return list of evidence for a specific case
      */
-    public List<Evidence> getEvidenceList() {
-        return evidenceList;
+    public List<String> getEvidenceIds() {
+        return evidenceIds;
     }
 
     /**
@@ -153,8 +152,8 @@ public class Crime {
      * 
      * @param personOfInterest associated to crime
      */
-    public void addPersonOfInterest(Person personOfInterest) {
-        personsOfInterest.add(personOfInterest);
+    public void addPersonOfInterestId(String personOfInterestId) {
+        personsOfInterestIds.add(personOfInterestId);
     }
 
     /**
@@ -162,8 +161,8 @@ public class Crime {
      * 
      * @param witness associated to crime
      */
-    public void addWitness(Person witness) {
-        witnesses.add(witness);
+    public void addWitnessId(String witnessId) {
+        witnessIds.add(witnessId);
     }
 
     /**
@@ -171,8 +170,8 @@ public class Crime {
      * 
      * @param victim associated to crime
      */
-    public void addVictim(Person victim) {
-        victims.add(victim);
+    public void addVictimId(String victimId) {
+        victimIds.add(victimId);
     }
 
     /**
@@ -180,8 +179,8 @@ public class Crime {
      * 
      * @param evidence associate to crime
      */
-    public void addEvidence(Evidence evidence) {
-        evidenceList.add(evidence);
+    public void addEvidenceId(String evidenceId) {
+        evidenceIds.add(evidenceId);
     }
 
     /**

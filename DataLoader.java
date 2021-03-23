@@ -268,4 +268,40 @@ public class DataLoader extends DataConstants {
         }
         return null;
     }
+
+    public static ArrayList<Crime> loadCrimes() {
+        ArrayList<Crime> crimes = new ArrayList<>();
+
+        try {
+            FileReader reader = new FileReader(CRIME_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray crimesJSON = (JSONArray) new JSONParser().parse(reader);
+
+            for (int i = 0; i < crimesJSON.size(); ++i) {
+                JSONObject crimeJSON = (JSONObject) crimesJSON.get(i);
+                int caseNumber = ((Long) crimeJSON.get(CRIME_CASE_NUMBER)).intValue();
+                TypesOfCrimes type = ((TypesOfCrimes) crimeJSON.get(CRIME_TYPE));
+                String description = (String) crimeJSON.get(CRIME_DESCRIPTION);
+                SimpleDateFormat date = (SimpleDateFormat) crimeJSON.get(CRIME_DATE);
+                String address = (String) crimeJSON.get(CRIME_ADDRESS);
+                String assignedId = (String) crimeJSON.get(CRIME_ASSIGNED_ID);
+                ArrayList<String> personOfInterestIds = (ArrayList<String>) crimeJSON.get(CRIME_PERSON_OF_INTEREST_IDS);
+                ArrayList<String> witnessIds = (ArrayList<String>) crimeJSON.get(CRIME_WITNESS_IDS);
+                ArrayList<String> victimIds = (ArrayList<String>) crimeJSON.get(CRIME_VICTIM_IDS);
+                ArrayList<String> evidenceIds = (ArrayList<String>) crimeJSON.get(CRIME_EVIDENCE_IDS);
+                boolean isSolved = ((Boolean) crimeJSON.get(CRIME_IS_SOLVED)).booleanValue();
+                crimes.add(new Crime(caseNumber, type, description, date, address, assignedId));
+                System.out.println(CRIME_CASE_NUMBER + ": " + caseNumber + "\n" + CRIME_TYPE + ": " + type + "\n"
+                        + CRIME_DESCRIPTION + ": " + description + "\n" + CRIME_DATE + ": " + date + "\n"
+                        + CRIME_ADDRESS + ": " + address + "\n" + CRIME_ASSIGNED_ID + ": " + assignedId + "\n"
+                        + CRIME_PERSON_OF_INTEREST_IDS + ": " + personOfInterestIds + "\n" + CRIME_WITNESS_IDS + ": "
+                        + witnessIds + "\n" + CRIME_VICTIM_IDS + ": " + victimIds + "\n" + CRIME_EVIDENCE_IDS + ": "
+                        + evidenceIds + "\n" + CRIME_IS_SOLVED + ": " + isSolved + "\n***************************");
+            }
+            return crimes;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

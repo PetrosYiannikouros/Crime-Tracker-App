@@ -1,7 +1,10 @@
+import java.util.UUID;
+
 /**
  * The evidence for each crime
  */
 public class Evidence {
+    private UUID id;
     private String type;
     private String description;
     private int amount;
@@ -10,9 +13,26 @@ public class Evidence {
      * Constructor for Evidence object
      */
     public Evidence(String type, String description, int amount) {
+        this.id = UUID.randomUUID();
         this.type = type;
         this.description = description;
         this.amount = amount;
+    }
+
+    public UUID getId() {
+        return this.id;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public String description() {
+        return this.description;
+    }
+
+    public int amount() {
+        return this.amount;
     }
 
     /**

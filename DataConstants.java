@@ -126,17 +126,13 @@ public abstract class DataConstants {
     protected static final String CRIME_FILE_NAME = "Crime-Tracker-App/json/Crime.json";
     protected static final String CRIME_CASE_NUMBER = "caseNumber";
     protected static final String CRIME_TYPE = "type";
-    protected static final String CRIME_DESCRIPTION = "descriptionOfCrime";
+    protected static final String CRIME_DESCRIPTION = "description";
     protected static final String CRIME_DATE = "date";
     protected static final String CRIME_ADDRESS = "address";
-    protected static final String CRIME_FIRST_ON_SCENE_FIRST_NAME = "firstOnSceneFN";
-    protected static final String CRIME_LAST_ON_SCENE_LAST_NAME = "firstOnSceneLN";
-    protected static final String CRIME_SUSPECTS = "suspects";
-    protected static final String CRIME_CRIMINALS = "criminals";
-    protected static final String CRIME_WITNESSES = "witnesses";
-    protected static final String CRIME_VICTIMS = "victims";
-    protected static final String CRIME_EVIDENCE = "evidence";
+    protected static final String CRIME_ASSIGNED_ID = "assignedId";
+    protected static final String CRIME_PERSON_OF_INTEREST_IDS = "personOfInterestIds";
+    protected static final String CRIME_WITNESS_IDS = "witnessIds";
+    protected static final String CRIME_VICTIM_IDS = "victimIds";
+    protected static final String CRIME_EVIDENCE_IDS = "evidenceIds";
     protected static final String CRIME_IS_SOLVED = "isSolved";
-    protected static final String CRIME_CRIME_LIST = "crimeList";
-    protected static final String CRIME_PERSON_OF_INTEREST = "personOfInterest";
 }
