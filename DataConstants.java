@@ -54,7 +54,6 @@ public abstract class DataConstants {
     protected static final String CRIMINAL_IN_JAIL = "inJail";
     protected static final String CRIMINAL_CONVICTIONS = "convictions";
 
-
     protected static final String VICTIM_FILE_NAME = "json/Victim.json";
     protected static final String VICTIM = "victim";
     protected static final String VICTIM_FIRST_NAME = "firstName";
@@ -63,7 +62,7 @@ public abstract class DataConstants {
     protected static final String VICTIM_FAMILY_MEMBER = "familyMember";
     protected static final String VICTIM_CRIMINAL_DESCRIPTION = "criminalDesc";
 
-    //Witness
+    // Witness
     protected static final String WITNESS_FILE_NAME = "json/Witness.json";
     protected static final String WITNESS = "victim";
     protected static final String WITNESS_FIRST_NAME = "firstName";
@@ -75,7 +74,7 @@ public abstract class DataConstants {
     protected static final String WITNESS_LOCATION = "location";
     protected static final String WITNESS_TIME_OF_EVENT = "timeOfEvent";
 
-    //USER
+    // USER
     protected static final String USER_FILE_NAME = "json/User.json";
     protected static final String USER_ID = "id";
     protected static final String USER_FIRST_NAME = "firstName";
@@ -85,8 +84,7 @@ public abstract class DataConstants {
     protected static final String USER_PRECINCT = "precinct";
     protected static final String USER_DEPARTMENT = "department";
 
-
-    //Admin
+    // Admin
     protected static final String ADMINISTRATOR_FILE_NAME = "json/Administrator.json";
     protected static final String ADMINISTRATOR_ID = "id";
     protected static final String ADMINISTRATOR_FIRST_NAME = "firstName";
@@ -98,8 +96,34 @@ public abstract class DataConstants {
     protected static final String ADMINISTRATOR_PHONE_NUMBER = "phoneNumber";
     protected static final String ADMINISTRATOR_EMAIL = "email";
 
-    //Crime
-    protected static final String CRIME_FILE_NAME = "json/Crime.json";
+    // SUSPECTS
+    protected static final String SUSPECT_FILE_NAME = "Crime-Tracker-App/json/Suspect.json";
+    protected static final String SUSPECT = "suspect";
+    protected static final String SUSPECT_ID = "id";
+    protected static final String SUSPECT_FIRST_NAME = "firstName";
+    protected static final String SUSPECT_LAST_NAME = "lastName";
+    protected static final String SUSPECT_DECEASED = "deceased";
+    protected static final String SUSPECT_PHONE_NUMBER = "phoneNumber";
+    protected static final String SUSPECT_CASE_NUMS = "caseNums";
+    protected static final String SUSPECT_NICK_NAME = "nickName";
+    protected static final String SUSPECT_AGE = "age";
+    protected static final String SUSPECT_WEIGHT = "weight";
+    protected static final String SUSPECT_HEIGHT = "height";
+    protected static final String SUSPECT_RACE = "race";
+    protected static final String SUSPECT_SHOE_SIZE = "shoeSize";
+    protected static final String SUSPECT_NATURAL_HAIR_COLOR = "naturalHairColor";
+    protected static final String SUSPECT_HAIR_LENGTH = "hairLength";
+    protected static final String SUSPECT_FACIAL_HAIR_DESCRIPTION = "facialHairDesc";
+    protected static final String SUSPECT_CLOTHES_DESCRIPTION = "clothesDesc";
+    protected static final String SUSPECT_TATTOOED = "tattooed";
+    protected static final String SUSPECT_TATTOO_LIST = "tattooList";
+    protected static final String SUSPECT_HAS_CAR = "hasCar";
+    protected static final String SUSPECT_CAR_DESCRIPTION = "carDescription";
+    protected static final String SUSPECT_LICENSE_PLATE_NUM = "licensePlate";
+    protected static final String SUSPECT_REASONS = "reasons:";
+
+    // Crime
+    protected static final String CRIME_FILE_NAME = "Crime-Tracker-App/json/Crime.json";
     protected static final String CRIME_CASE_NUMBER = "caseNumber";
     protected static final String CRIME_TYPE = "type";
     protected static final String CRIME_DESCRIPTION = "descriptionOfCrime";
@@ -115,8 +139,4 @@ public abstract class DataConstants {
     protected static final String CRIME_IS_SOLVED = "isSolved";
     protected static final String CRIME_CRIME_LIST = "crimeList";
     protected static final String CRIME_PERSON_OF_INTEREST = "personOfInterest";
-
-    //SUSPECTS 
-    protected static final String SUSPECT_FILE_NAME = "json/Suspect";
-    
 }

@@ -105,6 +105,7 @@ public class DataLoader extends DataConstants {
                 String lastName = (String) criminalJSON.get(CRIMINAL_LAST_NAME);
                 boolean deceased = ((Boolean) criminalJSON.get(CRIMINAL_DECEASED)).booleanValue();
                 String phoneNumber = (String) criminalJSON.get(CRIMINAL_PHONE_NUMBER);
+                ArrayList<String> caseNums = (ArrayList<String>) criminalJSON.get(CRIMINAL_CASE_NUMS);
                 String nickName = (String) criminalJSON.get(CRIMINAL_NICK_NAME);
                 int age = ((Long) criminalJSON.get(CRIMINAL_AGE)).intValue();
                 int weight = ((Long) criminalJSON.get(CRIMINAL_WEIGHT)).intValue();
@@ -123,21 +124,21 @@ public class DataLoader extends DataConstants {
                 boolean inJail = ((Boolean) criminalJSON.get(CRIMINAL_IN_JAIL)).booleanValue();
                 ArrayList<String> convictions = (ArrayList<String>) criminalJSON.get(CRIMINAL_CONVICTIONS);
                 criminals.add(new Criminal(firstName, lastName, phoneNumber, nickName, age, weight, height, race,
-                        shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, hasCar, carDescription,
-                        licensePlate, inJail));
+                        shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
+                        carDescription, licensePlate, inJail));
                 System.out.println(CRIMINAL_ID + ": " + id + "\n" + CRIMINAL_FIRST_NAME + ": " + firstName + "\n"
                         + CRIMINAL_LAST_NAME + ": " + lastName + "\n" + CRIMINAL_DECEASED + ": " + deceased + "\n"
-                        + CRIMINAL_PHONE_NUMBER + ": " + phoneNumber + "\n" + CRIMINAL_NICK_NAME + ": " + nickName
-                        + "\n" + CRIMINAL_AGE + ": " + age + "\n" + CRIMINAL_WEIGHT + ": " + weight + "\n"
-                        + CRIMINAL_HEIGHT + ": " + height + "\n" + CRIMINAL_RACE + ": " + race + "\n"
-                        + CRIMINAL_SHOE_SIZE + ": " + shoeSize + "\n" + CRIMINAL_NATURAL_HAIR_COLOR + ": "
-                        + naturalHairColor + "\n" + CRIMINAL_HAIR_LENGTH + ": " + hairLength + "\n"
-                        + CRIMINAL_FACIAL_HAIR_DESCRIPTION + ": " + facialHairDesc + "\n" + CRIMINAL_CLOTHES_DESCRIPTION
-                        + ": " + clothesDesc + "\n" + CRIMINAL_TATTOOED + ": " + tattoed + "\n" + CRIMINAL_TATTOO_LIST
-                        + ": " + tattooList + "\n" + CRIMINAL_HAS_CAR + ": " + hasCar + "\n" + CRIMINAL_CAR_DESCRIPTION
-                        + ": " + carDescription + "\n" + CRIMINAL_LICENSE_PLATE_NUM + ": " + licensePlate + "\n"
-                        + CRIMINAL_IN_JAIL + ": " + inJail + "\n" + CRIMINAL_CONVICTIONS + ": " + convictions + "\n"
-                        + "***************************");
+                        + CRIMINAL_PHONE_NUMBER + ": " + phoneNumber + "\n" + CRIME_CASE_NUMBER + ": " + caseNums + "\n"
+                        + CRIMINAL_NICK_NAME + ": " + nickName + "\n" + CRIMINAL_AGE + ": " + age + "\n"
+                        + CRIMINAL_WEIGHT + ": " + weight + "\n" + CRIMINAL_HEIGHT + ": " + height + "\n"
+                        + CRIMINAL_RACE + ": " + race + "\n" + CRIMINAL_SHOE_SIZE + ": " + shoeSize + "\n"
+                        + CRIMINAL_NATURAL_HAIR_COLOR + ": " + naturalHairColor + "\n" + CRIMINAL_HAIR_LENGTH + ": "
+                        + hairLength + "\n" + CRIMINAL_FACIAL_HAIR_DESCRIPTION + ": " + facialHairDesc + "\n"
+                        + CRIMINAL_CLOTHES_DESCRIPTION + ": " + clothesDesc + "\n" + CRIMINAL_TATTOOED + ": " + tattoed
+                        + "\n" + CRIMINAL_TATTOO_LIST + ": " + tattooList + "\n" + CRIMINAL_HAS_CAR + ": " + hasCar
+                        + "\n" + CRIMINAL_CAR_DESCRIPTION + ": " + carDescription + "\n" + CRIMINAL_LICENSE_PLATE_NUM
+                        + ": " + licensePlate + "\n" + CRIMINAL_IN_JAIL + ": " + inJail + "\n" + CRIMINAL_CONVICTIONS
+                        + ": " + convictions + "\n" + "***************************");
             }
             return criminals;
         } catch (Exception e) {
@@ -145,8 +146,6 @@ public class DataLoader extends DataConstants {
         }
         return null;
     }
-
-
 
     public static ArrayList<Victim> loadVictims() {
         ArrayList<Victim> victims = new ArrayList<>();
@@ -162,13 +161,11 @@ public class DataLoader extends DataConstants {
                 String lastName = (String) victimJSON.get(VICTIM_LAST_NAME);
                 String phoneNumber = (String) victimJSON.get(VICTIM_PHONE_NUMBER);
                 ArrayList<String> familyMembers = (ArrayList<String>) victimJSON.get(VICTIM_FAMILY_MEMBER);
-                String criminalDesc = (String)victimJSON.get(VICTIM_CRIMINAL_DESCRIPTION);
-                victims.add(new Victim(firstName, lastName, phoneNumber, familyMembers,
-                criminalDesc));
-                System.out.println("FirstName: " + firstName + 
-                "\nLastName: " + lastName + "\nPhoneNumber: " + phoneNumber +
-                "\nFamilyMembers: " + familyMembers + "\nCriminal Description: " + criminalDesc + 
-                "\n*************************");
+                String criminalDesc = (String) victimJSON.get(VICTIM_CRIMINAL_DESCRIPTION);
+                victims.add(new Victim(firstName, lastName, phoneNumber, familyMembers, criminalDesc));
+                System.out.println("FirstName: " + firstName + "\nLastName: " + lastName + "\nPhoneNumber: "
+                        + phoneNumber + "\nFamilyMembers: " + familyMembers + "\nCriminal Description: " + criminalDesc
+                        + "\n*************************");
             }
             return victims;
         } catch (Exception e) {
@@ -176,8 +173,6 @@ public class DataLoader extends DataConstants {
         }
         return null;
     }
-
-
 
     public static ArrayList<Witness> loadWitnesses() {
         ArrayList<Witness> witnesses = new ArrayList<>();
@@ -196,17 +191,14 @@ public class DataLoader extends DataConstants {
                 String phoneNumber = (String) witnessJSON.get(WITNESS_PHONE_NUMBER);
                 List<Integer> caseNums = (List<Integer>) witnessJSON.get(WITNESS_CASE_NUMS);
                 boolean proof = ((Boolean) witnessJSON.get(WITNESS_PROOF)).booleanValue();
-                String story = (String) witnessJSON.get(WITNESS_STORY); 
+                String story = (String) witnessJSON.get(WITNESS_STORY);
                 String location = (String) witnessJSON.get(WITNESS_LOCATION);
                 String date = (String) witnessJSON.get(WITNESS_TIME_OF_EVENT);
                 Date dattt = new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(date);
                 Date plz = new SimpleDateFormat("dd-MM-yyyy HH:mm").parse(date);
-                System.out.println("FirstName: " + firstName + 
-                "\nLastName: " + lastName + "\nPhoneNumber: " + phoneNumber + 
-                "\ncaseNums: " + caseNums + "\nProof: " + proof +
-                "\nStory: " + story + "\nLocation: " + 
-                "\nTime: " + plz +
-                "\n*************************");
+                System.out.println("FirstName: " + firstName + "\nLastName: " + lastName + "\nPhoneNumber: "
+                        + phoneNumber + "\ncaseNums: " + caseNums + "\nProof: " + proof + "\nStory: " + story
+                        + "\nLocation: " + "\nTime: " + plz + "\n*************************");
             }
             return witnesses;
         } catch (Exception e) {
@@ -214,7 +206,6 @@ public class DataLoader extends DataConstants {
         }
         return null;
     }
-
 
     public static ArrayList<User> loadUsers() {
         ArrayList<User> users = new ArrayList<User>();
@@ -233,10 +224,10 @@ public class DataLoader extends DataConstants {
                 String precinct = (String) userJSON.get(USER_PRECINCT);
                 String department = (String) userJSON.get(USER_DEPARTMENT);
                 users.add(new User(firstName, lastName, userName, password, precinct, department));
-                System.out.println(USER_FIRST_NAME + ": " + firstName + "\n"
-                        + USER_LAST_NAME + ": " + lastName + "\n" + USER_USERNAME + ": " + userName + "\n"
-                        + USER_PASSWORD + ": " + password + "\n" + USER_PRECINCT + ": " + precinct + "\n"
-                        + USER_DEPARTMENT + ": " + department + "\n" + "***************************");
+                System.out.println(USER_FIRST_NAME + ": " + firstName + "\n" + USER_LAST_NAME + ": " + lastName + "\n"
+                        + USER_USERNAME + ": " + userName + "\n" + USER_PASSWORD + ": " + password + "\n"
+                        + USER_PRECINCT + ": " + precinct + "\n" + USER_DEPARTMENT + ": " + department + "\n"
+                        + "***************************");
             }
             return users;
         } catch (Exception e) {
@@ -244,7 +235,6 @@ public class DataLoader extends DataConstants {
         }
         return null;
     }
-
 
     public static ArrayList<Administrator> loadAdministrators() {
         ArrayList<Administrator> admins = new ArrayList<Administrator>();
@@ -264,15 +254,13 @@ public class DataLoader extends DataConstants {
                 String department = (String) adminJSON.get(ADMINISTRATOR_DEPARTMENT);
                 String phoneNumber = (String) adminJSON.get(ADMINISTRATOR_PHONE_NUMBER);
                 String email = (String) adminJSON.get(ADMINISTRATOR_EMAIL);
-                admins.add(new Administrator(firstName, lastName, userName, password, precinct, department, 
-                phoneNumber, email));
-                System.out.println(ADMINISTRATOR_FIRST_NAME + ": " + firstName + "\n"
-                        + ADMINISTRATOR_LAST_NAME + ": " + lastName + "\n" + ADMINISTRATOR_USERNAME + ": " + userName + "\n"
-                        + ADMINISTRATOR_PASSWORD + ": " + password + "\n" + ADMINISTRATOR_PRECINCT + ": " + precinct + "\n"
-                        + ADMINISTRATOR_DEPARTMENT + ": " + department + "\n" +
-                        ADMINISTRATOR_PHONE_NUMBER + ": " + phoneNumber + "\n" +
-                        ADMINISTRATOR_EMAIL + ": " + email +
-                        "\n***************************");
+                admins.add(new Administrator(firstName, lastName, userName, password, precinct, department, phoneNumber,
+                        email));
+                System.out.println(ADMINISTRATOR_FIRST_NAME + ": " + firstName + "\n" + ADMINISTRATOR_LAST_NAME + ": "
+                        + lastName + "\n" + ADMINISTRATOR_USERNAME + ": " + userName + "\n" + ADMINISTRATOR_PASSWORD
+                        + ": " + password + "\n" + ADMINISTRATOR_PRECINCT + ": " + precinct + "\n"
+                        + ADMINISTRATOR_DEPARTMENT + ": " + department + "\n" + ADMINISTRATOR_PHONE_NUMBER + ": "
+                        + phoneNumber + "\n" + ADMINISTRATOR_EMAIL + ": " + email + "\n***************************");
             }
             return admins;
         } catch (Exception e) {

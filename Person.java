@@ -70,7 +70,7 @@ public abstract class Person {
         return this.id;
     }
 
-    public List<Integer> getCaseNums() {
+    public List<Integer> getCases() {
         return caseNums;
     }
 

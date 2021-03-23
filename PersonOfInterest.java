@@ -27,7 +27,8 @@ public abstract class PersonOfInterest extends Person {
 
     public PersonOfInterest(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
             String height, String race, double shoeSize, String naturalHairColor, String hairLength,
-            String facialHairDesc, String clothesDesc, boolean hasCar, String carDescription, String licensePlate) {
+            String facialHairDesc, String clothesDesc, boolean tattooed, boolean hasCar, String carDescription,
+            String licensePlate) {
         super(firstName, lastName, phoneNumber);
         this.nickName = nickName;
         this.age = age;
@@ -39,6 +40,8 @@ public abstract class PersonOfInterest extends Person {
         this.hairLength = hairLength;
         this.facialHairDesc = facialHairDesc;
         this.clothesDesc = clothesDesc;
+        this.tattooed = tattooed;
+        this.tattoos = new ArrayList<>();
         this.hasCar = hasCar;
         if (hasCar) {
             this.carDescription = carDescription;
@@ -74,7 +77,7 @@ public abstract class PersonOfInterest extends Person {
      * 
      * @return double weight
      */
-    public double getWeight() {
+    public int getWeight() {
         return this.weight;
     }
 
@@ -204,7 +207,7 @@ public abstract class PersonOfInterest extends Person {
     /**
      * set weight for POI
      * 
-     * @param double weight
+     * @param int weight
      */
     public void setWeight(int weight) {
         this.weight = weight;

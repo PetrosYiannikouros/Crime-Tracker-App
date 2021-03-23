@@ -33,7 +33,7 @@ public class DataWriter extends DataConstants {
         officerDetails.put(OFFICER_LAST_NAME, officer.getLastName());
         officerDetails.put(OFFICER_USERNAME, officer.getUserName());
         officerDetails.put(OFFICER_PASSWORD, officer.getPassword());
-        officerDetails.put(OFFICER_PRECINCT, officer.getPrecint());
+        officerDetails.put(OFFICER_PRECINCT, officer.getPrecinct());
         officerDetails.put(OFFICER_DEPARTMENT, officer.getDepartment());
         officerDetails.put(OFFICER_YEARS_SERVED, officer.getYearsServed());
         officerDetails.put(OFFICER_RANK, officer.getRank());
@@ -70,7 +70,7 @@ public class DataWriter extends DataConstants {
         detectiveDetails.put(DETECTIVE_LAST_NAME, detective.getLastName());
         detectiveDetails.put(DETECTIVE_USERNAME, detective.getUserName());
         detectiveDetails.put(DETECTIVE_PASSWORD, detective.getPassword());
-        detectiveDetails.put(DETECTIVE_PRECINCT, detective.getPrecint());
+        detectiveDetails.put(DETECTIVE_PRECINCT, detective.getPrecinct());
         detectiveDetails.put(DETECTIVE_DEPARTMENT, detective.getDepartment());
         detectiveDetails.put(DETECTIVE_YEARS_SERVED, detective.getYearsServed());
         detectiveDetails.put(DETECTIVE_RANK, detective.getRank());
@@ -93,7 +93,7 @@ public class DataWriter extends DataConstants {
         }
 
         // Write JSON file
-        try (FileWriter file = new FileWriter(DETECTIVE_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
 
             file.write(jsonCriminals.toJSONString());
             file.flush();
@@ -110,7 +110,7 @@ public class DataWriter extends DataConstants {
         criminalDetails.put(CRIMINAL_LAST_NAME, criminal.getLastName());
         criminalDetails.put(CRIMINAL_DECEASED, criminal.getIsDeceased());
         criminalDetails.put(CRIMINAL_PHONE_NUMBER, criminal.getPhoneNumber());
-        criminalDetails.put(CRIMINAL_CASE_NUMS, criminal.getCaseNums());
+        criminalDetails.put(CRIMINAL_CASE_NUMS, criminal.getCases());
         criminalDetails.put(CRIMINAL_NICK_NAME, criminal.getNickName());
         criminalDetails.put(CRIMINAL_AGE, criminal.getAge());
         criminalDetails.put(CRIMINAL_WEIGHT, criminal.getWeight());
