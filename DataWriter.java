@@ -131,4 +131,53 @@ public class DataWriter extends DataConstants {
 
         return criminalDetails;
     }
+
+    public static void saveSuspects() {
+        Suspects suspects = Suspects.getInstance();
+        ArrayList<Suspect> suspectList = suspects.getSuspects();
+        JSONArray jsonSuspects = new JSONArray();
+
+        // creating all the json objects
+        for (int i = 0; i < suspectList.size(); i++) {
+            jsonSuspects.add(getSuspectJSON(suspectList.get(i)));
+        }
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(SUSPECT_FILE_NAME)) {
+
+            file.write(jsonSuspects.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getSuspectJSON(Suspect suspect) {
+        JSONObject suspectDetails = new JSONObject();
+        suspectDetails.put(SUSPECT_ID, suspect.getId().toString());
+        suspectDetails.put(SUSPECT_FIRST_NAME, suspect.getFirstName());
+        suspectDetails.put(SUSPECT_LAST_NAME, suspect.getLastName());
+        suspectDetails.put(SUSPECT_DECEASED, suspect.getIsDeceased());
+        suspectDetails.put(SUSPECT_PHONE_NUMBER, suspect.getPhoneNumber());
+        suspectDetails.put(SUSPECT_CASE_NUMS, suspect.getCases());
+        suspectDetails.put(SUSPECT_NICK_NAME, suspect.getNickName());
+        suspectDetails.put(SUSPECT_AGE, suspect.getAge());
+        suspectDetails.put(SUSPECT_WEIGHT, suspect.getWeight());
+        suspectDetails.put(SUSPECT_HEIGHT, suspect.getHeight());
+        suspectDetails.put(SUSPECT_RACE, suspect.getRace());
+        suspectDetails.put(SUSPECT_SHOE_SIZE, suspect.getShoeSize());
+        suspectDetails.put(SUSPECT_NATURAL_HAIR_COLOR, suspect.getNaturalHairColor());
+        suspectDetails.put(SUSPECT_HAIR_LENGTH, suspect.getHairLength());
+        suspectDetails.put(SUSPECT_FACIAL_HAIR_DESCRIPTION, suspect.getFacialHairDesc());
+        suspectDetails.put(SUSPECT_CLOTHES_DESCRIPTION, suspect.getClothesDesc());
+        suspectDetails.put(SUSPECT_TATTOOED, suspect.isTattooed());
+        suspectDetails.put(SUSPECT_TATTOO_LIST, suspect.getTattoos());
+        suspectDetails.put(SUSPECT_HAS_CAR, suspect.hasCar());
+        suspectDetails.put(SUSPECT_CAR_DESCRIPTION, suspect.getCarDesc());
+        suspectDetails.put(SUSPECT_LICENSE_PLATE_NUM, suspect.getLicense());
+        suspectDetails.put(SUSPECT_REASONS, suspect.getReasons());
+
+        return suspectDetails;
+    }
 }

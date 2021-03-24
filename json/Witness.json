@@ -3,7 +3,11 @@
         "firstName": "Ryan",
         "lastName": "Sheckler",
         "phoneNumber": "765-908-0933",
-        "caseNums": [123,111,234],
+        "caseNums": [
+            123,
+            111,
+            234
+        ],
         "proof": true,
         "story": "was walking down the street and saw crime",
         "location": "Jakes on Devine",
@@ -13,7 +17,11 @@
         "firstName": "Tony",
         "lastName": "Hawk",
         "phoneNumber": "735-912-0923",
-        "caseNums": [133,321,322],
+        "caseNums": [
+            133,
+            321,
+            322
+        ],
         "proof": false,
         "story": "was walking down the street and saw crime",
         "location": "Jakes on Devine",
