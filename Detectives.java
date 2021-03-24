@@ -14,7 +14,7 @@ public class Detectives {
         }
         return detectives;
     }
-
+    
     public ArrayList<Detective> getDetectives() {
         return detectiveList;
     }
