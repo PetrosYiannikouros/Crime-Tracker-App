@@ -27,11 +27,11 @@ public class Evidence {
         return this.type;
     }
 
-    public String description() {
+    public String getDescription() {
         return this.description;
     }
 
-    public int amount() {
+    public int getAmount() {
         return this.amount;
     }
 

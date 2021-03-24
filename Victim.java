@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
@@ -5,7 +6,12 @@ import java.util.ArrayList;
  * person
  */
 public class Victim extends Person {
-    private ArrayList<String> familyMembers;
+    String pattern = "dd-MM-yyyy HH:mm";
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+    private String location;
+    private SimpleDateFormat timeOfEvent;
+    private String story;
     private String criminalDesc;
 
     /**
@@ -15,21 +21,27 @@ public class Victim extends Person {
 
     }
 
-    public Victim(String firstName, String lastName, String phoneNumber, ArrayList<String> familyMembers,
-            String criminalDesc) {
+    public Victim(String firstName, String lastName, String phoneNumber, String location, SimpleDateFormat timeOfEvent,
+            String story, String criminalDesc) {
         super(firstName, lastName, phoneNumber);
-        this.familyMembers = familyMembers;
+        this.location = location;
+        this.timeOfEvent = timeOfEvent;
+        this.story = story;
         this.criminalDesc = criminalDesc;
     }
 
     // getters -----------------------------------------------------
 
-    /**
-     * 
-     * @return
-     */
-    public ArrayList<String> getFamily() {
-        return this.familyMembers;
+    public String getLocation() {
+        return this.location;
+    }
+
+    public SimpleDateFormat getTimeOfEvent() {
+        return this.timeOfEvent;
+    }
+
+    public String getStory() {
+        return this.story;
     }
 
     /**
@@ -44,25 +56,9 @@ public class Victim extends Person {
 
     /**
      * 
-     * @param familyMembers
-     */
-    public void setFamilyMembers(ArrayList<String> familyMembers) {
-        this.familyMembers = familyMembers;
-    }
-
-    /**
-     * 
      * @param description
      */
     public void setCriminalDesc(String description) {
         this.criminalDesc = description;
-    }
-
-    /**
-     * 
-     * @param familyMember
-     */
-    public void addFamilyMember(String familyMember) {
-        familyMembers.add(familyMember);
     }
 }

@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "/Users/tylershatley/Downloads/json-simple-1.1.1.jar"
+        "/Users/tylershatley/Downloads/json-simple-1.1.1.jar",
+        "c:\\Users\\pyian\\Downloads\\json-simple-1.1.1.jar"
     ]
 }

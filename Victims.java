@@ -1,9 +1,12 @@
+
 /**
  * Victims class
  * used for data processing
  */
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+
 public class Victims {
     private static Victims victims = null;
     private static ArrayList<Victim> victimList = new ArrayList<Victim>();
@@ -23,10 +26,9 @@ public class Victims {
         return victimList;
     }
 
-    public void addVictim(String firstName, String lastName, String phoneNumber,
-        ArrayList<String> familyMembers, String criminalDesc) {
-        victimList.add(new Victim(firstName, lastName, phoneNumber, 
-        familyMembers, criminalDesc));
+    public void addVictim(String firstName, String lastName, String phoneNumber, String location,
+            SimpleDateFormat timeOfEvent, String story, String criminalDesc) {
+        victimList.add(new Victim(firstName, lastName, phoneNumber, location, timeOfEvent, story, criminalDesc));
         DataWriter.saveVictims();
     }
 }

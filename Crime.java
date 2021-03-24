@@ -15,15 +15,34 @@ public class Crime {
     private SimpleDateFormat date;
     private String address;
     private String assignedId;
-    private List<String> personsOfInterestIds;
-    private List<String> witnessIds;
-    private List<String> victimIds;
-    private List<String> evidenceIds;
+    private List<Criminal> criminals;
+    private List<Suspect> suspects;
+    private List<Witness> witnesses;
+    private List<Victim> victims;
+    private List<Evidence> evidence;
     private boolean isSolved;
 
     /**
      * Constructor for Crime object
      */
+    public Crime(int caseNumber, TypesOfCrimes type, String description, SimpleDateFormat date, String address,
+            String assignedId, List<Criminal> criminals, List<Suspect> suspects, List<Witness> witnesses,
+            List<Victim> victims, List<Evidence> evidence) {
+        this.caseNumber = caseNumber;
+        this.type = type;
+        this.description = description;
+        this.date = date;
+        this.address = address;
+        this.assignedId = assignedId;
+        this.criminals = criminals;
+        this.suspects = suspects;
+        this.witnesses = witnesses;
+        this.victims = victims;
+        this.evidence = evidence;
+        isSolved = false;
+    }
+
+    /** from scratch */
     public Crime(int caseNumber, TypesOfCrimes type, String description, SimpleDateFormat date, String address,
             String assignedId) {
         this.caseNumber = caseNumber;
@@ -32,10 +51,11 @@ public class Crime {
         this.date = date;
         this.address = address;
         this.assignedId = assignedId;
-        personsOfInterestIds = new ArrayList<>();
-        witnessIds = new ArrayList<>();
-        victimIds = new ArrayList<>();
-        evidenceIds = new ArrayList<>();
+        this.criminals = new ArrayList<>();
+        this.suspects = new ArrayList<>();
+        this.witnesses = new ArrayList<>();
+        this.victims = new ArrayList<>();
+        this.evidence = new ArrayList<>();
         isSolved = false;
     }
 

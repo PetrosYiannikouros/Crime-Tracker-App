@@ -180,4 +180,146 @@ public class DataWriter extends DataConstants {
 
         return suspectDetails;
     }
+
+    public static void saveWitnesses() {
+        Witnesses witnesses = Witnesses.getInstance();
+        ArrayList<Witness> witnessList = witnesses.getWitnesses();
+        JSONArray jsonWitnesses = new JSONArray();
+
+        // creating all the json objects
+        for (int i = 0; i < witnessList.size(); i++) {
+            jsonWitnesses.add(getWitnessJSON(witnessList.get(i)));
+        }
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(WITNESS_FILE_NAME)) {
+
+            file.write(jsonWitnesses.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getWitnessJSON(Witness witness) {
+        JSONObject witnessDetails = new JSONObject();
+        witnessDetails.put(WITNESS_ID, witness.getId().toString());
+        witnessDetails.put(WITNESS_FIRST_NAME, witness.getFirstName());
+        witnessDetails.put(WITNESS_LAST_NAME, witness.getLastName());
+        witnessDetails.put(WITNESS_DECEASED, witness.getIsDeceased());
+        witnessDetails.put(WITNESS_PHONE_NUMBER, witness.getPhoneNumber());
+        witnessDetails.put(WITNESS_CASE_NUMS, witness.getCases());
+        witnessDetails.put(WITNESS_PROOF, witness.hasProof());
+        witnessDetails.put(WITNESS_STORY, witness.getStory());
+        witnessDetails.put(WITNESS_LOCATION, witness.getLocation());
+        witnessDetails.put(WITNESS_TIME_OF_EVENT, witness.getTimeOfEvent());
+
+        return witnessDetails;
+    }
+
+    public static void saveVictims() {
+        Victims victims = Victims.getInstance();
+        ArrayList<Victim> victimList = victims.getVictims();
+        JSONArray jsonVictims = new JSONArray();
+
+        // creating all the json objects
+        for (int i = 0; i < victimList.size(); i++) {
+            jsonVictims.add(getVictimJSON(victimList.get(i)));
+        }
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(VICTIM_FILE_NAME)) {
+
+            file.write(jsonVictims.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getVictimJSON(Victim victim) {
+        JSONObject victimDetails = new JSONObject();
+        victimDetails.put(VICTIM_ID, victim.getId().toString());
+        victimDetails.put(VICTIM_FIRST_NAME, victim.getFirstName());
+        victimDetails.put(VICTIM_LAST_NAME, victim.getLastName());
+        victimDetails.put(VICTIM_DECEASED, victim.getIsDeceased());
+        victimDetails.put(VICTIM_PHONE_NUMBER, victim.getPhoneNumber());
+        victimDetails.put(VICTIM_LOCATION, victim.getLocation());
+        victimDetails.put(VICTIM_TIME_OF_EVENT, victim.getTimeOfEvent());
+        victimDetails.put(VICTIM_STORY, victim.getStory());
+        victimDetails.put(VICTIM_CRIMINAL_DESCRIPTION, victim.getCriminalDesc());
+
+        return victimDetails;
+    }
+
+    public static void saveCrimes() {
+        Crimes crimes = Crimes.getInstance();
+        ArrayList<Crime> crimeList = crimes.getCrimes();
+        JSONArray jsonCrimes = new JSONArray();
+
+        // creating all the json objects
+        for (int i = 0; i < crimeList.size(); i++) {
+            jsonCrimes.add(getCrimeJSON(crimeList.get(i)));
+        }
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
+
+            file.write(jsonCrimes.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getCrimeJSON(Crime crime) {
+        JSONObject crimeDetails = new JSONObject();
+        crimeDetails.put(CRIME_CASE_NUMBER, crime.getCaseNumber());
+        crimeDetails.put(CRIME_TYPE, crime.getType());
+        crimeDetails.put(CRIME_DESCRIPTION, crime.getDescription());
+        crimeDetails.put(CRIME_DATE, crime.getDate());
+        crimeDetails.put(CRIME_ADDRESS, crime.getAddress());
+        crimeDetails.put(CRIME_ASSIGNED_ID, crime.getAssignedId());
+        crimeDetails.put(CRIME_PERSON_OF_INTEREST_IDS, crime.getPersonsOfInterestIds());
+        crimeDetails.put(CRIME_WITNESS_IDS, crime.getWitnessIds());
+        crimeDetails.put(CRIME_VICTIM_IDS, crime.getVictimIds());
+        crimeDetails.put(CRIME_EVIDENCE_IDS, crime.getEvidenceIds());
+        crimeDetails.put(CRIME_IS_SOLVED, crime.getIsSolved());
+
+        return crimeDetails;
+    }
+
+    public static void saveEvidences() {
+        Evidences evidences = Evidences.getInstance();
+        ArrayList<Evidence> evidenceList = evidences.getEvidences();
+        JSONArray jsonEvidences = new JSONArray();
+
+        // creating all the json objects
+        for (int i = 0; i < evidenceList.size(); i++) {
+            jsonEvidences.add(getEvidenceJSON(evidenceList.get(i)));
+        }
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
+
+            file.write(jsonEvidences.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getEvidenceJSON(Evidence evidence) {
+        JSONObject evidenceDetails = new JSONObject();
+        evidenceDetails.put(EVIDENCE_ID, evidence.getId().toString());
+        evidenceDetails.put(EVIDENCE_TYPE, evidence.getType());
+        evidenceDetails.put(EVIDENCE_DESCRIPTION, evidence.getDescription());
+        evidenceDetails.put(EVIDENCE_AMOUNT, evidence.getAmount());
+
+        return evidenceDetails;
+    }
 }

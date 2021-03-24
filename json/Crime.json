@@ -23,12 +23,12 @@
         "date": "09/04/2008 23:00",
         "address": "4897 Ocean Blvd",
         "assignedId": "2a5aea58-6361-4b0f-b48f-1f5189f8be88",
-        "personOfInterestids": [
+        "personOfInterest": [
             "887c318e-1f17-407b-984e-c429a46d2231"
         ],
-        "witnessIds": [],
-        "victimIds": [],
-        "evidenceIds": [
+        "witnesses": [],
+        "victims": [],
+        "evidences": [
             "acedc38d-8f69-4a68-8225-235e45205f8a"
         ],
         "isSolved": false

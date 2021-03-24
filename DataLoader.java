@@ -214,13 +214,19 @@ public class DataLoader extends DataConstants {
                 JSONObject victimJSON = (JSONObject) victimsJSON.get(i);
                 String firstName = (String) victimJSON.get(VICTIM_FIRST_NAME);
                 String lastName = (String) victimJSON.get(VICTIM_LAST_NAME);
+                boolean deceased = ((Boolean) victimJSON.get(VICTIM_DECEASED)).booleanValue();
                 String phoneNumber = (String) victimJSON.get(VICTIM_PHONE_NUMBER);
-                ArrayList<String> familyMembers = (ArrayList<String>) victimJSON.get(VICTIM_FAMILY_MEMBER);
+                String location = (String) victimJSON.get(VICTIM_LOCATION);
+                String timeOfEvent = (String) victimJSON.get(VICTIM_TIME_OF_EVENT);
+                SimpleDateFormat date = new SimpleDateFormat(timeOfEvent);
+                String story = (String) victimJSON.get(VICTIM_STORY);
                 String criminalDesc = (String) victimJSON.get(VICTIM_CRIMINAL_DESCRIPTION);
-                victims.add(new Victim(firstName, lastName, phoneNumber, familyMembers, criminalDesc));
-                System.out.println("FirstName: " + firstName + "\nLastName: " + lastName + "\nPhoneNumber: "
-                        + phoneNumber + "\nFamilyMembers: " + familyMembers + "\nCriminal Description: " + criminalDesc
-                        + "\n*************************");
+                victims.add(new Victim(firstName, lastName, phoneNumber, location, date, story, criminalDesc));
+                System.out.println(VICTIM_FIRST_NAME + ": " + firstName + "\n" + VICTIM_LAST_NAME + ": " + lastName
+                        + "\n" + VICTIM_DECEASED + ": " + deceased + "\n" + "\n" + VICTIM_PHONE_NUMBER + ": "
+                        + phoneNumber + "\n" + VICTIM_LOCATION + ": " + location + "\n" + VICTIM_TIME_OF_EVENT + ": "
+                        + timeOfEvent + "\n" + VICTIM_STORY + ": " + story + "\n" + VICTIM_CRIMINAL_DESCRIPTION + ": "
+                        + criminalDesc + "\n" + "*************************");
             }
             return victims;
         } catch (Exception e) {
@@ -343,6 +349,7 @@ public class DataLoader extends DataConstants {
                 String assignedId = (String) crimeJSON.get(CRIME_ASSIGNED_ID);
                 JSONArray personOfInterestIds = (JSONArray) crimeJSON.get(CRIME_PERSON_OF_INTEREST_IDS);
                 JSONArray witnessIds = (JSONArray) crimeJSON.get(CRIME_WITNESS_IDS);
+                ArrayList<Witness> witnesses = getWitnesses(witnessIds);
                 JSONArray victimIds = (JSONArray) crimeJSON.get(CRIME_VICTIM_IDS);
                 JSONArray evidenceIds = (JSONArray) crimeJSON.get(CRIME_EVIDENCE_IDS);
                 boolean isSolved = ((Boolean) crimeJSON.get(CRIME_IS_SOLVED)).booleanValue();
@@ -361,11 +368,31 @@ public class DataLoader extends DataConstants {
         return null;
     }
 
-    private ArrayList<Witness> getWitnesses(JSONArray items) {
+    private static ArrayList<Witness> getWitnesses(JSONArray items) {
         ArrayList<Witness> list = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
             UUID id = UUID.fromString((String) items.get(i));
             list.add(Witnesses.getInstance().getWitness(id));
+        }
+
+        return list;
+    }
+
+    private static ArrayList<Criminal> getCriminals(JSONArray items) {
+        ArrayList<Criminal> list = new ArrayList<>();
+        for (int i = 0; i < items.size(); i++) {
+            UUID id = UUID.fromString((String) items.get(i));
+            list.add(Criminals.getInstance().getCriminal(id));
+        }
+
+        return list;
+    }
+
+    private static ArrayList<Suspect> getSuspects(JSONArray items) {
+        ArrayList<Suspect> list = new ArrayList<>();
+        for (int i = 0; i < items.size(); i++) {
+            UUID id = UUID.fromString((String) items.get(i));
+            list.add(Suspects.getInstance().getSuspect(id));
         }
 
         return list;
