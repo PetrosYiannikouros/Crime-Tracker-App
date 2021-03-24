@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.UUID;
+
 public class Witnesses {
     private static Witnesses witnesses = null;
     private static ArrayList<Witness> witnessList = new ArrayList<Witness>();
@@ -20,10 +22,13 @@ public class Witnesses {
         return witnessList;
     }
 
-    public void addWitness(String firstName, String lastName, String phoneNumber, List<Integer> caseNums, 
-    boolean proof, String story, String location, SimpleDateFormat timeOfEvent) {
-        witnessList.add(new Witness(firstName, lastName, phoneNumber, caseNums,
-        proof, story, location, timeOfEvent));
+    public void addWitness(String firstName, String lastName, String phoneNumber, List<Integer> caseNums, boolean proof,
+            String story, String location, SimpleDateFormat timeOfEvent) {
+        witnessList.add(new Witness(firstName, lastName, phoneNumber, caseNums, proof, story, location, timeOfEvent));
         DataWriter.saveWitnesses();
+    }
+
+    public Witness getWitness(UUID id) {
+        return null;
     }
 }

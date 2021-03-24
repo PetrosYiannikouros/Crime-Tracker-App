@@ -2,6 +2,7 @@ import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.Date;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -285,10 +286,10 @@ public class DataLoader extends DataConstants {
                 SimpleDateFormat date = (SimpleDateFormat) crimeJSON.get(CRIME_DATE);
                 String address = (String) crimeJSON.get(CRIME_ADDRESS);
                 String assignedId = (String) crimeJSON.get(CRIME_ASSIGNED_ID);
-                ArrayList<String> personOfInterestIds = (ArrayList<String>) crimeJSON.get(CRIME_PERSON_OF_INTEREST_IDS);
-                ArrayList<String> witnessIds = (ArrayList<String>) crimeJSON.get(CRIME_WITNESS_IDS);
-                ArrayList<String> victimIds = (ArrayList<String>) crimeJSON.get(CRIME_VICTIM_IDS);
-                ArrayList<String> evidenceIds = (ArrayList<String>) crimeJSON.get(CRIME_EVIDENCE_IDS);
+                JSONArray personOfInterestIds = (JSONArray) crimeJSON.get(CRIME_PERSON_OF_INTEREST_IDS);
+                JSONArray witnessIds = (JSONArray) crimeJSON.get(CRIME_WITNESS_IDS);
+                JSONArray victimIds = (JSONArray) crimeJSON.get(CRIME_VICTIM_IDS);
+                JSONArray evidenceIds = (JSONArray) crimeJSON.get(CRIME_EVIDENCE_IDS);
                 boolean isSolved = ((Boolean) crimeJSON.get(CRIME_IS_SOLVED)).booleanValue();
                 crimes.add(new Crime(caseNumber, type, description, date, address, assignedId));
                 System.out.println(CRIME_CASE_NUMBER + ": " + caseNumber + "\n" + CRIME_TYPE + ": " + type + "\n"
@@ -303,5 +304,15 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
         return null;
+    }
+
+    private ArrayList<Witness> getWitnesses(JSONArray items) {
+        ArrayList<Witness> list = new ArrayList<>();
+        for (int i = 0; i < items.size(); i++) {
+            UUID id = UUID.fromString((String) items.get(i));
+            list.add(Witnesses.getInstance().getWitness(id));
+        }
+
+        return list;
     }
 }
