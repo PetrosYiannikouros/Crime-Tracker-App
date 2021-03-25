@@ -1,7 +1,9 @@
 public class main {
     public static void main(String[] args) {
-        Crimes test = Crimes.getInstance();
-        test.getCrimes();
+        CrimeTracker ct = new CrimeTracker();
+        ct.loginAccount("HEHEGuy100", "beatit");
+        //Crimes test = Crimes.getInstance();
+        //test.getCrimes();
         // Suspects test = Suspects.getInstance();
         // test.getSuspects();
         // Victims test = Victims.getInstance();
