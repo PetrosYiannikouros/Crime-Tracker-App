@@ -7,6 +7,7 @@ public abstract class PersonOfInterest extends Person {
     private int weight;
     private String height;
     private String race;
+    private String gender;
     private double shoeSize;
     private String naturalHairColor;
     private String hairLength;
@@ -26,7 +27,7 @@ public abstract class PersonOfInterest extends Person {
     }
 
     public PersonOfInterest(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
-            String height, String race, double shoeSize, String naturalHairColor, String hairLength,
+            String height, String race, String gender, double shoeSize, String naturalHairColor, String hairLength,
             String facialHairDesc, String clothesDesc, boolean tattooed, boolean hasCar, String carDescription,
             String licensePlate) {
         super(firstName, lastName, phoneNumber);
@@ -35,6 +36,7 @@ public abstract class PersonOfInterest extends Person {
         this.weight = weight;
         this.height = height;
         this.race = race;
+        this.gender = gender;
         this.shoeSize = shoeSize;
         this.naturalHairColor = naturalHairColor;
         this.hairLength = hairLength;
@@ -97,6 +99,10 @@ public abstract class PersonOfInterest extends Person {
      */
     public String getRace() {
         return this.race;
+    }
+
+    public String getGender() {
+        return this.gender;
     }
 
     /**

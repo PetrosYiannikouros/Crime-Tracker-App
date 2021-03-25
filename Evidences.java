@@ -1,6 +1,8 @@
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+
 public class Evidences {
     private static Evidences evidences = null;
     private static ArrayList<Evidence> evidenceList = new ArrayList<>();
@@ -24,7 +26,11 @@ public class Evidences {
         evidenceList.add(new Evidence(type, description, amount));
         DataWriter.saveEvidences();
     }
+
+    public Evidence getEvidence(UUID id) {
+        for (Evidence evidence : evidenceList)
+            if (evidence.getId().equals(id))
+                return evidence;
+        return null;
+    }
 }
-
-
-

@@ -114,12 +114,21 @@ public class Crime {
     }
 
     /**
-     * Accessor for persons of interest
+     * Accessor for criminals
      * 
      * @return list of persons of interest for a specific case
      */
-    public List<String> getPersonsOfInterestIds() {
-        return personsOfInterestIds;
+    public List<Criminal> getCriminals() {
+        return criminals;
+    }
+
+    /**
+     * Accessor for suspects
+     * 
+     * @return list of persons of interest for a specific case
+     */
+    public List<Suspect> getSuspects() {
+        return suspects;
     }
 
     /**
@@ -127,8 +136,8 @@ public class Crime {
      * 
      * @return list of witnesses for a specific case
      */
-    public List<String> getWitnessIds() {
-        return witnessIds;
+    public List<Witness> getWitnesses() {
+        return witnesses;
     }
 
     /**
@@ -136,8 +145,8 @@ public class Crime {
      * 
      * @return list of victims for a specific case
      */
-    public List<String> getVictimIds() {
-        return victimIds;
+    public List<Victim> getVictims() {
+        return victims;
     }
 
     /**
@@ -145,8 +154,8 @@ public class Crime {
      * 
      * @return list of evidence for a specific case
      */
-    public List<String> getEvidenceIds() {
-        return evidenceIds;
+    public List<Evidence> getEvidence() {
+        return evidence;
     }
 
     /**
@@ -168,12 +177,21 @@ public class Crime {
     }
 
     /**
-     * Add person of interest to crime
+     * Add criminal to crime
      * 
      * @param personOfInterest associated to crime
      */
-    public void addPersonOfInterestId(String personOfInterestId) {
-        personsOfInterestIds.add(personOfInterestId);
+    public void addCriminal(Criminal criminal) {
+        criminals.add(criminal);
+    }
+
+    /**
+     * Add suspect to crime
+     * 
+     * @param personOfInterest associated to crime
+     */
+    public void addSuspect(Suspect suspect) {
+        suspects.add(suspect);
     }
 
     /**
@@ -181,8 +199,8 @@ public class Crime {
      * 
      * @param witness associated to crime
      */
-    public void addWitnessId(String witnessId) {
-        witnessIds.add(witnessId);
+    public void addWitness(Witness witness) {
+        witnesses.add(witness);
     }
 
     /**
@@ -190,8 +208,8 @@ public class Crime {
      * 
      * @param victim associated to crime
      */
-    public void addVictimId(String victimId) {
-        victimIds.add(victimId);
+    public void addVictim(Victim victim) {
+        victims.add(victim);
     }
 
     /**
@@ -199,8 +217,8 @@ public class Crime {
      * 
      * @param evidence associate to crime
      */
-    public void addEvidenceId(String evidenceId) {
-        evidenceIds.add(evidenceId);
+    public void addEvidence(Evidence evidenceItem) {
+        evidence.add(evidenceItem);
     }
 
     /**

@@ -116,6 +116,7 @@ public class DataWriter extends DataConstants {
         criminalDetails.put(CRIMINAL_WEIGHT, criminal.getWeight());
         criminalDetails.put(CRIMINAL_HEIGHT, criminal.getHeight());
         criminalDetails.put(CRIMINAL_RACE, criminal.getRace());
+        criminalDetails.put(CRIMINAL_GENDER, criminal.getGender());
         criminalDetails.put(CRIMINAL_SHOE_SIZE, criminal.getShoeSize());
         criminalDetails.put(CRIMINAL_NATURAL_HAIR_COLOR, criminal.getNaturalHairColor());
         criminalDetails.put(CRIMINAL_HAIR_LENGTH, criminal.getHairLength());
@@ -166,6 +167,7 @@ public class DataWriter extends DataConstants {
         suspectDetails.put(SUSPECT_WEIGHT, suspect.getWeight());
         suspectDetails.put(SUSPECT_HEIGHT, suspect.getHeight());
         suspectDetails.put(SUSPECT_RACE, suspect.getRace());
+        suspectDetails.put(SUSPECT_GENDER, suspect.getGender());
         suspectDetails.put(SUSPECT_SHOE_SIZE, suspect.getShoeSize());
         suspectDetails.put(SUSPECT_NATURAL_HAIR_COLOR, suspect.getNaturalHairColor());
         suspectDetails.put(SUSPECT_HAIR_LENGTH, suspect.getHairLength());
@@ -283,10 +285,11 @@ public class DataWriter extends DataConstants {
         crimeDetails.put(CRIME_DATE, crime.getDate());
         crimeDetails.put(CRIME_ADDRESS, crime.getAddress());
         crimeDetails.put(CRIME_ASSIGNED_ID, crime.getAssignedId());
-        crimeDetails.put(CRIME_PERSON_OF_INTEREST_IDS, crime.getPersonsOfInterestIds());
-        crimeDetails.put(CRIME_WITNESS_IDS, crime.getWitnessIds());
-        crimeDetails.put(CRIME_VICTIM_IDS, crime.getVictimIds());
-        crimeDetails.put(CRIME_EVIDENCE_IDS, crime.getEvidenceIds());
+        crimeDetails.put(CRIME_CRIMINALS, crime.getCriminals());
+        crimeDetails.put(CRIME_SUSPECTS, crime.getSuspects());
+        crimeDetails.put(CRIME_WITNESSES, crime.getWitnesses());
+        crimeDetails.put(CRIME_VICTIMS, crime.getVictims());
+        crimeDetails.put(CRIME_EVIDENCES, crime.getEvidence());
         crimeDetails.put(CRIME_IS_SOLVED, crime.getIsSolved());
 
         return crimeDetails;

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Criminals {
     private static Criminals criminals = null;
@@ -20,12 +21,19 @@ public class Criminals {
     }
 
     public void addCriminal(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
-            String height, String race, double shoeSize, String naturalHairColor, String hairLength,
+            String height, String race, String gender, double shoeSize, String naturalHairColor, String hairLength,
             String facialHairDesc, String clothesDesc, boolean tattoed, boolean hasCar, String carSpecs,
             String licensePlate, boolean inJail) {
-        criminalList.add(new Criminal(firstName, lastName, phoneNumber, nickName, age, weight, height, race, shoeSize,
-                naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar, carSpecs, licensePlate,
-                inJail));
+        criminalList.add(new Criminal(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender,
+                shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar, carSpecs,
+                licensePlate, inJail));
         DataWriter.saveCriminals();
+    }
+
+    public Criminal getCriminal(UUID id) {
+        for (Criminal criminal : criminalList)
+            if (criminal.getId().equals(id))
+                return criminal;
+        return null;
     }
 }

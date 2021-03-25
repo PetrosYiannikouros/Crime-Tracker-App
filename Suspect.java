@@ -15,10 +15,10 @@ public class Suspect extends PersonOfInterest {
     }
 
     public Suspect(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
-            String height, String race, double shoeSize, String naturalHairColor, String hairLength,
+            String height, String race, String gender, double shoeSize, String naturalHairColor, String hairLength,
             String facialHairDesc, String clothesDesc, boolean tattoed, boolean hasCar, String carDescription,
             String licensePlate) {
-        super(firstName, lastName, phoneNumber, nickName, age, weight, height, race, shoeSize, naturalHairColor,
+        super(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender, shoeSize, naturalHairColor,
                 hairLength, facialHairDesc, clothesDesc, tattoed, hasCar, carDescription, licensePlate);
         this.reasons = new ArrayList<>();
     }

@@ -6,6 +6,7 @@
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Victims {
     private static Victims victims = null;
@@ -30,5 +31,12 @@ public class Victims {
             SimpleDateFormat timeOfEvent, String story, String criminalDesc) {
         victimList.add(new Victim(firstName, lastName, phoneNumber, location, timeOfEvent, story, criminalDesc));
         DataWriter.saveVictims();
+    }
+
+    public Victim getVictim(UUID id) {
+        for (Victim victim : victimList)
+            if (victim.getId().equals(id))
+                return victim;
+        return null;
     }
 }

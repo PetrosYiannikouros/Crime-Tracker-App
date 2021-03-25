@@ -112,6 +112,7 @@ public class DataLoader extends DataConstants {
                 int weight = ((Long) suspectJSON.get(SUSPECT_WEIGHT)).intValue();
                 String height = (String) suspectJSON.get(SUSPECT_HEIGHT);
                 String race = (String) suspectJSON.get(SUSPECT_RACE);
+                String gender = (String) suspectJSON.get(SUSPECT_GENDER);
                 double shoeSize = ((Double) suspectJSON.get(SUSPECT_SHOE_SIZE)).doubleValue();
                 String naturalHairColor = (String) suspectJSON.get(SUSPECT_NATURAL_HAIR_COLOR);
                 String hairLength = (String) suspectJSON.get(SUSPECT_HAIR_LENGTH);
@@ -122,7 +123,7 @@ public class DataLoader extends DataConstants {
                 boolean hasCar = ((Boolean) suspectJSON.get(SUSPECT_HAS_CAR)).booleanValue();
                 String carDescription = (String) suspectJSON.get(SUSPECT_CAR_DESCRIPTION);
                 String licensePlate = (String) suspectJSON.get(SUSPECT_LICENSE_PLATE_NUM);
-                suspects.add(new Suspect(firstName, lastName, phoneNumber, nickName, age, weight, height, race,
+                suspects.add(new Suspect(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender,
                         shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
                         carDescription, licensePlate));
                 System.out.println(SUSPECT_ID + ": " + id + "\n" + SUSPECT_FIRST_NAME + ": " + firstName + "\n"
@@ -130,13 +131,13 @@ public class DataLoader extends DataConstants {
                         + SUSPECT_PHONE_NUMBER + ": " + phoneNumber + "\n" + SUSPECT_CASE_NUMS + ": " + caseNums + "\n"
                         + SUSPECT_NICK_NAME + ": " + nickName + "\n" + SUSPECT_AGE + ": " + age + "\n" + SUSPECT_WEIGHT
                         + ": " + weight + "\n" + SUSPECT_HEIGHT + ": " + height + "\n" + SUSPECT_RACE + ": " + race
-                        + "\n" + SUSPECT_SHOE_SIZE + ": " + shoeSize + "\n" + SUSPECT_NATURAL_HAIR_COLOR + ": "
-                        + naturalHairColor + "\n" + SUSPECT_HAIR_LENGTH + ": " + hairLength + "\n"
-                        + SUSPECT_FACIAL_HAIR_DESCRIPTION + ": " + facialHairDesc + "\n" + SUSPECT_CLOTHES_DESCRIPTION
-                        + ": " + clothesDesc + "\n" + SUSPECT_TATTOOED + ": " + tattoed + "\n" + SUSPECT_TATTOO_LIST
-                        + ": " + tattooList + "\n" + SUSPECT_HAS_CAR + ": " + hasCar + "\n" + SUSPECT_CAR_DESCRIPTION
-                        + ": " + carDescription + "\n" + SUSPECT_LICENSE_PLATE_NUM + ": " + licensePlate + "\n"
-                        + "***************************");
+                        + "\n" + SUSPECT_GENDER + ": " + gender + "\n" + SUSPECT_SHOE_SIZE + ": " + shoeSize + "\n"
+                        + SUSPECT_NATURAL_HAIR_COLOR + ": " + naturalHairColor + "\n" + SUSPECT_HAIR_LENGTH + ": "
+                        + hairLength + "\n" + SUSPECT_FACIAL_HAIR_DESCRIPTION + ": " + facialHairDesc + "\n"
+                        + SUSPECT_CLOTHES_DESCRIPTION + ": " + clothesDesc + "\n" + SUSPECT_TATTOOED + ": " + tattoed
+                        + "\n" + SUSPECT_TATTOO_LIST + ": " + tattooList + "\n" + SUSPECT_HAS_CAR + ": " + hasCar + "\n"
+                        + SUSPECT_CAR_DESCRIPTION + ": " + carDescription + "\n" + SUSPECT_LICENSE_PLATE_NUM + ": "
+                        + licensePlate + "\n" + "***************************");
             }
             return suspects;
         } catch (Exception e) {
@@ -166,6 +167,7 @@ public class DataLoader extends DataConstants {
                 int weight = ((Long) criminalJSON.get(CRIMINAL_WEIGHT)).intValue();
                 String height = (String) criminalJSON.get(CRIMINAL_HEIGHT);
                 String race = (String) criminalJSON.get(CRIMINAL_RACE);
+                String gender = (String) criminalJSON.get(CRIMINAL_GENDER);
                 double shoeSize = ((Double) criminalJSON.get(CRIMINAL_SHOE_SIZE)).doubleValue();
                 String naturalHairColor = (String) criminalJSON.get(CRIMINAL_NATURAL_HAIR_COLOR);
                 String hairLength = (String) criminalJSON.get(CRIMINAL_HAIR_LENGTH);
@@ -179,21 +181,22 @@ public class DataLoader extends DataConstants {
                 boolean inJail = ((Boolean) criminalJSON.get(CRIMINAL_IN_JAIL)).booleanValue();
                 ArrayList<String> convictions = (ArrayList<String>) criminalJSON.get(CRIMINAL_CONVICTIONS);
                 criminals.add(new Criminal(firstName, lastName, phoneNumber, nickName, age, weight, height, race,
-                        shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
+                        gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
                         carDescription, licensePlate, inJail));
                 System.out.println(CRIMINAL_ID + ": " + id + "\n" + CRIMINAL_FIRST_NAME + ": " + firstName + "\n"
                         + CRIMINAL_LAST_NAME + ": " + lastName + "\n" + CRIMINAL_DECEASED + ": " + deceased + "\n"
                         + CRIMINAL_PHONE_NUMBER + ": " + phoneNumber + "\n" + CRIME_CASE_NUMBER + ": " + caseNums + "\n"
                         + CRIMINAL_NICK_NAME + ": " + nickName + "\n" + CRIMINAL_AGE + ": " + age + "\n"
                         + CRIMINAL_WEIGHT + ": " + weight + "\n" + CRIMINAL_HEIGHT + ": " + height + "\n"
-                        + CRIMINAL_RACE + ": " + race + "\n" + CRIMINAL_SHOE_SIZE + ": " + shoeSize + "\n"
-                        + CRIMINAL_NATURAL_HAIR_COLOR + ": " + naturalHairColor + "\n" + CRIMINAL_HAIR_LENGTH + ": "
-                        + hairLength + "\n" + CRIMINAL_FACIAL_HAIR_DESCRIPTION + ": " + facialHairDesc + "\n"
-                        + CRIMINAL_CLOTHES_DESCRIPTION + ": " + clothesDesc + "\n" + CRIMINAL_TATTOOED + ": " + tattoed
-                        + "\n" + CRIMINAL_TATTOO_LIST + ": " + tattooList + "\n" + CRIMINAL_HAS_CAR + ": " + hasCar
-                        + "\n" + CRIMINAL_CAR_DESCRIPTION + ": " + carDescription + "\n" + CRIMINAL_LICENSE_PLATE_NUM
-                        + ": " + licensePlate + "\n" + CRIMINAL_IN_JAIL + ": " + inJail + "\n" + CRIMINAL_CONVICTIONS
-                        + ": " + convictions + "\n" + "***************************");
+                        + CRIMINAL_RACE + ": " + race + "\n" + CRIMINAL_GENDER + ": " + gender + "\n"
+                        + CRIMINAL_SHOE_SIZE + ": " + shoeSize + "\n" + CRIMINAL_NATURAL_HAIR_COLOR + ": "
+                        + naturalHairColor + "\n" + CRIMINAL_HAIR_LENGTH + ": " + hairLength + "\n"
+                        + CRIMINAL_FACIAL_HAIR_DESCRIPTION + ": " + facialHairDesc + "\n" + CRIMINAL_CLOTHES_DESCRIPTION
+                        + ": " + clothesDesc + "\n" + CRIMINAL_TATTOOED + ": " + tattoed + "\n" + CRIMINAL_TATTOO_LIST
+                        + ": " + tattooList + "\n" + CRIMINAL_HAS_CAR + ": " + hasCar + "\n" + CRIMINAL_CAR_DESCRIPTION
+                        + ": " + carDescription + "\n" + CRIMINAL_LICENSE_PLATE_NUM + ": " + licensePlate + "\n"
+                        + CRIMINAL_IN_JAIL + ": " + inJail + "\n" + CRIMINAL_CONVICTIONS + ": " + convictions + "\n"
+                        + "***************************");
             }
             return criminals;
         } catch (Exception e) {
@@ -347,19 +350,26 @@ public class DataLoader extends DataConstants {
                 SimpleDateFormat date = (SimpleDateFormat) crimeJSON.get(CRIME_DATE);
                 String address = (String) crimeJSON.get(CRIME_ADDRESS);
                 String assignedId = (String) crimeJSON.get(CRIME_ASSIGNED_ID);
-                JSONArray personOfInterestIds = (JSONArray) crimeJSON.get(CRIME_PERSON_OF_INTEREST_IDS);
-                JSONArray witnessIds = (JSONArray) crimeJSON.get(CRIME_WITNESS_IDS);
-                ArrayList<Witness> witnesses = getWitnesses(witnessIds);
-                JSONArray victimIds = (JSONArray) crimeJSON.get(CRIME_VICTIM_IDS);
-                JSONArray evidenceIds = (JSONArray) crimeJSON.get(CRIME_EVIDENCE_IDS);
+                JSONArray criminals = (JSONArray) crimeJSON.get(CRIME_CRIMINALS);
+                ArrayList<Criminal> criminalList = getCriminals(criminals);
+                JSONArray suspects = (JSONArray) crimeJSON.get(CRIME_SUSPECTS);
+                ArrayList<Suspect> suspectList = getSuspects(suspects);
+                JSONArray witnesses = (JSONArray) crimeJSON.get(CRIME_WITNESSES);
+                ArrayList<Witness> witnessList = getWitnesses(witnesses);
+                JSONArray victims = (JSONArray) crimeJSON.get(CRIME_VICTIMS);
+                ArrayList<Victim> victimList = getVictims(victims);
+                JSONArray evidences = (JSONArray) crimeJSON.get(CRIME_EVIDENCES);
+                ArrayList<Evidence> evidenceList = getEvidence(evidences);
                 boolean isSolved = ((Boolean) crimeJSON.get(CRIME_IS_SOLVED)).booleanValue();
-                crimes.add(new Crime(caseNumber, enumType, description, date, address, assignedId));
+                crimes.add(new Crime(caseNumber, enumType, description, date, address, assignedId, criminalList,
+                        suspectList, witnessList, victimList, evidenceList));
                 System.out.println(CRIME_CASE_NUMBER + ": " + caseNumber + "\n" + CRIME_TYPE + ": " + type + "\n"
                         + CRIME_DESCRIPTION + ": " + description + "\n" + CRIME_DATE + ": " + date + "\n"
                         + CRIME_ADDRESS + ": " + address + "\n" + CRIME_ASSIGNED_ID + ": " + assignedId + "\n"
-                        + CRIME_PERSON_OF_INTEREST_IDS + ": " + personOfInterestIds + "\n" + CRIME_WITNESS_IDS + ": "
-                        + witnessIds + "\n" + CRIME_VICTIM_IDS + ": " + victimIds + "\n" + CRIME_EVIDENCE_IDS + ": "
-                        + evidenceIds + "\n" + CRIME_IS_SOLVED + ": " + isSolved + "\n***************************");
+                        + CRIME_CRIMINALS + ": " + criminalList + "\n" + CRIME_SUSPECTS + ": " + suspectList + "\n"
+                        + CRIME_WITNESSES + ": " + witnessList + "\n" + CRIME_VICTIMS + ": " + victimList + "\n"
+                        + CRIME_EVIDENCES + ": " + evidenceList + "\n" + CRIME_IS_SOLVED + ": " + isSolved
+                        + "\n***************************");
             }
             return crimes;
         } catch (Exception e) {
@@ -373,6 +383,16 @@ public class DataLoader extends DataConstants {
         for (int i = 0; i < items.size(); i++) {
             UUID id = UUID.fromString((String) items.get(i));
             list.add(Witnesses.getInstance().getWitness(id));
+        }
+
+        return list;
+    }
+
+    private static ArrayList<Victim> getVictims(JSONArray items) {
+        ArrayList<Victim> list = new ArrayList<>();
+        for (int i = 0; i < items.size(); i++) {
+            UUID id = UUID.fromString((String) items.get(i));
+            list.add(Victims.getInstance().getVictim(id));
         }
 
         return list;
@@ -393,6 +413,16 @@ public class DataLoader extends DataConstants {
         for (int i = 0; i < items.size(); i++) {
             UUID id = UUID.fromString((String) items.get(i));
             list.add(Suspects.getInstance().getSuspect(id));
+        }
+
+        return list;
+    }
+
+    private static ArrayList<Evidence> getEvidence(JSONArray items) {
+        ArrayList<Evidence> list = new ArrayList<>();
+        for (int i = 0; i < items.size(); i++) {
+            UUID id = UUID.fromString((String) items.get(i));
+            list.add(Evidences.getInstance().getEvidence(id));
         }
 
         return list;
