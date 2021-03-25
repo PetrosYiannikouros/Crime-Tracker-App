@@ -224,16 +224,14 @@ public class DataLoader extends DataConstants {
                 boolean deceased = ((Boolean) victimJSON.get(VICTIM_DECEASED)).booleanValue();
                 String phoneNumber = (String) victimJSON.get(VICTIM_PHONE_NUMBER);
                 String location = (String) victimJSON.get(VICTIM_LOCATION);
-                String timeOfEvent = (String) victimJSON.get(VICTIM_TIME_OF_EVENT);
-                SimpleDateFormat date = new SimpleDateFormat(timeOfEvent);
                 String story = (String) victimJSON.get(VICTIM_STORY);
                 String criminalDesc = (String) victimJSON.get(VICTIM_CRIMINAL_DESCRIPTION);
-                victims.add(new Victim(idUUID, firstName, lastName, phoneNumber, location, date, story, criminalDesc));
-                System.out.println(VICTIM_FIRST_NAME + ": " + firstName + "\n" + VICTIM_LAST_NAME + ": " + lastName
-                        + "\n" + VICTIM_DECEASED + ": " + deceased + "\n" + "\n" + VICTIM_PHONE_NUMBER + ": "
-                        + phoneNumber + "\n" + VICTIM_LOCATION + ": " + location + "\n" + VICTIM_TIME_OF_EVENT + ": "
-                        + timeOfEvent + "\n" + VICTIM_STORY + ": " + story + "\n" + VICTIM_CRIMINAL_DESCRIPTION + ": "
-                        + criminalDesc + "\n" + "*************************");
+                victims.add(new Victim(idUUID, firstName, lastName, phoneNumber, location, story, criminalDesc));
+                System.out.println(VICTIM_ID + ": " + id + "\n" + VICTIM_FIRST_NAME + ": " + firstName + "\n"
+                        + VICTIM_LAST_NAME + ": " + lastName + "\n" + VICTIM_DECEASED + ": " + deceased + "\n"
+                        + VICTIM_PHONE_NUMBER + ": " + phoneNumber + "\n" + VICTIM_LOCATION + ": " + location + "\n"
+                        + VICTIM_STORY + ": " + story + "\n" + VICTIM_CRIMINAL_DESCRIPTION + ": " + criminalDesc + "\n"
+                        + "*************************");
             }
             return victims;
         } catch (Exception e) {
@@ -257,19 +255,14 @@ public class DataLoader extends DataConstants {
                 String firstName = (String) witnessJSON.get(WITNESS_FIRST_NAME);
                 String lastName = (String) witnessJSON.get(WITNESS_LAST_NAME);
                 String phoneNumber = (String) witnessJSON.get(WITNESS_PHONE_NUMBER);
-                List<Integer> caseNums = (List<Integer>) witnessJSON.get(WITNESS_CASE_NUMS);
                 boolean proof = ((Boolean) witnessJSON.get(WITNESS_PROOF)).booleanValue();
                 String story = (String) witnessJSON.get(WITNESS_STORY);
                 String location = (String) witnessJSON.get(WITNESS_LOCATION);
-                String timeOfEvent = (String) witnessJSON.get(WITNESS_TIME_OF_EVENT);
-                SimpleDateFormat date = new SimpleDateFormat(timeOfEvent);
-                witnesses.add(
-                        new Witness(idUUID, firstName, lastName, phoneNumber, caseNums, proof, story, location, date));
-                System.out.println(WITNESS_FIRST_NAME + ": " + firstName + "\n" + WITNESS_LAST_NAME + ": " + lastName
-                        + "\n" + WITNESS_PHONE_NUMBER + ": " + phoneNumber + "\n" + WITNESS_CASE_NUMS + ": " + caseNums
-                        + "\n" + WITNESS_PROOF + ": " + proof + "\n" + WITNESS_STORY + ": " + story + "\n"
-                        + WITNESS_LOCATION + ": " + location + "\n" + WITNESS_TIME_OF_EVENT + ": " + timeOfEvent + "\n"
-                        + "*************************");
+                witnesses.add(new Witness(idUUID, firstName, lastName, phoneNumber, proof, story, location));
+                System.out.println(WITNESS_ID + ": " + id + "\n" + WITNESS_FIRST_NAME + ": " + firstName + "\n"
+                        + WITNESS_LAST_NAME + ": " + lastName + "\n" + WITNESS_PHONE_NUMBER + ": " + phoneNumber + "\n"
+                        + WITNESS_PROOF + ": " + proof + "\n" + WITNESS_STORY + ": " + story + "\n" + WITNESS_LOCATION
+                        + ": " + location + "\n" + "*************************");
             }
             return witnesses;
         } catch (Exception e) {

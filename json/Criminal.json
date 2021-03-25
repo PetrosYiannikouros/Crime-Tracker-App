@@ -22,7 +22,6 @@
         "convictions": [],
         "age": 69,
         "hasCar": true,
-        "caseNums": [],
         "height": "5'11\""
     },
     {
@@ -48,7 +47,6 @@
         "convictions": [],
         "age": 64,
         "hasCar": true,
-        "caseNums": [],
         "height": "6'1\""
     },
     {
@@ -74,7 +72,6 @@
         "convictions": [],
         "age": 33,
         "hasCar": true,
-        "caseNums": [],
         "height": "5'5"
     },
     {
@@ -107,7 +104,6 @@
         ],
         "age": 44,
         "hasCar": true,
-        "caseNums": [],
         "height": "5'7"
     },
     {
@@ -140,7 +136,6 @@
         ],
         "age": 21,
         "hasCar": true,
-        "caseNums": [],
         "height": "6'4"
     },
     {
@@ -171,7 +166,6 @@
         ],
         "age": 32,
         "hasCar": true,
-        "caseNums": [],
         "height": "6'2\""
     },
     {
@@ -203,7 +197,6 @@
         ],
         "age": 34,
         "hasCar": true,
-        "caseNums": [],
         "height": "6'2\""
     },
     {
@@ -235,7 +228,6 @@
         ],
         "age": 38,
         "hasCar": true,
-        "caseNums": [],
         "height": "6'2\""
     }
 ]
