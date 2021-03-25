@@ -105,6 +105,19 @@ public class CrimeTracker {
             System.out.println("invalid email syntax");
             return false;
         }
-      }
+    }
+
+    public boolean existingPhoneNumber(String phoneNumber) {
+        admins = Administrators.getInstance();
+        ArrayList<Administrator> adminList = admins.getAdministrators();
+        for(int i =0; i < adminList.size(); ++i) {
+            admin = adminList.get(i);
+            if (admin.getPhoneNumber().equals(phoneNumber)) {
+                System.out.println("Phone Number already associated with an account...");
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
