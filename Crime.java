@@ -1,5 +1,6 @@
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ public class Crime {
     private int caseNumber;
     private TypesOfCrimes type;
     private String description;
-    private SimpleDateFormat date;
+    private String date;
     private String address;
     private String assignedId;
     private List<Criminal> criminals;
@@ -25,13 +26,13 @@ public class Crime {
     /**
      * Constructor for Crime object
      */
-    public Crime(int caseNumber, TypesOfCrimes type, String description, SimpleDateFormat date, String address,
-            String assignedId, List<Criminal> criminals, List<Suspect> suspects, List<Witness> witnesses,
-            List<Victim> victims, List<Evidence> evidence) {
+    public Crime(int caseNumber, TypesOfCrimes type, String description, String date, String address, String assignedId,
+            List<Criminal> criminals, List<Suspect> suspects, List<Witness> witnesses, List<Victim> victims,
+            List<Evidence> evidence) {
         this.caseNumber = caseNumber;
         this.type = type;
         this.description = description;
-        this.date = date;
+        this.date = simpleDateFormat.format(new Date());
         this.address = address;
         this.assignedId = assignedId;
         this.criminals = criminals;
@@ -43,12 +44,12 @@ public class Crime {
     }
 
     /** from scratch */
-    public Crime(int caseNumber, TypesOfCrimes type, String description, SimpleDateFormat date, String address,
+    public Crime(int caseNumber, TypesOfCrimes type, String description, String date, String address,
             String assignedId) {
         this.caseNumber = caseNumber;
         this.type = type;
         this.description = description;
-        this.date = date;
+        this.date = simpleDateFormat.format(date);
         this.address = address;
         this.assignedId = assignedId;
         this.criminals = new ArrayList<>();
@@ -91,7 +92,7 @@ public class Crime {
      * 
      * @return date of crime
      */
-    public SimpleDateFormat getDate() {
+    public String getDate() {
         return date;
     }
 

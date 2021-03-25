@@ -1,8 +1,30 @@
 [
     {
-
+        "lastName": "Unknown",
+        "tattooed": false,
+        "deceased": false,
+        "shoeSize": 10.0,
+        "race": "White",
+        "gender": "Male",
+        "facialHairDesc": "Unknown",
+        "naturalHairColor": "Unknown",
+        "nickName": "Unknown",
+        "weight": 200,
+        "carDescription": "2007 Dodge Van",
+        "clothesDesc": "Ski mask with heavy clothing",
+        "hairLength": "Unknown",
+        "firstName": "Unknown",
+        "tattooList": [],
+        "phoneNumber": "Unknown",
+        "licensePlate": "Covered",
+        "id": "e87c2ffb-20fa-4bf3-a793-0ded4e067155",
+        "age": 30,
+        "hasCar": true,
+        "caseNums": [],
+        "height": "6'1\"",
+        "reasons": [
+            "This is all the information we have on the suspect. More to come as the investigation continues"
+        ]
     },
-    {
-        
-    }
+    {}
 ]
