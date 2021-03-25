@@ -29,6 +29,9 @@ public class Witnesses {
     }
 
     public Witness getWitness(UUID id) {
+        for (Witness witness : witnessList)
+            if (witness.getId().equals(id))
+                return witness;
         return null;
     }
 }

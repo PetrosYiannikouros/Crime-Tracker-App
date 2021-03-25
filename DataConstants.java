@@ -41,6 +41,7 @@ public abstract class DataConstants {
     protected static final String CRIMINAL_WEIGHT = "weight";
     protected static final String CRIMINAL_HEIGHT = "height";
     protected static final String CRIMINAL_RACE = "race";
+    protected static final String CRIMINAL_GENDER = "gender";
     protected static final String CRIMINAL_SHOE_SIZE = "shoeSize";
     protected static final String CRIMINAL_NATURAL_HAIR_COLOR = "naturalHairColor";
     protected static final String CRIMINAL_HAIR_LENGTH = "hairLength";
@@ -116,6 +117,7 @@ public abstract class DataConstants {
     protected static final String SUSPECT_WEIGHT = "weight";
     protected static final String SUSPECT_HEIGHT = "height";
     protected static final String SUSPECT_RACE = "race";
+    protected static final String SUSPECT_GENDER = "gender";
     protected static final String SUSPECT_SHOE_SIZE = "shoeSize";
     protected static final String SUSPECT_NATURAL_HAIR_COLOR = "naturalHairColor";
     protected static final String SUSPECT_HAIR_LENGTH = "hairLength";
@@ -136,10 +138,11 @@ public abstract class DataConstants {
     protected static final String CRIME_DATE = "date";
     protected static final String CRIME_ADDRESS = "address";
     protected static final String CRIME_ASSIGNED_ID = "assignedId";
-    protected static final String CRIME_PERSON_OF_INTEREST_IDS = "personOfInterestIds";
-    protected static final String CRIME_WITNESS_IDS = "witnessIds";
-    protected static final String CRIME_VICTIM_IDS = "victimIds";
-    protected static final String CRIME_EVIDENCE_IDS = "evidenceIds";
+    protected static final String CRIME_CRIMINALS = "criminals";
+    protected static final String CRIME_SUSPECTS = "suspects";
+    protected static final String CRIME_WITNESSES = "witnesses";
+    protected static final String CRIME_VICTIMS = "victims";
+    protected static final String CRIME_EVIDENCES = "evidence";
     protected static final String CRIME_IS_SOLVED = "isSolved";
 
     // Evidence
