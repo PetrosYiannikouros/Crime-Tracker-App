@@ -19,6 +19,13 @@ public class Evidence {
         this.amount = amount;
     }
 
+    public Evidence(UUID id, String type, String description, int amount) {
+        this.id = id;
+        this.type = type;
+        this.description = description;
+        this.amount = amount;
+    }
+
     public UUID getId() {
         return this.id;
     }

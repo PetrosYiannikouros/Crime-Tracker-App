@@ -1,5 +1,6 @@
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * A witness to a crime. At or near the scene of the crime
@@ -27,7 +28,15 @@ public class Witness extends Person {
         this.story = story;
         this.location = location;
         this.timeOfEvent = timeOfEvent;
+    }
 
+    public Witness(UUID id, String firstName, String lastName, String phoneNumber, List<Integer> caseNums,
+            boolean proof, String story, String location, SimpleDateFormat timeOfEvent) {
+        super(id, firstName, lastName, phoneNumber);
+        this.proof = proof;
+        this.story = story;
+        this.location = location;
+        this.timeOfEvent = timeOfEvent;
     }
 
     // getters -----------------------------------------------------

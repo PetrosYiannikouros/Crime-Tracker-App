@@ -89,7 +89,7 @@
         "naturalHairColor": "Dirty Blonde",
         "nickName": "Home girl",
         "weight": 120,
-        "carDescription": "2012 Volkswagon",
+        "carDescription": "2012 Volkswagon Jetta",
         "clothesDesc": "usually tank top and short",
         "hairLength": "Long",
         "firstName": "Patricia",
@@ -109,5 +109,133 @@
         "hasCar": true,
         "caseNums": [],
         "height": "5'7"
+    },
+    {
+        "lastName": "Pearson",
+        "tattooed": true,
+        "inJail": true,
+        "deceased": false,
+        "shoeSize": 14.0,
+        "race": "White",
+        "gender": "Male",
+        "facialHairDesc": "Full Beard",
+        "naturalHairColor": "Dark Brown",
+        "nickName": "Home boy",
+        "weight": 240,
+        "carDescription": "2010 Honda Accord",
+        "clothesDesc": "mostly jeans and a wife-beater",
+        "hairLength": "Mop-top",
+        "firstName": "Kurt",
+        "tattooList": [
+            "dove tattoo on chest",
+            "skull tattoo on shoulder"
+        ],
+        "phoneNumber": "555-671-4822",
+        "licensePlate": "BWP-874",
+        "id": "ef8113e7-e9aa-439a-9bbe-97e2745b49cc",
+        "convictions": [
+            "robbed a bar and stole liquor in 2012",
+            "public intoxication in 2014",
+            "possession of schedule I drugs in 2015"
+        ],
+        "age": 21,
+        "hasCar": true,
+        "caseNums": [],
+        "height": "6'4"
+    },
+    {
+        "lastName": "Walker",
+        "tattooed": true,
+        "inJail": false,
+        "deceased": false,
+        "shoeSize": 12.0,
+        "race": "White",
+        "gender": "Male",
+        "facialHairDesc": "Clean-shaven",
+        "naturalHairColor": "Black",
+        "nickName": "Skywalker",
+        "weight": 200,
+        "carDescription": "2013 Honda Civic",
+        "clothesDesc": "Wears a ball cap a lot",
+        "hairLength": "Thick",
+        "firstName": "Mark",
+        "tattooList": [
+            "Details Unknown"
+        ],
+        "phoneNumber": "555-698-3719",
+        "licensePlate": "HFD-883",
+        "id": "11e0230f-d81a-4554-a25b-ae37fa7a0a7f",
+        "convictions": [
+            "Assault and Battery in 2012",
+            "Domestic violence in 2014"
+        ],
+        "age": 32,
+        "hasCar": true,
+        "caseNums": [],
+        "height": "6'2\""
+    },
+    {
+        "lastName": "Smuda",
+        "tattooed": true,
+        "inJail": false,
+        "deceased": false,
+        "shoeSize": 13.0,
+        "race": "White",
+        "gender": "Male",
+        "facialHairDesc": "Scruffy",
+        "naturalHairColor": "Black",
+        "nickName": "Unknown",
+        "weight": 220,
+        "carDescription": "2010 Dodge Charger",
+        "clothesDesc": "Various",
+        "hairLength": "Thick",
+        "firstName": "Billy",
+        "tattooList": [
+            "Picture of his mom on chest",
+            "Lion on back"
+        ],
+        "phoneNumber": "555-5734-802",
+        "licensePlate": "MWW-472",
+        "id": "807f88bf-9e8e-44bf-be16-97a1e12fe6d7",
+        "convictions": [
+            "DUI in 2012",
+            "Possession of Schedule I drug in 2014"
+        ],
+        "age": 34,
+        "hasCar": true,
+        "caseNums": [],
+        "height": "6'2\""
+    },
+    {
+        "lastName": "Pettis",
+        "tattooed": true,
+        "inJail": false,
+        "deceased": false,
+        "shoeSize": 12.0,
+        "race": "Hispanic",
+        "gender": "Male",
+        "facialHairDesc": "Clean-shaven",
+        "naturalHairColor": "Black",
+        "nickName": "Money man",
+        "weight": 260,
+        "carDescription": "2019 Chevrolet 2500 HD",
+        "clothesDesc": "Various",
+        "hairLength": "Thick",
+        "firstName": "Johny",
+        "tattooList": [
+            "Chinese symbols on shoulder",
+            "US flag on back"
+        ],
+        "phoneNumber": "555-8648-9702",
+        "licensePlate": "WRJ-582",
+        "id": "565d6396-07da-4013-b576-fd3943c04a09",
+        "convictions": [
+            "Embezzlement in 2014",
+            "Fraud in 2016"
+        ],
+        "age": 38,
+        "hasCar": true,
+        "caseNums": [],
+        "height": "6'2\""
     }
 ]

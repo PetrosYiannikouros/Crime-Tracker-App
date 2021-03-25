@@ -29,6 +29,15 @@ public abstract class Person {
         this.caseNums = new ArrayList<>();
     }
 
+    protected Person(UUID id, String firstName, String lastName, String phoneNumber) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.deceased = false; // default is not deceased
+        this.phoneNumber = phoneNumber;
+        this.caseNums = new ArrayList<>();
+    }
+
     // getter section
     /**
      * get First Name

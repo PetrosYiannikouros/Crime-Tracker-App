@@ -102,6 +102,7 @@ public class DataLoader extends DataConstants {
             for (int i = 0; i < suspectsJSON.size(); ++i) {
                 JSONObject suspectJSON = (JSONObject) suspectsJSON.get(i);
                 String id = (String) suspectJSON.get(SUSPECT_ID);
+                UUID idUUID = UUID.fromString(id);
                 String firstName = (String) suspectJSON.get(SUSPECT_FIRST_NAME);
                 String lastName = (String) suspectJSON.get(SUSPECT_LAST_NAME);
                 boolean deceased = ((Boolean) suspectJSON.get(SUSPECT_DECEASED)).booleanValue();
@@ -123,8 +124,8 @@ public class DataLoader extends DataConstants {
                 boolean hasCar = ((Boolean) suspectJSON.get(SUSPECT_HAS_CAR)).booleanValue();
                 String carDescription = (String) suspectJSON.get(SUSPECT_CAR_DESCRIPTION);
                 String licensePlate = (String) suspectJSON.get(SUSPECT_LICENSE_PLATE_NUM);
-                suspects.add(new Suspect(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender,
-                        shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
+                suspects.add(new Suspect(idUUID, firstName, lastName, phoneNumber, nickName, age, weight, height, race,
+                        gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
                         carDescription, licensePlate));
                 System.out.println(SUSPECT_ID + ": " + id + "\n" + SUSPECT_FIRST_NAME + ": " + firstName + "\n"
                         + SUSPECT_LAST_NAME + ": " + lastName + "\n" + SUSPECT_DECEASED + ": " + deceased + "\n"
@@ -157,6 +158,7 @@ public class DataLoader extends DataConstants {
             for (int i = 0; i < criminalsJSON.size(); ++i) {
                 JSONObject criminalJSON = (JSONObject) criminalsJSON.get(i);
                 String id = (String) criminalJSON.get(CRIMINAL_ID);
+                UUID idUUID = UUID.fromString(id);
                 String firstName = (String) criminalJSON.get(CRIMINAL_FIRST_NAME);
                 String lastName = (String) criminalJSON.get(CRIMINAL_LAST_NAME);
                 boolean deceased = ((Boolean) criminalJSON.get(CRIMINAL_DECEASED)).booleanValue();
@@ -180,9 +182,9 @@ public class DataLoader extends DataConstants {
                 String licensePlate = (String) criminalJSON.get(CRIMINAL_LICENSE_PLATE_NUM);
                 boolean inJail = ((Boolean) criminalJSON.get(CRIMINAL_IN_JAIL)).booleanValue();
                 ArrayList<String> convictions = (ArrayList<String>) criminalJSON.get(CRIMINAL_CONVICTIONS);
-                criminals.add(new Criminal(firstName, lastName, phoneNumber, nickName, age, weight, height, race,
-                        gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
-                        carDescription, licensePlate, inJail));
+                criminals.add(new Criminal(idUUID, firstName, lastName, phoneNumber, nickName, age, weight, height,
+                        race, gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed,
+                        hasCar, carDescription, licensePlate, inJail));
                 System.out.println(CRIMINAL_ID + ": " + id + "\n" + CRIMINAL_FIRST_NAME + ": " + firstName + "\n"
                         + CRIMINAL_LAST_NAME + ": " + lastName + "\n" + CRIMINAL_DECEASED + ": " + deceased + "\n"
                         + CRIMINAL_PHONE_NUMBER + ": " + phoneNumber + "\n" + CRIME_CASE_NUMBER + ": " + caseNums + "\n"
@@ -215,6 +217,8 @@ public class DataLoader extends DataConstants {
 
             for (int i = 0; i < victimsJSON.size(); ++i) {
                 JSONObject victimJSON = (JSONObject) victimsJSON.get(i);
+                String id = (String) victimJSON.get(VICTIM_ID);
+                UUID idUUID = UUID.fromString(id);
                 String firstName = (String) victimJSON.get(VICTIM_FIRST_NAME);
                 String lastName = (String) victimJSON.get(VICTIM_LAST_NAME);
                 boolean deceased = ((Boolean) victimJSON.get(VICTIM_DECEASED)).booleanValue();
@@ -224,7 +228,7 @@ public class DataLoader extends DataConstants {
                 SimpleDateFormat date = new SimpleDateFormat(timeOfEvent);
                 String story = (String) victimJSON.get(VICTIM_STORY);
                 String criminalDesc = (String) victimJSON.get(VICTIM_CRIMINAL_DESCRIPTION);
-                victims.add(new Victim(firstName, lastName, phoneNumber, location, date, story, criminalDesc));
+                victims.add(new Victim(idUUID, firstName, lastName, phoneNumber, location, date, story, criminalDesc));
                 System.out.println(VICTIM_FIRST_NAME + ": " + firstName + "\n" + VICTIM_LAST_NAME + ": " + lastName
                         + "\n" + VICTIM_DECEASED + ": " + deceased + "\n" + "\n" + VICTIM_PHONE_NUMBER + ": "
                         + phoneNumber + "\n" + VICTIM_LOCATION + ": " + location + "\n" + VICTIM_TIME_OF_EVENT + ": "
@@ -248,6 +252,8 @@ public class DataLoader extends DataConstants {
 
             for (int i = 0; i < witnessesJSON.size(); ++i) {
                 JSONObject witnessJSON = (JSONObject) witnessesJSON.get(i);
+                String id = (String) witnessJSON.get(WITNESS_ID);
+                UUID idUUID = UUID.fromString(id);
                 String firstName = (String) witnessJSON.get(WITNESS_FIRST_NAME);
                 String lastName = (String) witnessJSON.get(WITNESS_LAST_NAME);
                 String phoneNumber = (String) witnessJSON.get(WITNESS_PHONE_NUMBER);
@@ -257,7 +263,8 @@ public class DataLoader extends DataConstants {
                 String location = (String) witnessJSON.get(WITNESS_LOCATION);
                 String timeOfEvent = (String) witnessJSON.get(WITNESS_TIME_OF_EVENT);
                 SimpleDateFormat date = new SimpleDateFormat(timeOfEvent);
-                witnesses.add(new Witness(firstName, lastName, phoneNumber, caseNums, proof, story, location, date));
+                witnesses.add(
+                        new Witness(idUUID, firstName, lastName, phoneNumber, caseNums, proof, story, location, date));
                 System.out.println(WITNESS_FIRST_NAME + ": " + firstName + "\n" + WITNESS_LAST_NAME + ": " + lastName
                         + "\n" + WITNESS_PHONE_NUMBER + ": " + phoneNumber + "\n" + WITNESS_CASE_NUMS + ": " + caseNums
                         + "\n" + WITNESS_PROOF + ": " + proof + "\n" + WITNESS_STORY + ": " + story + "\n"
@@ -347,7 +354,7 @@ public class DataLoader extends DataConstants {
                 String type = ((String) crimeJSON.get(CRIME_TYPE));
                 TypesOfCrimes enumType = TypesOfCrimes.valueOf(type);
                 String description = (String) crimeJSON.get(CRIME_DESCRIPTION);
-                SimpleDateFormat date = (SimpleDateFormat) crimeJSON.get(CRIME_DATE);
+                String date = (String) crimeJSON.get(CRIME_DATE);
                 String address = (String) crimeJSON.get(CRIME_ADDRESS);
                 String assignedId = (String) crimeJSON.get(CRIME_ASSIGNED_ID);
                 JSONArray criminals = (JSONArray) crimeJSON.get(CRIME_CRIMINALS);
@@ -378,7 +385,37 @@ public class DataLoader extends DataConstants {
         return null;
     }
 
+    public static ArrayList<Evidence> loadEvidences() {
+        ArrayList<Evidence> evidence = new ArrayList<>();
+
+        try {
+            FileReader reader = new FileReader(EVIDENCE_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray evidencesJSON = (JSONArray) new JSONParser().parse(reader);
+
+            for (int i = 0; i < evidencesJSON.size(); ++i) {
+                JSONObject evidenceJSON = (JSONObject) evidencesJSON.get(i);
+                String id = (String) evidenceJSON.get(EVIDENCE_ID);
+                UUID idUUID = UUID.fromString(id);
+                String type = (String) evidenceJSON.get(EVIDENCE_TYPE);
+                String description = (String) evidenceJSON.get(EVIDENCE_DESCRIPTION);
+                int amount = ((Long) evidenceJSON.get(EVIDENCE_AMOUNT)).intValue();
+                evidence.add(new Evidence(idUUID, type, description, amount));
+                System.out.println(EVIDENCE_ID + ": " + id + "\n" + EVIDENCE_TYPE + ": " + type + "\n"
+                        + EVIDENCE_DESCRIPTION + ": " + description + "\n" + EVIDENCE_AMOUNT + ": " + amount + "\n"
+                        + "***************************");
+            }
+            return evidence;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     private static ArrayList<Witness> getWitnesses(JSONArray items) {
+        if (items == null)
+            return null;
+
         ArrayList<Witness> list = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
             UUID id = UUID.fromString((String) items.get(i));
@@ -389,6 +426,9 @@ public class DataLoader extends DataConstants {
     }
 
     private static ArrayList<Victim> getVictims(JSONArray items) {
+        if (items == null)
+            return null;
+
         ArrayList<Victim> list = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
             UUID id = UUID.fromString((String) items.get(i));
@@ -399,6 +439,9 @@ public class DataLoader extends DataConstants {
     }
 
     private static ArrayList<Criminal> getCriminals(JSONArray items) {
+        if (items == null)
+            return null;
+
         ArrayList<Criminal> list = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
             UUID id = UUID.fromString((String) items.get(i));
@@ -409,6 +452,9 @@ public class DataLoader extends DataConstants {
     }
 
     private static ArrayList<Suspect> getSuspects(JSONArray items) {
+        if (items == null)
+            return null;
+
         ArrayList<Suspect> list = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
             UUID id = UUID.fromString((String) items.get(i));
@@ -419,6 +465,9 @@ public class DataLoader extends DataConstants {
     }
 
     private static ArrayList<Evidence> getEvidence(JSONArray items) {
+        if (items == null)
+            return null;
+
         ArrayList<Evidence> list = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
             UUID id = UUID.fromString((String) items.get(i));

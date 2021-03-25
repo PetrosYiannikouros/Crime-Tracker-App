@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * A convicted criminal
@@ -21,6 +22,18 @@ public class Criminal extends PersonOfInterest {
             String licensePlate, boolean inJail) {
         super(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender, shoeSize, naturalHairColor,
                 hairLength, facialHairDesc, clothesDesc, tattoed, hasCar, carDescription, licensePlate);
+        this.inJail = inJail;
+        this.convictions = new ArrayList<>();
+    }
+
+    // Helps retrieve actual UUID and not create another random one
+    public Criminal(UUID id, String firstName, String lastName, String phoneNumber, String nickName, int age,
+            int weight, String height, String race, String gender, double shoeSize, String naturalHairColor,
+            String hairLength, String facialHairDesc, String clothesDesc, boolean tattoed, boolean hasCar,
+            String carDescription, String licensePlate, boolean inJail) {
+        super(id, firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender, shoeSize,
+                naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar, carDescription,
+                licensePlate);
         this.inJail = inJail;
         this.convictions = new ArrayList<>();
     }

@@ -21,7 +21,7 @@ public class Crimes {
         return crimeList;
     }
 
-    public void addCrime(int caseNumber, TypesOfCrimes type, String description, SimpleDateFormat date, String address,
+    public void addCrime(int caseNumber, TypesOfCrimes type, String description, String date, String address,
             String assignedId) {
         crimeList.add(new Crime(caseNumber, type, description, date, address, assignedId));
         DataWriter.saveCrimes();

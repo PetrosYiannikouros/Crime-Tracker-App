@@ -31,9 +31,11 @@ public class Criminals {
     }
 
     public Criminal getCriminal(UUID id) {
-        for (Criminal criminal : criminalList)
+        for (int i = 0; i < criminalList.size(); i++) {
+            Criminal criminal = criminalList.get(i);
             if (criminal.getId().equals(id))
                 return criminal;
+        }
         return null;
     }
 }

@@ -1,5 +1,5 @@
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Victim class creates victim adds stories and family members extends class
@@ -24,6 +24,15 @@ public class Victim extends Person {
     public Victim(String firstName, String lastName, String phoneNumber, String location, SimpleDateFormat timeOfEvent,
             String story, String criminalDesc) {
         super(firstName, lastName, phoneNumber);
+        this.location = location;
+        this.timeOfEvent = timeOfEvent;
+        this.story = story;
+        this.criminalDesc = criminalDesc;
+    }
+
+    public Victim(UUID id, String firstName, String lastName, String phoneNumber, String location,
+            SimpleDateFormat timeOfEvent, String story, String criminalDesc) {
+        super(id, firstName, lastName, phoneNumber);
         this.location = location;
         this.timeOfEvent = timeOfEvent;
         this.story = story;

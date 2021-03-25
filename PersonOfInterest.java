@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.UUID;
 import java.util.ArrayList;
 
 public abstract class PersonOfInterest extends Person {
@@ -31,6 +32,35 @@ public abstract class PersonOfInterest extends Person {
             String facialHairDesc, String clothesDesc, boolean tattooed, boolean hasCar, String carDescription,
             String licensePlate) {
         super(firstName, lastName, phoneNumber);
+        this.nickName = nickName;
+        this.age = age;
+        this.weight = weight;
+        this.height = height;
+        this.race = race;
+        this.gender = gender;
+        this.shoeSize = shoeSize;
+        this.naturalHairColor = naturalHairColor;
+        this.hairLength = hairLength;
+        this.facialHairDesc = facialHairDesc;
+        this.clothesDesc = clothesDesc;
+        this.tattooed = tattooed;
+        this.tattoos = new ArrayList<>();
+        this.hasCar = hasCar;
+        if (hasCar) {
+            this.carDescription = carDescription;
+            this.licensePlate = licensePlate;
+        } else {
+            this.carDescription = "Not known or N/A";
+            this.licensePlate = "Not known or N/A";
+        }
+    }
+
+    // Helps retrieve actual UUID and not create another random one
+    public PersonOfInterest(UUID id, String firstName, String lastName, String phoneNumber, String nickName, int age,
+            int weight, String height, String race, String gender, double shoeSize, String naturalHairColor,
+            String hairLength, String facialHairDesc, String clothesDesc, boolean tattooed, boolean hasCar,
+            String carDescription, String licensePlate) {
+        super(id, firstName, lastName, phoneNumber);
         this.nickName = nickName;
         this.age = age;
         this.weight = weight;
