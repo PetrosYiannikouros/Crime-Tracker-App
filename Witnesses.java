@@ -22,9 +22,9 @@ public class Witnesses {
         return witnessList;
     }
 
-    public void addWitness(String firstName, String lastName, String phoneNumber, List<Integer> caseNums, boolean proof,
-            String story, String location, SimpleDateFormat timeOfEvent) {
-        witnessList.add(new Witness(firstName, lastName, phoneNumber, caseNums, proof, story, location, timeOfEvent));
+    public void addWitness(String firstName, String lastName, String phoneNumber, boolean proof, String story,
+            String location) {
+        witnessList.add(new Witness(firstName, lastName, phoneNumber, proof, story, location));
         DataWriter.saveWitnesses();
     }
 

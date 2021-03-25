@@ -26,9 +26,9 @@ public class Victims {
         return victimList;
     }
 
-    public void addVictim(String firstName, String lastName, String phoneNumber, String location,
-            SimpleDateFormat timeOfEvent, String story, String criminalDesc) {
-        victimList.add(new Victim(firstName, lastName, phoneNumber, location, timeOfEvent, story, criminalDesc));
+    public void addVictim(String firstName, String lastName, String phoneNumber, String location, String story,
+            String criminalDesc) {
+        victimList.add(new Victim(firstName, lastName, phoneNumber, location, story, criminalDesc));
         DataWriter.saveVictims();
     }
 

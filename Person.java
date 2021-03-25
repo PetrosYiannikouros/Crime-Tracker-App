@@ -26,7 +26,6 @@ public abstract class Person {
         this.lastName = lastName;
         this.deceased = false; // default is not deceased
         this.phoneNumber = phoneNumber;
-        this.caseNums = new ArrayList<>();
     }
 
     protected Person(UUID id, String firstName, String lastName, String phoneNumber) {
@@ -35,7 +34,6 @@ public abstract class Person {
         this.lastName = lastName;
         this.deceased = false; // default is not deceased
         this.phoneNumber = phoneNumber;
-        this.caseNums = new ArrayList<>();
     }
 
     // getter section

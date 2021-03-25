@@ -211,11 +211,9 @@ public class DataWriter extends DataConstants {
         witnessDetails.put(WITNESS_LAST_NAME, witness.getLastName());
         witnessDetails.put(WITNESS_DECEASED, witness.getIsDeceased());
         witnessDetails.put(WITNESS_PHONE_NUMBER, witness.getPhoneNumber());
-        witnessDetails.put(WITNESS_CASE_NUMS, witness.getCases());
         witnessDetails.put(WITNESS_PROOF, witness.hasProof());
         witnessDetails.put(WITNESS_STORY, witness.getStory());
         witnessDetails.put(WITNESS_LOCATION, witness.getLocation());
-        witnessDetails.put(WITNESS_TIME_OF_EVENT, witness.getTimeOfEvent());
 
         return witnessDetails;
     }
@@ -249,7 +247,6 @@ public class DataWriter extends DataConstants {
         victimDetails.put(VICTIM_DECEASED, victim.getIsDeceased());
         victimDetails.put(VICTIM_PHONE_NUMBER, victim.getPhoneNumber());
         victimDetails.put(VICTIM_LOCATION, victim.getLocation());
-        victimDetails.put(VICTIM_TIME_OF_EVENT, victim.getTimeOfEvent());
         victimDetails.put(VICTIM_STORY, victim.getStory());
         victimDetails.put(VICTIM_CRIMINAL_DESCRIPTION, victim.getCriminalDesc());
 

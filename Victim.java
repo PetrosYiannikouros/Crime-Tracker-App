@@ -6,11 +6,7 @@ import java.util.UUID;
  * person
  */
 public class Victim extends Person {
-    String pattern = "dd-MM-yyyy HH:mm";
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
     private String location;
-    private SimpleDateFormat timeOfEvent;
     private String story;
     private String criminalDesc;
 
@@ -21,20 +17,18 @@ public class Victim extends Person {
 
     }
 
-    public Victim(String firstName, String lastName, String phoneNumber, String location, SimpleDateFormat timeOfEvent,
-            String story, String criminalDesc) {
+    public Victim(String firstName, String lastName, String phoneNumber, String location, String story,
+            String criminalDesc) {
         super(firstName, lastName, phoneNumber);
         this.location = location;
-        this.timeOfEvent = timeOfEvent;
         this.story = story;
         this.criminalDesc = criminalDesc;
     }
 
-    public Victim(UUID id, String firstName, String lastName, String phoneNumber, String location,
-            SimpleDateFormat timeOfEvent, String story, String criminalDesc) {
+    public Victim(UUID id, String firstName, String lastName, String phoneNumber, String location, String story,
+            String criminalDesc) {
         super(id, firstName, lastName, phoneNumber);
         this.location = location;
-        this.timeOfEvent = timeOfEvent;
         this.story = story;
         this.criminalDesc = criminalDesc;
     }
@@ -43,10 +37,6 @@ public class Victim extends Person {
 
     public String getLocation() {
         return this.location;
-    }
-
-    public SimpleDateFormat getTimeOfEvent() {
-        return this.timeOfEvent;
     }
 
     public String getStory() {

@@ -9,7 +9,9 @@
         "criminals": [
             "11e0230f-d81a-4554-a25b-ae37fa7a0a7f"
         ],
-        "suspects": [],
+        "suspects": [
+            "b1e58c9a-5542-48c3-9477-c27171f3ed06"
+        ],
         "witnesses": [],
         "victims": [],
         "evidence": [
@@ -29,7 +31,9 @@
         ],
         "suspects": [],
         "witnesses": [],
-        "victims": [],
+        "victims": [
+            "e1db131c-4825-4a96-a344-83ca97ec43db"
+        ],
         "evidence": [
             "acedc38d-8f69-4a68-8225-235e45205f8a"
         ],
