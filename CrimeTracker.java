@@ -16,7 +16,6 @@ public class CrimeTracker {
         users = Users.getInstance();
         ArrayList<User> userList = users.getUsers();
         for(int i =0; i < users.getUsers().size(); ++i){
-            userList.get(i);
             user = userList.get(i);
             if(user.getUserName().equals(userName)) {
                 if(user.getPassword().equals(password)){
@@ -33,4 +32,18 @@ public class CrimeTracker {
         System.out.println("Username not found");
         return false;
     }
+
+    public boolean existingUserName(String userName) {
+        users = Users.getInstance();
+        ArrayList<User> userList = users.getUsers();
+        for(int i =0; i < users.getUsers().size(); ++i) {
+            user = userList.get(i);
+            if (user.getUserName().equals(userName)) {
+                System.out.println("User Name is taken...");
+                return false;
+            }
+        }
+        return true;
+    }
 }
+
