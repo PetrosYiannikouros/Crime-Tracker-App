@@ -1,7 +1,8 @@
 public class main {
     public static void main(String[] args) {
         CrimeTracker ct = new CrimeTracker();
-        ct.existingEmail("tdog@gmail.com");
+        ct.validEmail("tyler@gmail.net");
+        //ct.existingEmail("tdog@gmail.com");
        // ct.loginAccount("HEHEGuy100", "beatit");
        //ct.existingUserName("HEHEGuy10");
         //Crimes test = Crimes.getInstance();
