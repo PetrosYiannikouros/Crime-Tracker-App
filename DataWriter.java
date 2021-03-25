@@ -322,4 +322,38 @@ public class DataWriter extends DataConstants {
 
         return evidenceDetails;
     }
+
+    public static JSONObject getUserJSON(User user) {
+        JSONObject userDetails = new JSONObject();
+        userDetails.put(OFFICER_ID, user.getId().toString());
+        userDetails.put(OFFICER_FIRST_NAME, user.getFirstName());
+        userDetails.put(OFFICER_LAST_NAME, user.getLastName());
+        userDetails.put(OFFICER_USERNAME, user.getUserName());
+        userDetails.put(OFFICER_PASSWORD, user.getPassword());
+        userDetails.put(OFFICER_PRECINCT, user.getPrecinct());
+        userDetails.put(OFFICER_DEPARTMENT, user.getDepartment());
+
+        return userDetails;
+    }
+
+    public static void saveUsers() {
+        Users users = Users.getInstance();
+        ArrayList<User> userList = users.getUsers();
+        JSONArray jsonUsers = new JSONArray();
+
+        // creating all the json objects
+        for (int i = 0; i < userList.size(); i++) {
+            jsonUsers.add(getUserJSON(userList.get(i)));
+        }
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
+
+            file.write(jsonUsers.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
