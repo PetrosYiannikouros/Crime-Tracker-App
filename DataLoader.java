@@ -36,12 +36,6 @@ public class DataLoader extends DataConstants {
                 String badgeNumber = (String) officerJSON.get(OFFICER_BADGE_NUMBER);
                 officers.add(new Officer(firstName, lastName, userName, password, precinct, department, yearsServed,
                         rank, badgeNumber));
-                System.out.println(OFFICER_ID + ": " + id + "\n" + OFFICER_FIRST_NAME + ": " + firstName + "\n"
-                        + OFFICER_LAST_NAME + ": " + lastName + "\n" + OFFICER_USERNAME + ": " + userName + "\n"
-                        + OFFICER_PASSWORD + ": " + password + "\n" + OFFICER_PRECINCT + ": " + precinct + "\n"
-                        + OFFICER_DEPARTMENT + ": " + department + "\n" + OFFICER_YEARS_SERVED + ": " + yearsServed
-                        + "\n" + OFFICER_RANK + ": " + rank + "\n" + OFFICER_BADGE_NUMBER + ": " + badgeNumber + "\n"
-                        + "***************************");
             }
             return officers;
         } catch (Exception e) {
@@ -75,14 +69,6 @@ public class DataLoader extends DataConstants {
                 ArrayList<Crime> activeCasesList = (ArrayList<Crime>) detectiveJSON.get(DETECTIVE_ACTIVE_CASES_LIST);
                 detectives.add(new Detective(firstName, lastName, userName, password, precinct, department, yearsServed,
                         rank, badgeNumber, activeCases, solvedCases));
-                System.out.println(DETECTIVE_ID + ": " + id + "\n" + DETECTIVE_FIRST_NAME + ": " + firstName + "\n"
-                        + DETECTIVE_LAST_NAME + ": " + lastName + "\n" + DETECTIVE_USERNAME + ": " + userName + "\n"
-                        + DETECTIVE_PASSWORD + ": " + password + "\n" + DETECTIVE_PRECINCT + ": " + precinct + "\n"
-                        + DETECTIVE_DEPARTMENT + ": " + department + "\n" + DETECTIVE_YEARS_SERVED + ": " + yearsServed
-                        + "\n" + DETECTIVE_RANK + ": " + rank + "\n" + DETECTIVE_BADGE_NUMBER + ": " + badgeNumber
-                        + "\n" + DETECTIVE_ACTIVE_CASES + ": " + activeCases + "\n" + DETECTIVE_SOLVED_CASES + ": "
-                        + solvedCases + "\n" + DETECTIVE_ACTIVE_CASES_LIST + ": " + activeCasesList + "\n"
-                        + "***************************");
             }
             return detectives;
         } catch (Exception e) {
@@ -127,18 +113,6 @@ public class DataLoader extends DataConstants {
                 suspects.add(new Suspect(idUUID, firstName, lastName, phoneNumber, nickName, age, weight, height, race,
                         gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
                         carDescription, licensePlate));
-                System.out.println(SUSPECT_ID + ": " + id + "\n" + SUSPECT_FIRST_NAME + ": " + firstName + "\n"
-                        + SUSPECT_LAST_NAME + ": " + lastName + "\n" + SUSPECT_DECEASED + ": " + deceased + "\n"
-                        + SUSPECT_PHONE_NUMBER + ": " + phoneNumber + "\n" + SUSPECT_CASE_NUMS + ": " + caseNums + "\n"
-                        + SUSPECT_NICK_NAME + ": " + nickName + "\n" + SUSPECT_AGE + ": " + age + "\n" + SUSPECT_WEIGHT
-                        + ": " + weight + "\n" + SUSPECT_HEIGHT + ": " + height + "\n" + SUSPECT_RACE + ": " + race
-                        + "\n" + SUSPECT_GENDER + ": " + gender + "\n" + SUSPECT_SHOE_SIZE + ": " + shoeSize + "\n"
-                        + SUSPECT_NATURAL_HAIR_COLOR + ": " + naturalHairColor + "\n" + SUSPECT_HAIR_LENGTH + ": "
-                        + hairLength + "\n" + SUSPECT_FACIAL_HAIR_DESCRIPTION + ": " + facialHairDesc + "\n"
-                        + SUSPECT_CLOTHES_DESCRIPTION + ": " + clothesDesc + "\n" + SUSPECT_TATTOOED + ": " + tattoed
-                        + "\n" + SUSPECT_TATTOO_LIST + ": " + tattooList + "\n" + SUSPECT_HAS_CAR + ": " + hasCar + "\n"
-                        + SUSPECT_CAR_DESCRIPTION + ": " + carDescription + "\n" + SUSPECT_LICENSE_PLATE_NUM + ": "
-                        + licensePlate + "\n" + "***************************");
             }
             return suspects;
         } catch (Exception e) {
@@ -185,20 +159,6 @@ public class DataLoader extends DataConstants {
                 criminals.add(new Criminal(idUUID, firstName, lastName, phoneNumber, nickName, age, weight, height,
                         race, gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed,
                         hasCar, carDescription, licensePlate, inJail));
-                System.out.println(CRIMINAL_ID + ": " + id + "\n" + CRIMINAL_FIRST_NAME + ": " + firstName + "\n"
-                        + CRIMINAL_LAST_NAME + ": " + lastName + "\n" + CRIMINAL_DECEASED + ": " + deceased + "\n"
-                        + CRIMINAL_PHONE_NUMBER + ": " + phoneNumber + "\n" + CRIME_CASE_NUMBER + ": " + caseNums + "\n"
-                        + CRIMINAL_NICK_NAME + ": " + nickName + "\n" + CRIMINAL_AGE + ": " + age + "\n"
-                        + CRIMINAL_WEIGHT + ": " + weight + "\n" + CRIMINAL_HEIGHT + ": " + height + "\n"
-                        + CRIMINAL_RACE + ": " + race + "\n" + CRIMINAL_GENDER + ": " + gender + "\n"
-                        + CRIMINAL_SHOE_SIZE + ": " + shoeSize + "\n" + CRIMINAL_NATURAL_HAIR_COLOR + ": "
-                        + naturalHairColor + "\n" + CRIMINAL_HAIR_LENGTH + ": " + hairLength + "\n"
-                        + CRIMINAL_FACIAL_HAIR_DESCRIPTION + ": " + facialHairDesc + "\n" + CRIMINAL_CLOTHES_DESCRIPTION
-                        + ": " + clothesDesc + "\n" + CRIMINAL_TATTOOED + ": " + tattoed + "\n" + CRIMINAL_TATTOO_LIST
-                        + ": " + tattooList + "\n" + CRIMINAL_HAS_CAR + ": " + hasCar + "\n" + CRIMINAL_CAR_DESCRIPTION
-                        + ": " + carDescription + "\n" + CRIMINAL_LICENSE_PLATE_NUM + ": " + licensePlate + "\n"
-                        + CRIMINAL_IN_JAIL + ": " + inJail + "\n" + CRIMINAL_CONVICTIONS + ": " + convictions + "\n"
-                        + "***************************");
             }
             return criminals;
         } catch (Exception e) {
@@ -227,11 +187,6 @@ public class DataLoader extends DataConstants {
                 String story = (String) victimJSON.get(VICTIM_STORY);
                 String criminalDesc = (String) victimJSON.get(VICTIM_CRIMINAL_DESCRIPTION);
                 victims.add(new Victim(idUUID, firstName, lastName, phoneNumber, location, story, criminalDesc));
-                System.out.println(VICTIM_ID + ": " + id + "\n" + VICTIM_FIRST_NAME + ": " + firstName + "\n"
-                        + VICTIM_LAST_NAME + ": " + lastName + "\n" + VICTIM_DECEASED + ": " + deceased + "\n"
-                        + VICTIM_PHONE_NUMBER + ": " + phoneNumber + "\n" + VICTIM_LOCATION + ": " + location + "\n"
-                        + VICTIM_STORY + ": " + story + "\n" + VICTIM_CRIMINAL_DESCRIPTION + ": " + criminalDesc + "\n"
-                        + "*************************");
             }
             return victims;
         } catch (Exception e) {
@@ -259,10 +214,6 @@ public class DataLoader extends DataConstants {
                 String story = (String) witnessJSON.get(WITNESS_STORY);
                 String location = (String) witnessJSON.get(WITNESS_LOCATION);
                 witnesses.add(new Witness(idUUID, firstName, lastName, phoneNumber, proof, story, location));
-                System.out.println(WITNESS_ID + ": " + id + "\n" + WITNESS_FIRST_NAME + ": " + firstName + "\n"
-                        + WITNESS_LAST_NAME + ": " + lastName + "\n" + WITNESS_PHONE_NUMBER + ": " + phoneNumber + "\n"
-                        + WITNESS_PROOF + ": " + proof + "\n" + WITNESS_STORY + ": " + story + "\n" + WITNESS_LOCATION
-                        + ": " + location + "\n" + "*************************");
             }
             return witnesses;
         } catch (Exception e) {
@@ -288,10 +239,6 @@ public class DataLoader extends DataConstants {
                 String precinct = (String) userJSON.get(USER_PRECINCT);
                 String department = (String) userJSON.get(USER_DEPARTMENT);
                 users.add(new User(firstName, lastName, userName, password, precinct, department));
-                System.out.println(USER_FIRST_NAME + ": " + firstName + "\n" + USER_LAST_NAME + ": " + lastName + "\n"
-                        + USER_USERNAME + ": " + userName + "\n" + USER_PASSWORD + ": " + password + "\n"
-                        + USER_PRECINCT + ": " + precinct + "\n" + USER_DEPARTMENT + ": " + department + "\n"
-                        + "***************************");
             }
             return users;
         } catch (Exception e) {
@@ -320,11 +267,6 @@ public class DataLoader extends DataConstants {
                 String email = (String) adminJSON.get(ADMINISTRATOR_EMAIL);
                 admins.add(new Administrator(firstName, lastName, userName, password, precinct, department, phoneNumber,
                         email));
-                System.out.println(ADMINISTRATOR_FIRST_NAME + ": " + firstName + "\n" + ADMINISTRATOR_LAST_NAME + ": "
-                        + lastName + "\n" + ADMINISTRATOR_USERNAME + ": " + userName + "\n" + ADMINISTRATOR_PASSWORD
-                        + ": " + password + "\n" + ADMINISTRATOR_PRECINCT + ": " + precinct + "\n"
-                        + ADMINISTRATOR_DEPARTMENT + ": " + department + "\n" + ADMINISTRATOR_PHONE_NUMBER + ": "
-                        + phoneNumber + "\n" + ADMINISTRATOR_EMAIL + ": " + email + "\n***************************");
             }
             return admins;
         } catch (Exception e) {
@@ -363,13 +305,6 @@ public class DataLoader extends DataConstants {
                 boolean isSolved = ((Boolean) crimeJSON.get(CRIME_IS_SOLVED)).booleanValue();
                 crimes.add(new Crime(caseNumber, enumType, description, date, address, assignedId, criminalList,
                         suspectList, witnessList, victimList, evidenceList));
-                System.out.println(CRIME_CASE_NUMBER + ": " + caseNumber + "\n" + CRIME_TYPE + ": " + type + "\n"
-                        + CRIME_DESCRIPTION + ": " + description + "\n" + CRIME_DATE + ": " + date + "\n"
-                        + CRIME_ADDRESS + ": " + address + "\n" + CRIME_ASSIGNED_ID + ": " + assignedId + "\n"
-                        + CRIME_CRIMINALS + ": " + criminalList + "\n" + CRIME_SUSPECTS + ": " + suspectList + "\n"
-                        + CRIME_WITNESSES + ": " + witnessList + "\n" + CRIME_VICTIMS + ": " + victimList + "\n"
-                        + CRIME_EVIDENCES + ": " + evidenceList + "\n" + CRIME_IS_SOLVED + ": " + isSolved
-                        + "\n***************************");
             }
             return crimes;
         } catch (Exception e) {
@@ -394,9 +329,6 @@ public class DataLoader extends DataConstants {
                 String description = (String) evidenceJSON.get(EVIDENCE_DESCRIPTION);
                 int amount = ((Long) evidenceJSON.get(EVIDENCE_AMOUNT)).intValue();
                 evidence.add(new Evidence(idUUID, type, description, amount));
-                System.out.println(EVIDENCE_ID + ": " + id + "\n" + EVIDENCE_TYPE + ": " + type + "\n"
-                        + EVIDENCE_DESCRIPTION + ": " + description + "\n" + EVIDENCE_AMOUNT + ": " + amount + "\n"
-                        + "***************************");
             }
             return evidence;
         } catch (Exception e) {
