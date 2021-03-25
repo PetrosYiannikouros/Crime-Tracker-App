@@ -13,7 +13,7 @@ public class CrimeTracker {
      * @return true or false
      */
     public boolean loginAccount(String userName, String password) {
-        users = users.getInstance();
+        users = Users.getInstance();
         ArrayList<User> userList = users.getUsers();
         for(int i =0; i < users.getUsers().size(); ++i){
             userList.get(i);
