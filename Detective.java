@@ -56,7 +56,7 @@ public class Detective extends Officer {
      * 
      * @return activeCaseList
      */
-    public List<Crime> getCaseNumbers() {
+    public List<Integer> getCaseNumbers() {
         return this.caseNumbers;
     }
 
@@ -84,7 +84,7 @@ public class Detective extends Officer {
      * 
      * @param activeCaseList
      */
-    public void addCase(Crime activeCase) {
-        this.activeCasesList.add(activeCase);
+    public void addCase(int caseNumber) {
+        this.caseNumbers.add(caseNumber);
     }
 }

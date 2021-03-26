@@ -12,16 +12,17 @@ public class TestMain {
                 // for (Evidence evidence : crime.getEvidence())
                 // System.out.println(evidence.getDescription());
 
-                // ArrayList<Crime> crimes = Crimes.getInstance().getCrimes();
-                // for (Crime crime : crimes)
-                // System.out.println(crime.getDate());
+                ArrayList<Crime> crimes = Crimes.getInstance().getCrimes();
+                for (Crime crime : crimes)
+                        System.out.println(crime.getDate());
 
-                Detectives test = Detectives.getInstance();
-                test.getDetectives();
+                // Detectives test = Detectives.getInstance();
+                // // test.getDetectives();
                 // Crimes crimes = Crimes.getInstance();
                 // crimes.addCrime(100, TypesOfCrimes.INCHOATE, "Theft of X Gaming Console and
-                // 20 games", "03-03-2021 19:00",
-                // "1725 Harbinson Blvd", "edf66144-0dcb-40d1-b4f2-6cc1d60b1bc6");
+                // 20 games",
+                // "03-03-2021 19:00", "1725 Harbinson Blvd",
+                // "edf66144-0dcb-40d1-b4f2-6cc1d60b1bc6");
                 // Crime crime = Crimes.search(100);
                 // crime.addSuspect(new Suspect("", "", "", "", 18, 150, "5'9\"", "White",
                 // "Male", 10, "Brown", "Shoulder length",

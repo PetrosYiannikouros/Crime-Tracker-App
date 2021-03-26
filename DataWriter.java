@@ -1,6 +1,8 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -113,7 +115,7 @@ public class DataWriter extends DataConstants {
         detectiveDetails.put(DETECTIVE_BADGE_NUMBER, detective.getBadgeNumber());
         detectiveDetails.put(DETECTIVE_ACTIVE_CASES, detective.getActiveCases());
         detectiveDetails.put(DETECTIVE_SOLVED_CASES, detective.getSolvedCases());
-        detectiveDetails.put(DETECTIVE_ACTIVE_CASES_LIST, detective.getActiveCaseList());
+        detectiveDetails.put(DETECTIVE_ACTIVE_CASES_LIST, detective.getCaseNumbers());
 
         return detectiveDetails;
     }
@@ -312,16 +314,16 @@ public class DataWriter extends DataConstants {
     public static JSONObject getCrimeJSON(Crime crime) {
         JSONObject crimeDetails = new JSONObject();
         crimeDetails.put(CRIME_CASE_NUMBER, crime.getCaseNumber());
-        crimeDetails.put(CRIME_TYPE, crime.getType());
+        crimeDetails.put(CRIME_TYPE, crime.getType().toString());
         crimeDetails.put(CRIME_DESCRIPTION, crime.getDescription());
         crimeDetails.put(CRIME_DATE, crime.getDate());
         crimeDetails.put(CRIME_ADDRESS, crime.getAddress());
         crimeDetails.put(CRIME_ASSIGNED_ID, crime.getAssignedId());
-        crimeDetails.put(CRIME_CRIMINALS, crime.getCriminals());
-        crimeDetails.put(CRIME_SUSPECTS, crime.getSuspects());
-        crimeDetails.put(CRIME_WITNESSES, crime.getWitnesses());
-        crimeDetails.put(CRIME_VICTIMS, crime.getVictims());
-        crimeDetails.put(CRIME_EVIDENCES, crime.getEvidence());
+        crimeDetails.put(CRIME_CRIMINALS, getPeopleIds((List<Person>) (List<? extends Person>) crime.getCriminals()));
+        crimeDetails.put(CRIME_SUSPECTS, getPeopleIds((List<Person>) (List<? extends Person>) crime.getSuspects()));
+        crimeDetails.put(CRIME_WITNESSES, getPeopleIds((List<Person>) (List<? extends Person>) crime.getWitnesses()));
+        crimeDetails.put(CRIME_VICTIMS, getPeopleIds((List<Person>) (List<? extends Person>) crime.getWitnesses()));
+        crimeDetails.put(CRIME_EVIDENCES, getEvidenceIds(crime.getEvidence()));
         crimeDetails.put(CRIME_IS_SOLVED, crime.getIsSolved());
 
         return crimeDetails;
@@ -390,5 +392,23 @@ public class DataWriter extends DataConstants {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static JSONArray getPeopleIds(List<Person> people) {
+        JSONArray jsonPeople = new JSONArray();
+        for (Person person : people) {
+            jsonPeople.add(person.getId().toString());
+        }
+
+        return jsonPeople;
+    }
+
+    private static JSONArray getEvidenceIds(List<Evidence> evidences) {
+        JSONArray jsonEvidences = new JSONArray();
+        for (Evidence evidence : evidences) {
+            jsonEvidences.add(evidence.getId().toString());
+        }
+
+        return jsonEvidences;
     }
 }
