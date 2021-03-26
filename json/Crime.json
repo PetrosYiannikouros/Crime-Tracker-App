@@ -50,10 +50,14 @@
         "suspects": [
             "e87c2ffb-20fa-4bf3-a793-0ded4e067155"
         ],
-        "witnesses": [],
+        "witnesses": [
+            "c189acb0-eb95-4e85-b8a8-527afa87d440",
+            "d91ed2b4-c2e7-48f5-9936-0423a898452d"
+        ],
         "victims": [],
         "evidence": [
-            "352df160-65a3-4f2a-8c3b-ff4e61cdbefb"
+            "352df160-65a3-4f2a-8c3b-ff4e61cdbefb",
+            "0149cc26-6bb2-4383-8350-52de9efef10a"
         ],
         "isSolved": false
     }

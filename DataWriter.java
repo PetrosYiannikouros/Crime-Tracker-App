@@ -146,7 +146,6 @@ public class DataWriter extends DataConstants {
         criminalDetails.put(CRIMINAL_LAST_NAME, criminal.getLastName());
         criminalDetails.put(CRIMINAL_DECEASED, criminal.getIsDeceased());
         criminalDetails.put(CRIMINAL_PHONE_NUMBER, criminal.getPhoneNumber());
-        criminalDetails.put(CRIMINAL_CASE_NUMS, criminal.getCases());
         criminalDetails.put(CRIMINAL_NICK_NAME, criminal.getNickName());
         criminalDetails.put(CRIMINAL_AGE, criminal.getAge());
         criminalDetails.put(CRIMINAL_WEIGHT, criminal.getWeight());
