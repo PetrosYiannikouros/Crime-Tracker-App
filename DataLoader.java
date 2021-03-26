@@ -25,6 +25,7 @@ public class DataLoader extends DataConstants {
             for (int i = 0; i < officersJSON.size(); ++i) {
                 JSONObject officerJSON = (JSONObject) officersJSON.get(i);
                 String id = (String) officerJSON.get(OFFICER_ID);
+                UUID idUUID = UUID.fromString(id);
                 String firstName = (String) officerJSON.get(OFFICER_FIRST_NAME);
                 String lastName = (String) officerJSON.get(OFFICER_LAST_NAME);
                 String userName = (String) officerJSON.get(OFFICER_USERNAME);
@@ -34,8 +35,8 @@ public class DataLoader extends DataConstants {
                 int yearsServed = ((Long) officerJSON.get(OFFICER_YEARS_SERVED)).intValue();
                 String rank = (String) officerJSON.get(OFFICER_RANK);
                 String badgeNumber = (String) officerJSON.get(OFFICER_BADGE_NUMBER);
-                officers.add(new Officer(firstName, lastName, userName, password, precinct, department, yearsServed,
-                        rank, badgeNumber));
+                officers.add(new Officer(idUUID, firstName, lastName, userName, password, precinct, department,
+                        yearsServed, rank, badgeNumber));
             }
             return officers;
         } catch (Exception e) {
