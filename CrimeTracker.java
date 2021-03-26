@@ -1,6 +1,7 @@
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.ArrayList;
+import java.util.UUID;
 public class CrimeTracker {
 	private static Users users;
     private static User user;
@@ -188,10 +189,8 @@ public class CrimeTracker {
         ArrayList<Detective> detectiveList = detectives.getDetectives();
         for(int i = 0; i < detectiveList.size(); ++i) {
             detective = detectiveList.get(i);
-            System.out.println(detective.getId());
-            if(detective.getId().equals(id)){
+            if(detective.getId().equals(UUID.fromString(id))){
                 //detective found
-                System.out.print("adfg");
                 return true;
             }
         }
