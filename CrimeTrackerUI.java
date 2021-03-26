@@ -5,8 +5,9 @@ import java.util.UUID;
 public class CrimeTrackerUI {
     public static void main(String[] args) {
         System.out.println(UUID.randomUUID());
-        // Crimes crimes = Crimes.getInstance();
-        // crimes
+        Crimes crimes = Crimes.getInstance();
+        for (Crime crime : crimes)
+            crime.getDate();
         // Criminals criminals = Criminals.getInstance();
         // criminals.addCriminal("Burt", "Harbinson", "555-847-1845", "Flabum", 33, 190,
         // "5'5", "White", 7.0, "Dark Brown",

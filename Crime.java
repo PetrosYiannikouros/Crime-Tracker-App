@@ -32,7 +32,7 @@ public class Crime {
         this.caseNumber = caseNumber;
         this.type = type;
         this.description = description;
-        this.date = simpleDateFormat.format(new Date());
+        this.date = date;
         this.address = address;
         this.assignedId = assignedId;
         this.criminals = criminals;
@@ -49,7 +49,7 @@ public class Crime {
         this.caseNumber = caseNumber;
         this.type = type;
         this.description = description;
-        this.date = simpleDateFormat.format(date);
+        this.date = date;
         this.address = address;
         this.assignedId = assignedId;
         this.criminals = new ArrayList<>();

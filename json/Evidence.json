@@ -14,7 +14,13 @@
     {
         "id": "352df160-65a3-4f2a-8c3b-ff4e61cdbefb",
         "type": "Camera Footage",
-        "description": "Inside and outside the bank.",
+        "description": "Inside and outside the bank. Footage of the getaway vehicle, a 2000 Dodge Caravan",
         "amount": 2
+    },
+    {
+        "id": "0149cc26-6bb2-4383-8350-52de9efef10a",
+        "type": "Forensics",
+        "description": "Possible hair of suspect",
+        "amount": 1
     }
 ]

@@ -60,11 +60,11 @@ public class Criminals {
      * @return
      */
     public static ArrayList<Criminal> search(String tattooQuery, int age, String hairColor, String height) {
-        ArrayList<Criminal> total = Criminals.getInstance().getCriminals();
+        ArrayList<Criminal> criminals = Criminals.getInstance().getCriminals();
         ArrayList<Criminal> results = new ArrayList<>();
 
         if (!tattooQuery.isEmpty()) {
-            for (Criminal criminal : total) {
+            for (Criminal criminal : criminals) {
                 List<String> tattooes = criminal.getTattoos();
                 for (String tattoo : tattooes)
                     if (tattoo.toLowerCase().contains(tattooQuery.toLowerCase()))
@@ -73,7 +73,7 @@ public class Criminals {
         }
 
         if (age > 0 && !hairColor.isEmpty() && !height.isEmpty()) {
-            for (Criminal criminal : total) {
+            for (Criminal criminal : criminals) {
                 if (criminal.getAge() >= age && criminal.getNaturalHairColor().equalsIgnoreCase(hairColor)
                         && criminal.getHeight().equalsIgnoreCase(height))
                     results.add(criminal);

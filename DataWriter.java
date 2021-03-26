@@ -300,7 +300,7 @@ public class DataWriter extends DataConstants {
         }
 
         // Write JSON file
-        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(CRIME_FILE_NAME)) {
 
             file.write(jsonCrimes.toJSONString());
             file.flush();
