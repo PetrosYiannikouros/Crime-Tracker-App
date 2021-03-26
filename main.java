@@ -1,7 +1,9 @@
 public class main {
     public static void main(String[] args) {
         CrimeTracker ct = new CrimeTracker();
-        ct.validEmail("tyler@gmail.net");
+        ct.existingDetective("edf66144-0dcb-40d1-b4f2-6cc1d60b1bc6");
+       // ct.checkCrimeNum("2a5aea58-6361-4blf-b48f-1f5189f8be88");
+        //ct.existingPhoneNumber("864-860-5309");
         //ct.existingEmail("tdog@gmail.com");
        // ct.loginAccount("HEHEGuy100", "beatit");
        //ct.existingUserName("HEHEGuy10");

@@ -1,15 +1,21 @@
-/**
- * 
- */
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.ArrayList;
 public class CrimeTracker {
-	private Users users;
-    private User user;
+	private static Users users;
+    private static User user;
 
-    private Administrators admins;
-    private Administrator admin;
+    private static Administrators admins;
+    private static Administrator admin;
+
+    private static Crimes crimes;
+    private static Crime crime;
+
+    private static Officers officers;
+    private static Officer officer;
+
+    private static Detectives detectives;
+    private static Detective detective;
 
     /**
      * logging into account boolean
@@ -21,7 +27,7 @@ public class CrimeTracker {
      * false if there was a trouble not finding username/ 
      * if password didn't match
      */
-    public boolean loginAccount(String userName, String password) {
+    public static boolean loginAccount(String userName, String password) {
         users = Users.getInstance();
         ArrayList<User> userList = users.getUsers();
         for(int i =0; i < userList.size(); ++i){
@@ -48,7 +54,7 @@ public class CrimeTracker {
      * @return true if username wasnt found in database
      * false, if username already exists amongst users
      */
-    public boolean existingUserName(String userName) {
+    public static boolean existingUserName(String userName) {
         users = Users.getInstance();
         ArrayList<User> userList = users.getUsers();
         for(int i =0; i < users.getUsers().size(); ++i) {
@@ -67,7 +73,7 @@ public class CrimeTracker {
      * @return true if email not found
      * false, if email already exists amongst users
      */
-    public boolean existingEmail(String email) {
+    public static boolean existingEmail(String email) {
         admins = Administrators.getInstance();
         ArrayList<Administrator> adminList = admins.getAdministrators();
         for(int i =0; i < adminList.size(); ++i) {
@@ -87,7 +93,7 @@ public class CrimeTracker {
      * true if yes
      * false if not
      */
-    public boolean validEmail(String email) {
+    public static boolean validEmail(String email) {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
                 "[a-zA-Z0-9_+&*-]+)*@" +
                 "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
@@ -106,8 +112,14 @@ public class CrimeTracker {
             return false;
         }
     }
-
-    public boolean existingPhoneNumber(String phoneNumber) {
+    
+    /**
+     * boolean to check existing phone numbers amongst admins
+     * @param phoneNumber
+     * @return true if phonenumber isn't already in system
+     * false if phoner number is already in account 
+     */ 
+    public static boolean existingPhoneNumber(String phoneNumber) {
         admins = Administrators.getInstance();
         ArrayList<Administrator> adminList = admins.getAdministrators();
         for(int i =0; i < adminList.size(); ++i) {
@@ -118,6 +130,73 @@ public class CrimeTracker {
             }
         }
         return true;
+    }
+    
+    /**
+     * boolean that checks if assigned ID is already registered
+     * @param assingedId
+     * @return true if id isn't already regisered with crime
+     * false if id is already registered to a crime
+     */
+    public static boolean checkCrimeID(String assingedId) {
+        crimes = Crimes.getInstance();
+        ArrayList<Crime> crimeList = crimes.getCrimes();
+        for(int i = 0; i < crimeList.size(); ++i) {
+            crime = crimeList.get(i);
+            if(crime.getAssignedId().equals(assingedId)) {
+                System.out.println("ID already associated with another Case");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * method that checks to see if officer exists
+     * should be used in the process of creating crime
+     * with regards to officer first on scene 
+     * may have to be switched to id??
+     * @param badgeNumber
+     * @return true if officer exists, allowing that test to pass
+     * false if officer doesn't exist in system, not
+     * allowing for the creation of a crime
+     */
+    public static boolean existingOfficer(String badgeNumber) {
+        officers = Officers.getInstance();
+        ArrayList<Officer> officerList = officers.getOfficers();
+        for(int i = 0; i < officerList.size(); ++i) {
+            officer = officerList.get(i);
+            if(officer.getBadgeNumber().equals(badgeNumber)) {
+                //officer found
+                return true;
+            }
+        }
+        System.out.println("Officer not found");
+        return false;
+    }
+
+    /**
+     * method that checks to see if detective exists 
+     * should be used in the process of creating crime
+     * with regards to detective of the case
+     * @param id
+     * @return true, if detective exists in system.
+     * false, if detevtive doesn't exist inside of system.
+     */
+    public static boolean existingDetective(String id) {
+        detectives = Detectives.getInstance();
+        ArrayList<Detective> detectiveList = detectives.getDetectives();
+        for(int i = 0; i < detectiveList.size(); ++i) {
+            detective = detectiveList.get(i);
+            System.out.println(detective.getId());
+            if(detective.getId().equals(id)){
+                //detective found
+                System.out.print("adfg");
+                return true;
+            }
+        }
+        System.out.println("Detective not found");
+        return false;
     }
 }
 
