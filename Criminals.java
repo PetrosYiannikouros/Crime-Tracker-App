@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Criminals {
@@ -37,5 +38,48 @@ public class Criminals {
                 return criminal;
         }
         return null;
+    }
+
+    /**
+     * Searches criminal database based on user input
+     * 
+     * @param tattooQuery search by tattoos
+     * @return
+     */
+    public static ArrayList<Criminal> search(String tattooQuery) {
+        return search(tattooQuery, 0, "", "");
+    }
+
+    /**
+     * Searches criminal database based on user input
+     * 
+     * @param tattooQuery search by tattoos
+     * @param age         search by age
+     * @param hairColor   search by hair color
+     * @param height      search by height
+     * @return
+     */
+    public static ArrayList<Criminal> search(String tattooQuery, int age, String hairColor, String height) {
+        ArrayList<Criminal> criminals = Criminals.getInstance().getCriminals();
+        ArrayList<Criminal> results = new ArrayList<>();
+
+        if (!tattooQuery.isEmpty()) {
+            for (Criminal criminal : criminals) {
+                List<String> tattooes = criminal.getTattoos();
+                for (String tattoo : tattooes)
+                    if (tattoo.toLowerCase().contains(tattooQuery.toLowerCase()))
+                        results.add(criminal);
+            }
+        }
+
+        if (age > 0 && !hairColor.isEmpty() && !height.isEmpty()) {
+            for (Criminal criminal : criminals) {
+                if (criminal.getAge() >= age && criminal.getNaturalHairColor().equalsIgnoreCase(hairColor)
+                        && criminal.getHeight().equalsIgnoreCase(height))
+                    results.add(criminal);
+            }
+        }
+
+        return results;
     }
 }

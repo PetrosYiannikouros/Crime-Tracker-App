@@ -5,6 +5,42 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants {
+    public static void saveAdministrators() {
+        Administrators administrators = Administrators.getInstance();
+        ArrayList<Administrator> administratorList = administrators.getAdministrators();
+        JSONArray jsonAdministrators = new JSONArray();
+
+        // creating all the json objects
+        for (int i = 0; i < administratorList.size(); i++) {
+            jsonAdministrators.add(getAdministratorJSON(administratorList.get(i)));
+        }
+
+        // Write JSON file
+        try (FileWriter file = new FileWriter(ADMINISTRATOR_FILE_NAME)) {
+
+            file.write(jsonAdministrators.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getAdministratorJSON(Administrator administrator) {
+        JSONObject administratorDetails = new JSONObject();
+        administratorDetails.put(ADMINISTRATOR_ID, administrator.getId().toString());
+        administratorDetails.put(ADMINISTRATOR_FIRST_NAME, administrator.getFirstName());
+        administratorDetails.put(ADMINISTRATOR_LAST_NAME, administrator.getLastName());
+        administratorDetails.put(ADMINISTRATOR_USERNAME, administrator.getUserName());
+        administratorDetails.put(ADMINISTRATOR_PASSWORD, administrator.getPassword());
+        administratorDetails.put(ADMINISTRATOR_PRECINCT, administrator.getPrecinct());
+        administratorDetails.put(ADMINISTRATOR_DEPARTMENT, administrator.getDepartment());
+        administratorDetails.put(ADMINISTRATOR_PHONE_NUMBER, administrator.getPhoneNumber());
+        administratorDetails.put(ADMINISTRATOR_EMAIL, administrator.getEmail());
+
+        return administratorDetails;
+    }
+
     public static void saveOfficers() {
         Officers officers = Officers.getInstance();
         ArrayList<Officer> officerList = officers.getOfficers();
@@ -110,7 +146,6 @@ public class DataWriter extends DataConstants {
         criminalDetails.put(CRIMINAL_LAST_NAME, criminal.getLastName());
         criminalDetails.put(CRIMINAL_DECEASED, criminal.getIsDeceased());
         criminalDetails.put(CRIMINAL_PHONE_NUMBER, criminal.getPhoneNumber());
-        criminalDetails.put(CRIMINAL_CASE_NUMS, criminal.getCases());
         criminalDetails.put(CRIMINAL_NICK_NAME, criminal.getNickName());
         criminalDetails.put(CRIMINAL_AGE, criminal.getAge());
         criminalDetails.put(CRIMINAL_WEIGHT, criminal.getWeight());
@@ -264,7 +299,7 @@ public class DataWriter extends DataConstants {
         }
 
         // Write JSON file
-        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(CRIME_FILE_NAME)) {
 
             file.write(jsonCrimes.toJSONString());
             file.flush();

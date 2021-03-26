@@ -28,11 +28,20 @@ public abstract class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    protected Person(UUID id, String firstName, String lastName, String phoneNumber) {
+    /**
+     * Helps data loader that has existing parameters
+     * 
+     * @param id          found in JSON file
+     * @param firstName   found in JSON file
+     * @param lastName    found in JSON file
+     * @param deceased    found in JSON file
+     * @param phoneNumber found in JSON file
+     */
+    protected Person(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.deceased = false; // default is not deceased
+        this.deceased = deceased;
         this.phoneNumber = phoneNumber;
     }
 

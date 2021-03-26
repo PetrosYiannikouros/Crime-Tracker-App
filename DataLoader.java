@@ -110,9 +110,10 @@ public class DataLoader extends DataConstants {
                 boolean hasCar = ((Boolean) suspectJSON.get(SUSPECT_HAS_CAR)).booleanValue();
                 String carDescription = (String) suspectJSON.get(SUSPECT_CAR_DESCRIPTION);
                 String licensePlate = (String) suspectJSON.get(SUSPECT_LICENSE_PLATE_NUM);
-                suspects.add(new Suspect(idUUID, firstName, lastName, phoneNumber, nickName, age, weight, height, race,
-                        gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
-                        carDescription, licensePlate));
+                ArrayList<String> reasons = (ArrayList<String>) suspectJSON.get(SUSPECT_REASONS);
+                suspects.add(new Suspect(idUUID, firstName, lastName, deceased, phoneNumber, nickName, age, weight,
+                        height, race, gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc,
+                        tattoed, tattooList, hasCar, carDescription, licensePlate, reasons));
             }
             return suspects;
         } catch (Exception e) {
@@ -156,9 +157,9 @@ public class DataLoader extends DataConstants {
                 String licensePlate = (String) criminalJSON.get(CRIMINAL_LICENSE_PLATE_NUM);
                 boolean inJail = ((Boolean) criminalJSON.get(CRIMINAL_IN_JAIL)).booleanValue();
                 ArrayList<String> convictions = (ArrayList<String>) criminalJSON.get(CRIMINAL_CONVICTIONS);
-                criminals.add(new Criminal(idUUID, firstName, lastName, phoneNumber, nickName, age, weight, height,
-                        race, gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed,
-                        hasCar, carDescription, licensePlate, inJail));
+                criminals.add(new Criminal(idUUID, firstName, lastName, deceased, phoneNumber, nickName, age, weight,
+                        height, race, gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc,
+                        tattoed, tattooList, hasCar, carDescription, licensePlate, inJail, convictions));
             }
             return criminals;
         } catch (Exception e) {
@@ -186,7 +187,8 @@ public class DataLoader extends DataConstants {
                 String location = (String) victimJSON.get(VICTIM_LOCATION);
                 String story = (String) victimJSON.get(VICTIM_STORY);
                 String criminalDesc = (String) victimJSON.get(VICTIM_CRIMINAL_DESCRIPTION);
-                victims.add(new Victim(idUUID, firstName, lastName, phoneNumber, location, story, criminalDesc));
+                victims.add(
+                        new Victim(idUUID, firstName, lastName, deceased, phoneNumber, location, story, criminalDesc));
             }
             return victims;
         } catch (Exception e) {
@@ -209,11 +211,12 @@ public class DataLoader extends DataConstants {
                 UUID idUUID = UUID.fromString(id);
                 String firstName = (String) witnessJSON.get(WITNESS_FIRST_NAME);
                 String lastName = (String) witnessJSON.get(WITNESS_LAST_NAME);
+                boolean deceased = ((Boolean) witnessJSON.get(WITNESS_DECEASED)).booleanValue();
                 String phoneNumber = (String) witnessJSON.get(WITNESS_PHONE_NUMBER);
                 boolean proof = ((Boolean) witnessJSON.get(WITNESS_PROOF)).booleanValue();
                 String story = (String) witnessJSON.get(WITNESS_STORY);
                 String location = (String) witnessJSON.get(WITNESS_LOCATION);
-                witnesses.add(new Witness(idUUID, firstName, lastName, phoneNumber, proof, story, location));
+                witnesses.add(new Witness(idUUID, firstName, lastName, deceased, phoneNumber, proof, story, location));
             }
             return witnesses;
         } catch (Exception e) {

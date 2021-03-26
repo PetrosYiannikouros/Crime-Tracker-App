@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
 public class Crimes {
     private static Crimes crimes = null;
@@ -25,5 +23,15 @@ public class Crimes {
             String assignedId) {
         crimeList.add(new Crime(caseNumber, type, description, date, address, assignedId));
         DataWriter.saveCrimes();
+    }
+
+    public static Crime search(int caseNumber) {
+        ArrayList<Crime> crimes = Crimes.getInstance().getCrimes();
+        for (Crime crime : crimes)
+            if (crime.getCaseNumber() == caseNumber)
+                return crime;
+
+        System.out.println("Crime NOT found. Search for another case #");
+        return null;
     }
 }

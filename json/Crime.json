@@ -3,7 +3,7 @@
         "caseNumber": 5,
         "type": "INCHOATE",
         "description": "trespass early morning in high crime area",
-        "date": "08/12/2020 06:50",
+        "date": "08-12-2020 06:50",
         "address": "349 Lake Avenue",
         "assignedId": "edf66144-0dcb-40d1-b4f2-6cc1d60b1bc6",
         "criminals": [
@@ -23,7 +23,7 @@
         "caseNumber": 67,
         "type": "PERSONAL",
         "description": "murder late night at hotel",
-        "date": "09/04/2008 23:00",
+        "date": "09-04-2008 23:00",
         "address": "4897 Ocean Blvd",
         "assignedId": "2a5aea58-6361-4b0f-b48f-1f5189f8be88",
         "criminals": [
@@ -43,17 +43,21 @@
         "caseNumber": 139,
         "type": "STATUTORY",
         "description": "Bank Robbery",
-        "date": "12/10/2020 09:00",
+        "date": "12-10-2020 09:00",
         "address": "31 Main Street",
         "assignedId": "2a5aea58-6361-4b0f-b48f-1f5189f8be88",
         "criminals": [],
         "suspects": [
             "e87c2ffb-20fa-4bf3-a793-0ded4e067155"
         ],
-        "witnesses": [],
+        "witnesses": [
+            "c189acb0-eb95-4e85-b8a8-527afa87d440",
+            "d91ed2b4-c2e7-48f5-9936-0423a898452d"
+        ],
         "victims": [],
         "evidence": [
-            "352df160-65a3-4f2a-8c3b-ff4e61cdbefb"
+            "352df160-65a3-4f2a-8c3b-ff4e61cdbefb",
+            "0149cc26-6bb2-4383-8350-52de9efef10a"
         ],
         "isSolved": false
     }

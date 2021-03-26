@@ -56,11 +56,11 @@ public abstract class PersonOfInterest extends Person {
     }
 
     // Helps retrieve actual UUID and not create another random one
-    public PersonOfInterest(UUID id, String firstName, String lastName, String phoneNumber, String nickName, int age,
-            int weight, String height, String race, String gender, double shoeSize, String naturalHairColor,
-            String hairLength, String facialHairDesc, String clothesDesc, boolean tattooed, boolean hasCar,
-            String carDescription, String licensePlate) {
-        super(id, firstName, lastName, phoneNumber);
+    public PersonOfInterest(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber,
+            String nickName, int age, int weight, String height, String race, String gender, double shoeSize,
+            String naturalHairColor, String hairLength, String facialHairDesc, String clothesDesc, boolean tattooed,
+            ArrayList<String> tattoos, boolean hasCar, String carDescription, String licensePlate) {
+        super(id, firstName, lastName, deceased, phoneNumber);
         this.nickName = nickName;
         this.age = age;
         this.weight = weight;
@@ -73,7 +73,7 @@ public abstract class PersonOfInterest extends Person {
         this.facialHairDesc = facialHairDesc;
         this.clothesDesc = clothesDesc;
         this.tattooed = tattooed;
-        this.tattoos = new ArrayList<>();
+        this.tattoos = tattoos;
         this.hasCar = hasCar;
         if (hasCar) {
             this.carDescription = carDescription;
