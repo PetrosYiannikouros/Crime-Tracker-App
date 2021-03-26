@@ -55,6 +55,7 @@ public class DataLoader extends DataConstants {
             for (int i = 0; i < detectivesJSON.size(); ++i) {
                 JSONObject detectiveJSON = (JSONObject) detectivesJSON.get(i);
                 String id = (String) detectiveJSON.get(DETECTIVE_ID);
+                UUID idUUID = UUID.fromString(id);
                 String firstName = (String) detectiveJSON.get(DETECTIVE_FIRST_NAME);
                 String lastName = (String) detectiveJSON.get(DETECTIVE_LAST_NAME);
                 String userName = (String) detectiveJSON.get(DETECTIVE_USERNAME);
@@ -66,9 +67,9 @@ public class DataLoader extends DataConstants {
                 String badgeNumber = (String) detectiveJSON.get(DETECTIVE_BADGE_NUMBER);
                 int activeCases = ((Long) detectiveJSON.get(DETECTIVE_ACTIVE_CASES)).intValue();
                 int solvedCases = ((Long) detectiveJSON.get(DETECTIVE_SOLVED_CASES)).intValue();
-                ArrayList<Crime> activeCasesList = (ArrayList<Crime>) detectiveJSON.get(DETECTIVE_ACTIVE_CASES_LIST);
-                detectives.add(new Detective(firstName, lastName, userName, password, precinct, department, yearsServed,
-                        rank, badgeNumber, activeCases, solvedCases));
+                ArrayList<Integer> caseNumbers = (ArrayList<Integer>) detectiveJSON.get(DETECTIVE_ACTIVE_CASES_LIST);
+                detectives.add(new Detective(idUUID, firstName, lastName, userName, password, precinct, department,
+                        yearsServed, rank, badgeNumber, activeCases, solvedCases, caseNumbers));
             }
             return detectives;
         } catch (Exception e) {

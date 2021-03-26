@@ -5,11 +5,12 @@
  */
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Detective extends Officer {
     private int activeCases;
     private int solvedCases;
-    private List<Crime> activeCasesList;
+    private List<Integer> caseNumbers;
 
     /**
      * Default Constructor
@@ -19,7 +20,16 @@ public class Detective extends Officer {
         super(firstName, lastName, userName, password, precint, department, yearsServed, rank, badgeNumber);
         this.activeCases = activeCases;
         this.solvedCases = solvedCases;
-        activeCasesList = new ArrayList<>();
+        this.caseNumbers = new ArrayList<>();
+    }
+
+    public Detective(UUID id, String firstName, String lastName, String userName, String password, String precint,
+            String department, int yearsServed, String rank, String badgeNumber, int activeCases, int solvedCases,
+            ArrayList<Integer> caseNumbers) {
+        super(id, firstName, lastName, userName, password, precint, department, yearsServed, rank, badgeNumber);
+        this.activeCases = activeCases;
+        this.solvedCases = solvedCases;
+        this.caseNumbers = caseNumbers;
     }
 
     // getter section
@@ -46,8 +56,8 @@ public class Detective extends Officer {
      * 
      * @return activeCaseList
      */
-    public List<Crime> getActiveCaseList() {
-        return activeCasesList;
+    public List<Crime> getCaseNumbers() {
+        return this.caseNumbers;
     }
 
     // setter section

@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 /**
  * class for officers typer of user
  */
@@ -16,6 +18,14 @@ public class Officer extends User {
     public Officer(String firstName, String lastName, String userName, String password, String precinct,
             String department, int yearsServed, String rank, String badgeNumber) {
         super(firstName, lastName, userName, password, precinct, department);
+        this.yearsServed = yearsServed;
+        this.rank = rank;
+        this.badgeNumber = badgeNumber;
+    }
+
+    public Officer(UUID id, String firstName, String lastName, String userName, String password, String precinct,
+            String department, int yearsServed, String rank, String badgeNumber) {
+        super(id, firstName, lastName, userName, password, precinct, department);
         this.yearsServed = yearsServed;
         this.rank = rank;
         this.badgeNumber = badgeNumber;

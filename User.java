@@ -18,6 +18,7 @@ public class User {
     private String precinct;
     private String department;
     private List<Crime> crimeList;
+
     public User() {
 
     }
@@ -25,6 +26,18 @@ public class User {
     public User(String firstName, String lastName, String userName, String password, String precinct,
             String department) {
         this.id = UUID.randomUUID();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        crimeList = new ArrayList<>();
+        this.password = password;
+        this.precinct = precinct;
+        this.department = department;
+    }
+
+    public User(UUID id, String firstName, String lastName, String userName, String password, String precinct,
+            String department) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
