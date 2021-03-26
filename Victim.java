@@ -25,9 +25,9 @@ public class Victim extends Person {
         this.criminalDesc = criminalDesc;
     }
 
-    public Victim(UUID id, String firstName, String lastName, String phoneNumber, String location, String story,
-            String criminalDesc) {
-        super(id, firstName, lastName, phoneNumber);
+    public Victim(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber, String location,
+            String story, String criminalDesc) {
+        super(id, firstName, lastName, deceased, phoneNumber);
         this.location = location;
         this.story = story;
         this.criminalDesc = criminalDesc;

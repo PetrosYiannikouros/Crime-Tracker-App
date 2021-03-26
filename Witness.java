@@ -25,9 +25,9 @@ public class Witness extends Person {
         this.location = location;
     }
 
-    public Witness(UUID id, String firstName, String lastName, String phoneNumber, boolean proof, String story,
-            String location) {
-        super(id, firstName, lastName, phoneNumber);
+    public Witness(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber, boolean proof,
+            String story, String location) {
+        super(id, firstName, lastName, deceased, phoneNumber);
         this.proof = proof;
         this.story = story;
         this.location = location;
