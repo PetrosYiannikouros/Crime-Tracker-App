@@ -156,18 +156,18 @@ public class CrimeTracker {
      * method that checks to see if officer exists
      * should be used in the process of creating crime
      * with regards to officer first on scene 
-     * may have to be switched to id??
      * @param badgeNumber
      * @return true if officer exists, allowing that test to pass
      * false if officer doesn't exist in system, not
      * allowing for the creation of a crime
      */
-    public static boolean existingOfficer(String badgeNumber) {
+    public static boolean existingOfficer(String id) {
         officers = Officers.getInstance();
         ArrayList<Officer> officerList = officers.getOfficers();
         for(int i = 0; i < officerList.size(); ++i) {
             officer = officerList.get(i);
-            if(officer.getBadgeNumber().equals(badgeNumber)) {
+            System.out.println(officer.getId());
+            if(officer.getId().equals(UUID.fromString(id))) {
                 //officer found
                 return true;
             }
