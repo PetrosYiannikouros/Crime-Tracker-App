@@ -270,7 +270,7 @@ public class Crime {
         System.out.println("*****Evidence*****");
         for (int i = 0; i < evidence.size(); ++i) {
             Evidence evi = evidence.get(i);
-            System.out.println(evi);
+            System.out.println(evi.getDescription());
         }
         if (isSolved) {
             System.out.println("Case Status: Solved");

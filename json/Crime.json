@@ -46,7 +46,7 @@
         "date": "12-10-2020 09:00",
         "address": "31 Main Street",
         "assignedId": "2a5aea58-6361-4b0f-b48f-1f5189f8be88",
-        "criminals": [],
+        "criminals": ["887c318e-1f17-407b-984e-c429a46d2231"],
         "suspects": [
             "e87c2ffb-20fa-4bf3-a793-0ded4e067155"
         ],
@@ -54,7 +54,7 @@
             "c189acb0-eb95-4e85-b8a8-527afa87d440",
             "d91ed2b4-c2e7-48f5-9936-0423a898452d"
         ],
-        "victims": [],
+        "victims": ["36ef79b8-218d-4861-9134-6a72b6b15ad3"],
         "evidence": [
             "352df160-65a3-4f2a-8c3b-ff4e61cdbefb",
             "0149cc26-6bb2-4383-8350-52de9efef10a"
