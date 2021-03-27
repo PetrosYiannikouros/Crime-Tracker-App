@@ -30,6 +30,11 @@ public class Suspects {
         DataWriter.saveSuspects();
     }
 
+    public void addSuspect(Suspect suspect) {
+        suspectList.add(suspect);
+        DataWriter.saveSuspects();
+    }
+
     public Suspect getSuspect(UUID id) {
         for (Suspect suspect : suspectList)
             if (suspect.getId().equals(id))

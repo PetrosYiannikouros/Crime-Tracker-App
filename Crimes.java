@@ -25,6 +25,11 @@ public class Crimes {
         DataWriter.saveCrimes();
     }
 
+    public void addCrime(Crime crime) {
+        crimeList.add(crime);
+        DataWriter.saveCrimes();
+    }
+
     public static Crime search(int caseNumber) {
         ArrayList<Crime> crimes = Crimes.getInstance().getCrimes();
         for (Crime crime : crimes)

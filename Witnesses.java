@@ -28,6 +28,11 @@ public class Witnesses {
         DataWriter.saveWitnesses();
     }
 
+    public void addWitness(Witness witness) {
+        witnessList.add(witness);
+        DataWriter.saveWitnesses();
+    }
+
     public Witness getWitness(UUID id) {
         for (Witness witness : witnessList)
             if (witness.getId().equals(id))

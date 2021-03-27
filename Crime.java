@@ -1,15 +1,10 @@
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
  * Stores all details
  */
 public class Crime {
-    String pattern = "dd-MM-yyyy HH:mm";
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
     private int caseNumber;
     private TypesOfCrimes type;
     private String description;
