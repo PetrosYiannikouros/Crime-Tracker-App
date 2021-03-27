@@ -207,5 +207,24 @@ public class CrimeTracker {
         System.out.println("Detective not found");
         return false;
     }
+
+
+    /**
+     * Method to check if an existing crime is in database
+     * @param caseNum
+     * @return true if found 
+     * false if not found 
+     */
+    public static boolean existingCrime(int caseNum) {
+        crimes = Crimes.getInstance();
+        ArrayList<Crime> crimeList = crimes.getCrimes();
+        for(int i =0; i < crimes.getCrimes().size(); ++i) {
+            crime = crimeList.get(i);
+            if (crime.getCaseNumber() == (caseNum)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 

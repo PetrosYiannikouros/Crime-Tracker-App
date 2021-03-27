@@ -179,6 +179,12 @@ public class CrimeTrackerUI {
 
     }
 
+    public static void crimeSearch() {
+        System.out.println("What is the case number of the crime you are trying to search?");
+        int caseNum = scanner.nextInt();
+        
+    }
+
     /**
      * displays crime by calling CrimeTracker to display through
      * Crimelist
@@ -186,7 +192,6 @@ public class CrimeTrackerUI {
      */
     private static void displayCrime(String id) {
         System.out.println("\n-----------Crime-----------");
-
         crimeTrack.dispCrime(id);
     }
 }
