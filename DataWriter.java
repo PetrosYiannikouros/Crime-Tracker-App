@@ -322,7 +322,7 @@ public class DataWriter extends DataConstants {
         crimeDetails.put(CRIME_CRIMINALS, getPeopleIds((List<Person>) (List<? extends Person>) crime.getCriminals()));
         crimeDetails.put(CRIME_SUSPECTS, getPeopleIds((List<Person>) (List<? extends Person>) crime.getSuspects()));
         crimeDetails.put(CRIME_WITNESSES, getPeopleIds((List<Person>) (List<? extends Person>) crime.getWitnesses()));
-        crimeDetails.put(CRIME_VICTIMS, getPeopleIds((List<Person>) (List<? extends Person>) crime.getWitnesses()));
+        crimeDetails.put(CRIME_VICTIMS, getPeopleIds((List<Person>) (List<? extends Person>) crime.getVictims()));
         crimeDetails.put(CRIME_EVIDENCES, getEvidenceIds(crime.getEvidence()));
         crimeDetails.put(CRIME_IS_SOLVED, crime.getIsSolved());
 

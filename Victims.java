@@ -32,6 +32,11 @@ public class Victims {
         DataWriter.saveVictims();
     }
 
+    public void addVictim(Victim victim) {
+        victimList.add(victim);
+        DataWriter.saveVictims();
+    }
+
     public Victim getVictim(UUID id) {
         for (Victim victim : victimList)
             if (victim.getId().equals(id))

@@ -27,6 +27,11 @@ public class Evidences {
         DataWriter.saveEvidences();
     }
 
+    public void addEvidence(Evidence evidence) {
+        evidenceList.add(evidence);
+        DataWriter.saveEvidences();
+    }
+
     public Evidence getEvidence(UUID id) {
         for (Evidence evidence : evidenceList)
             if (evidence.getId().equals(id))
