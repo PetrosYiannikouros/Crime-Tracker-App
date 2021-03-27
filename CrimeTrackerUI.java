@@ -56,7 +56,8 @@ public class CrimeTrackerUI {
     }
 
     public static void main(String[] args) {
-
+        CrimeTrackerUI ui = new CrimeTrackerUI();
+        ui.crimeSearch();
     }
 
     /**
@@ -183,11 +184,11 @@ public class CrimeTrackerUI {
 
     }
 
-    public static void crimeSearch() {
+    public void crimeSearch() {
         System.out.println("What is the case number of the crime you are trying to search?");
         int caseNum = scanner.nextInt();
         if (CrimeTracker.existingCrime(caseNum)) {
-            System.out.println("asfga");
+           // System.out.println("asfga");
         } else {
             System.out.println("Case Number doesn't exist");
         }

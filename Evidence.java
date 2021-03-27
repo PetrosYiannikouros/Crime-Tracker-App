@@ -12,6 +12,10 @@ public class Evidence {
     /**
      * Constructor for Evidence object
      */
+
+     public Evidence() {
+     }
+
     public Evidence(String type, String description, int amount) {
         this.id = UUID.randomUUID();
         this.type = type;

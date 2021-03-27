@@ -245,23 +245,32 @@ public class Crime {
                 + getAddress() + "\nAssigned ID: " + getAssignedId() + "\n*****Criminals*****");
 
         for (int i = 0; i < criminals.size(); ++i) {
-            System.out.println(criminals.get(i));
+            Criminal crimial = criminals.get(i);
+            System.out.println("First Name: " + crimial.getFirstName() + 
+            "\nLast Name: " + crimial.getLastName());
         }
         System.out.println("*****Suspects*****");
         for (int i = 0; i < suspects.size(); ++i) {
-            System.out.println(suspects.get(i));
+            Suspect sus = suspects.get(i);
+            System.out.println("First Name: " + sus.getFirstName() +
+            "\nLast Name: " + sus.getLastName());
         }
         System.out.println("*****Witnesses*****");
         for (int i = 0; i < witnesses.size(); ++i) {
-            System.out.println(witnesses.get(i));
+            Witness wit = witnesses.get(i);
+            System.out.println("First Name: " + wit.getFirstName() +
+            "\nLast Name: " + wit.getLastName());
         }
         System.out.println("*****Victims*****");
         for (int i = 0; i < victims.size(); ++i) {
-            System.out.println(victims.get(i));
+            Victim vic = victims.get(i);
+            System.out.println("First Name: " + vic.getFirstName() +
+            "\nLast Name: " + vic.getLastName());
         }
         System.out.println("*****Evidence*****");
         for (int i = 0; i < evidence.size(); ++i) {
-            System.out.println(evidence.get(i));
+            Evidence evi = evidence.get(i);
+            System.out.println(evi);
         }
         if (isSolved) {
             System.out.println("Case Status: Solved");

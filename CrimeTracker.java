@@ -46,7 +46,7 @@ public class CrimeTracker {
         System.out.println("Username not found");
         return false;
     }
-
+    
     /**
      * checks to see if userName already exists amongst users
      * 
