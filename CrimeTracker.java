@@ -153,6 +153,16 @@ public class CrimeTracker {
     }
 
     /**
+     * displays the crime associated with the already checked id
+     * @param assignedID String id associated with crime
+     */
+    public static void dispCrime(String assignedID) {
+
+    }
+
+
+
+    /**
      * method that checks to see if officer exists
      * should be used in the process of creating crime
      * with regards to officer first on scene 
