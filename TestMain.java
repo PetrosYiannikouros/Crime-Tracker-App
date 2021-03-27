@@ -3,6 +3,13 @@ import java.util.UUID;
 
 public class TestMain {
         public static void main(String[] args) {
+                Suspects suspects = Suspects.getInstance();
+                ArrayList<String> tattoos = new ArrayList<>();
+                tattoos.add("Cobra on left shoulder");
+                tattoos.add("UFC belt on right shoulder");
+                suspects.addSuspect("Sam", "Alvey", "555-8127-8123", "Smiling", 35, 205, "6'2\"", "White", "Male", 14,
+                                "Red", "Short", "Scruffy", "Shorts and short shirt", true, true, "2014 Ford Mustang",
+                                "Unknown");
                 // ArrayList<Criminal> results = Criminals.search("", 30, "black", "6'2\"");
                 // for (Criminal criminal : results) {
                 // System.out.println(criminal.getId());
@@ -12,9 +19,9 @@ public class TestMain {
                 // for (Evidence evidence : crime.getEvidence())
                 // System.out.println(evidence.getDescription());
 
-                ArrayList<Crime> crimes = Crimes.getInstance().getCrimes();
-                for (Crime crime : crimes)
-                        System.out.println(crime.getDate());
+                // ArrayList<Crime> crimes = Crimes.getInstance().getCrimes();
+                // for (Crime crime : crimes)
+                // System.out.println(crime.getDate());
 
                 // Detectives test = Detectives.getInstance();
                 // // test.getDetectives();

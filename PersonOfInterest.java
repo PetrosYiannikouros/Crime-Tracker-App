@@ -50,8 +50,8 @@ public abstract class PersonOfInterest extends Person {
             this.carDescription = carDescription;
             this.licensePlate = licensePlate;
         } else {
-            this.carDescription = "Not known or N/A";
-            this.licensePlate = "Not known or N/A";
+            this.carDescription = "Not known";
+            this.licensePlate = "Not known";
         }
     }
 
@@ -346,5 +346,9 @@ public abstract class PersonOfInterest extends Person {
      */
     public void setLicense(String license) {
         this.licensePlate = license;
+    }
+
+    public void addTattoo(String tattoo) {
+        this.tattoos.add(tattoo);
     }
 }

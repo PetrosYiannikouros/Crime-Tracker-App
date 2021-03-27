@@ -27,7 +27,7 @@ public class Suspects {
         suspectList.add(new Suspect(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender,
                 shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar, carSpecs,
                 licensePlate));
-        DataWriter.saveCriminals();
+        DataWriter.saveSuspects();
     }
 
     public Suspect getSuspect(UUID id) {

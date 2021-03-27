@@ -128,7 +128,7 @@ public abstract class DataConstants {
     protected static final String SUSPECT_HAS_CAR = "hasCar";
     protected static final String SUSPECT_CAR_DESCRIPTION = "carDescription";
     protected static final String SUSPECT_LICENSE_PLATE_NUM = "licensePlate";
-    protected static final String SUSPECT_REASONS = "reasons:";
+    protected static final String SUSPECT_REASONS = "reasons";
 
     // Crime
     protected static final String CRIME_FILE_NAME = "json/Crime.json";
