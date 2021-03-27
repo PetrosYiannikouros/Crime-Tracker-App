@@ -188,6 +188,8 @@ public class Crime {
      */
     public void addSuspect(Suspect suspect) {
         suspects.add(suspect);
+        Suspects suspects = Suspects.getInstance();
+        suspects.addSuspect(suspect);
     }
 
     /**
@@ -197,6 +199,8 @@ public class Crime {
      */
     public void addWitness(Witness witness) {
         witnesses.add(witness);
+        Witnesses witnesses = Witnesses.getInstance();
+        witnesses.addWitness(witness);
     }
 
     /**
@@ -206,6 +210,8 @@ public class Crime {
      */
     public void addVictim(Victim victim) {
         victims.add(victim);
+        Victims victims = Victims.getInstance();
+        victims.addVictim(victim);
     }
 
     /**
@@ -215,6 +221,8 @@ public class Crime {
      */
     public void addEvidence(Evidence evidenceItem) {
         evidence.add(evidenceItem);
+        Evidences evidences = Evidences.getInstance();
+        evidences.addEvidence(evidenceItem);
     }
 
     /**
@@ -229,5 +237,36 @@ public class Crime {
      */
     private void deleteCrime() {
         // future functionality
+    }
+
+    public void printCrime() {
+        System.out.println("Case Number: " + getCaseNumber() + "\nType Of Crime: " + getType()
+                + "\nDescription of Crime: " + getDescription() + "\nDate of Crime: " + getDate() + "\nAddress: "
+                + getAddress() + "\nAssigned ID: " + getAssignedId() + "\n*****Criminals*****");
+
+        for (int i = 0; i < criminals.size(); ++i) {
+            System.out.println(criminals.get(i));
+        }
+        System.out.println("*****Suspects*****");
+        for (int i = 0; i < suspects.size(); ++i) {
+            System.out.println(suspects.get(i));
+        }
+        System.out.println("*****Witnesses*****");
+        for (int i = 0; i < witnesses.size(); ++i) {
+            System.out.println(witnesses.get(i));
+        }
+        System.out.println("*****Victims*****");
+        for (int i = 0; i < victims.size(); ++i) {
+            System.out.println(victims.get(i));
+        }
+        System.out.println("*****Evidence*****");
+        for (int i = 0; i < evidence.size(); ++i) {
+            System.out.println(evidence.get(i));
+        }
+        if (isSolved) {
+            System.out.println("Case Status: Solved");
+        } else {
+            System.out.println("Case Status: UnSolved");
+        }
     }
 }

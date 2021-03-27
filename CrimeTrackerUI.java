@@ -1,11 +1,8 @@
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
 import java.util.Scanner;
 
 public class CrimeTrackerUI {
     private static final String WELCOME_MESSAGE = "Welcome to Crime Tracker";
-    private String[] menuOptions = {"Login","Add Crime","Add Person","Display Crime"};
+    private String[] menuOptions = { "Login", "Add Crime", "Search Crime", "Search Criminal" };
     private static Scanner scanner;
     private static CrimeTracker crimeTrack;
 
@@ -23,61 +20,43 @@ public class CrimeTrackerUI {
     public void run() {
         System.out.println(WELCOME_MESSAGE);
 
-        //would loop until user is finished
-        while(true) {
+        // would loop until user is finished
+        while (true) {
             displayMenuOptions();
 
             int userChoice = getUserChoice(menuOptions.length);
 
-            if(userChoice == -1) {
+            if (userChoice == -1) {
                 System.out.println("Not a valid choice");
                 continue;
             }
 
-            if (userChoice == menuOptions.length -1) {
+            if (userChoice == menuOptions.length - 1) {
                 break;
             }
 
-            switch(userChoice) {
-                case(0):
-                    promptForUsernameAndPassword();
-                    break;
-                case(1):
-                    addCrime();
-                    break;
-                case(2):
-                    promtForPerson();
-                    break;
-                case(3):
-                    promptForCrime();
-                    break;
-                default:
-                    break;
+            switch (userChoice) {
+            case (0):
+                login();
+                break;
+            case (1):
+                addCrime();
+                break;
+            case (2):
+                promtForPerson();
+                break;
+            case (3):
+                promptForCrime();
+                break;
+            default:
+                break;
             }
         }
         System.out.println("Goodbye");
     }
 
-
-
-
     public static void main(String[] args) {
-        System.out.println(UUID.randomUUID());
-        Crimes crimes = Crimes.getInstance();
-        for (Crime crime : crimes)
-            crime.getDate();
-        // Criminals criminals = Criminals.getInstance();
-        // criminals.addCriminal("Burt", "Harbinson", "555-847-1845", "Flabum", 33, 190,
-        // "5'5", "White", 7.0, "Dark Brown",
-        // "Short and balding", "clean shaven", "unknown", false, true, "2008 Saab
-        // Turbo", "AIG712", false);
-        // Detectives detectives = Detectives.getInstance();
-        // detectives.addDetective("Tom", "Johnson", "jtom54", "hello8*", "Lexington",
-        // "Traffic", 15, "Detective", "863",
-        // 0, 0);
-        // Officers officers = Officers.getInstance();
-        // officers.addOfficer("Sam", "Smith", "Sammyboy", "asdf1234", "North Columbia",
-        // "State", 10, "Sergeant", "513");
+
     }
 
     /**
@@ -85,14 +64,15 @@ public class CrimeTrackerUI {
      */
     private void displayMenuOptions() {
         System.out.println("\n-----------Menu-----------");
-        for(int i=0;i<menuOptions.length;i++) {
-            System.out.println((i+1) + ". " + menuOptions[i]);
+        for (int i = 0; i < menuOptions.length; i++) {
+            System.out.println((i + 1) + ". " + menuOptions[i]);
         }
         System.out.println("\n");
     }
 
     /**
      * obtains the choice of action the user wants to take
+     * 
      * @param numChoices integer of how many total choices there are
      * @return integer for switch case to display and run correct methods
      */
@@ -102,50 +82,75 @@ public class CrimeTrackerUI {
         String input = scanner.nextLine();
         int choice = Integer.parseInt(input) - 1;
 
-        if(choice >= 0 && choice <= numChoices -1) {
+        if (choice >= 0 && choice <= numChoices - 1)
             return choice;
-        }
+
         return -1;
     }
 
     /**
-     * prompts for username and password from user if login is selected
-     * calls CrimeTracker method to check validity
+     * prompts for username and password from user if login is selected calls
+     * CrimeTracker method to check validity
      */
-    public static void promptForUsernameAndPassword() {
+    public static void login() {
         System.out.println("Please enter your username: ");
         String username = scanner.nextLine();
 
-        System.out.println("\nPlease enter your password: ");
-        String passwrd = scanner.nextLine();
+        System.out.println("Please enter your password: ");
+        String password = scanner.nextLine();
 
-        crimeTrack.loginAccount(username, passwrd);
-        return;
-
+        while (!CrimeTracker.loginAccount(username, password)) // keep asking user for correct login details
+            continue;
     }
 
     /**
-     * prompts for all variables of Crime, setting a new crime through
-     * CrimeTracker methods
+     * prompts for all variables of Crime, setting a new crime through CrimeTracker
+     * methods
      */
     public static void addCrime() {
         System.out.println("Please enter the case number: ");
         String caseNumString = scanner.nextLine();
         int caseNum = Integer.parseInt(caseNumString);
 
+        TypesOfCrimes type;
         System.out.println("Enter type of crime: Personal, Property, Inchoate, Statutoru, Financial, Other");
         String typeString = scanner.nextLine();
+        switch (typeString.toUpperCase()) {
+        case "PERSONAL":
+            type = TypesOfCrimes.PERSONAL;
+            break;
+        case "PROPERTY":
+            type = TypesOfCrimes.PROPERTY;
+            break;
+        case "INCHOATE":
+            type = TypesOfCrimes.INCHOATE;
+            break;
+        case "STATUTORY":
+            type = TypesOfCrimes.STATUTORY;
+            break;
+        case "FINANCIAL":
+            type = TypesOfCrimes.FINANCIAL;
+            break;
+        case "OTHER":
+            type = TypesOfCrimes.OTHER;
+            break;
+        default:
+            System.out.println("Not a valid selection.");
+        }
 
+        System.out.println("Please enter description of crime: ");
+        String description = scanner.nextLine();
 
+        System.out.println("Please enter date of crime (follow this format dd/mm/yy hh:mm): ");
+        String date = scanner.nextLine();
 
+        System.out.println("Please enter ");
         /*
-
-            and so on with all variables in Crime
-            add UUID
-            then create new crime
-            add crime to crime list 
-
-        */
+         * 
+         * and so on with all variables in Crime add UUID then create new crime add
+         * crime to crime list
+         * 
+         */
     }
 
     /**
@@ -153,11 +158,10 @@ public class CrimeTrackerUI {
      */
     public static void promtForPerson() {
         /*
-            Maybe ask for type of person, officer, admin, etc...
-        */
+         * Maybe ask for type of person, officer, admin, etc...
+         */
         System.out.println("What is the id of the person you wish to track?\n");
         String id = scanner.nextLine();
-
 
     }
 
@@ -169,8 +173,8 @@ public class CrimeTrackerUI {
         System.out.println("Please enter the Crime ID");
 
         String input = scanner.nextLine();
-        
-        if(!crimeTrack.checkCrimeID(input)) {
+
+        if (!crimeTrack.checkCrimeID(input)) {
             System.out.println("Crime does not exist");
             return;
         }
@@ -179,9 +183,19 @@ public class CrimeTrackerUI {
 
     }
 
+    public static void crimeSearch() {
+        System.out.println("What is the case number of the crime you are trying to search?");
+        int caseNum = scanner.nextInt();
+        if (CrimeTracker.existingCrime(caseNum)) {
+            System.out.println("asfga");
+        } else {
+            System.out.println("Case Number doesn't exist");
+        }
+    }
+
     /**
-     * displays crime by calling CrimeTracker to display through
-     * Crimelist
+     * displays crime by calling CrimeTracker to display through Crimelist
+     * 
      * @param id String of the id associated with a crime
      */
     private static void displayCrime(String id) {
