@@ -200,7 +200,6 @@ public class CrimeTrackerUI {
      */
     private static void displayCrime(String id) {
         System.out.println("\n-----------Crime-----------");
-
         crimeTrack.dispCrime(id);
     }
 }
