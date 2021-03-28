@@ -42,6 +42,7 @@ public abstract class DataConstants {
     protected static final String CRIMINAL_HEIGHT = "height";
     protected static final String CRIMINAL_RACE = "race";
     protected static final String CRIMINAL_GENDER = "gender";
+    protected static final String CRIMINAL_EYE_COLOR = "eyeColor";
     protected static final String CRIMINAL_SHOE_SIZE = "shoeSize";
     protected static final String CRIMINAL_NATURAL_HAIR_COLOR = "naturalHairColor";
     protected static final String CRIMINAL_HAIR_LENGTH = "hairLength";
@@ -118,6 +119,7 @@ public abstract class DataConstants {
     protected static final String SUSPECT_HEIGHT = "height";
     protected static final String SUSPECT_RACE = "race";
     protected static final String SUSPECT_GENDER = "gender";
+    protected static final String SUSPECT_EYE_COLOR = "eyeColor";
     protected static final String SUSPECT_SHOE_SIZE = "shoeSize";
     protected static final String SUSPECT_NATURAL_HAIR_COLOR = "naturalHairColor";
     protected static final String SUSPECT_HAIR_LENGTH = "hairLength";

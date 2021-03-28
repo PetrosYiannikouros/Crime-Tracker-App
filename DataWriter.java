@@ -154,6 +154,7 @@ public class DataWriter extends DataConstants {
         criminalDetails.put(CRIMINAL_HEIGHT, criminal.getHeight());
         criminalDetails.put(CRIMINAL_RACE, criminal.getRace());
         criminalDetails.put(CRIMINAL_GENDER, criminal.getGender());
+        criminalDetails.put(CRIMINAL_EYE_COLOR, criminal.getEyeColor());
         criminalDetails.put(CRIMINAL_SHOE_SIZE, criminal.getShoeSize());
         criminalDetails.put(CRIMINAL_NATURAL_HAIR_COLOR, criminal.getNaturalHairColor());
         criminalDetails.put(CRIMINAL_HAIR_LENGTH, criminal.getHairLength());
@@ -205,6 +206,7 @@ public class DataWriter extends DataConstants {
         suspectDetails.put(SUSPECT_HEIGHT, suspect.getHeight());
         suspectDetails.put(SUSPECT_RACE, suspect.getRace());
         suspectDetails.put(SUSPECT_GENDER, suspect.getGender());
+        suspectDetails.put(SUSPECT_EYE_COLOR, suspect.getEyeColor());
         suspectDetails.put(SUSPECT_SHOE_SIZE, suspect.getShoeSize());
         suspectDetails.put(SUSPECT_NATURAL_HAIR_COLOR, suspect.getNaturalHairColor());
         suspectDetails.put(SUSPECT_HAIR_LENGTH, suspect.getHairLength());

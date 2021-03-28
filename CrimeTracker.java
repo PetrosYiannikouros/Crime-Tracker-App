@@ -29,7 +29,7 @@ public class CrimeTracker {
      * @return true if username and password were valid false if there was a trouble
      *         not finding username/ if password didn't match
      */
-    public static boolean loginAccount(String userName, String password) {
+    public static boolean loginAccountUser(String userName, String password) {
         users = Users.getInstance();
         ArrayList<User> userList = users.getUsers();
         for (int i = 0; i < userList.size(); ++i) {
@@ -38,6 +38,46 @@ public class CrimeTracker {
                 if (user.getPassword().equals(password)) {
                     System.out.println("Logging you in...");
                     currentUser = user;
+                    return true;
+                } else {
+                    System.out.println("Invalid password for username: " + userName);
+                    return false;
+                }
+            }
+        }
+        System.out.println("Username not found");
+        return false;
+    }
+
+    public static boolean loginAccountDetective(String userName, String password) {
+        detectives = Detectives.getInstance();
+        ArrayList<Detective> detectiveList = detectives.getDetectives();
+        for (int i = 0; i < detectiveList.size(); ++i) {
+            detective = detectiveList.get(i);
+            if (detective.getUserName().equals(userName)) {
+                if (detective.getPassword().equals(password)) {
+                    System.out.println("Logging you in as Detective...");
+                    currentUser = detective;
+                    return true;
+                } else {
+                    System.out.println("Invalid password for username: " + userName);
+                    return false;
+                }
+            }
+        }
+        System.out.println("Username not found");
+        return false;
+    }
+
+    public static boolean loginAccountOfficer(String userName, String password) {
+        officers = Officers.getInstance();
+        ArrayList<Officer> officerList = officers.getOfficers();
+        for (int i = 0; i < officerList.size(); ++i) {
+            officer = officerList.get(i);
+            if (officer.getUserName().equals(userName)) {
+                if (officer.getPassword().equals(password)) {
+                    System.out.println("Logging you in as Officer...");
+                    currentUser = officer;
                     return true;
                 } else {
                     System.out.println("Invalid password for username: " + userName);

@@ -9,6 +9,7 @@ public abstract class PersonOfInterest extends Person {
     private String height;
     private String race;
     private String gender;
+    private String eyeColor;
     private double shoeSize;
     private String naturalHairColor;
     private String hairLength;
@@ -28,9 +29,9 @@ public abstract class PersonOfInterest extends Person {
     }
 
     public PersonOfInterest(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
-            String height, String race, String gender, double shoeSize, String naturalHairColor, String hairLength,
-            String facialHairDesc, String clothesDesc, boolean tattooed, boolean hasCar, String carDescription,
-            String licensePlate) {
+            String height, String race, String gender, String eyeColor, double shoeSize, String naturalHairColor,
+            String hairLength, String facialHairDesc, String clothesDesc, boolean tattooed, boolean hasCar,
+            String carDescription, String licensePlate) {
         super(firstName, lastName, phoneNumber);
         this.nickName = nickName;
         this.age = age;
@@ -38,6 +39,7 @@ public abstract class PersonOfInterest extends Person {
         this.height = height;
         this.race = race;
         this.gender = gender;
+        this.eyeColor = eyeColor;
         this.shoeSize = shoeSize;
         this.naturalHairColor = naturalHairColor;
         this.hairLength = hairLength;
@@ -57,9 +59,9 @@ public abstract class PersonOfInterest extends Person {
 
     // Helps retrieve actual UUID and not create another random one
     public PersonOfInterest(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber,
-            String nickName, int age, int weight, String height, String race, String gender, double shoeSize,
-            String naturalHairColor, String hairLength, String facialHairDesc, String clothesDesc, boolean tattooed,
-            ArrayList<String> tattoos, boolean hasCar, String carDescription, String licensePlate) {
+            String nickName, int age, int weight, String height, String race, String gender, String eyeColor,
+            double shoeSize, String naturalHairColor, String hairLength, String facialHairDesc, String clothesDesc,
+            boolean tattooed, ArrayList<String> tattoos, boolean hasCar, String carDescription, String licensePlate) {
         super(id, firstName, lastName, deceased, phoneNumber);
         this.nickName = nickName;
         this.age = age;
@@ -67,6 +69,7 @@ public abstract class PersonOfInterest extends Person {
         this.height = height;
         this.race = race;
         this.gender = gender;
+        this.eyeColor = eyeColor;
         this.shoeSize = shoeSize;
         this.naturalHairColor = naturalHairColor;
         this.hairLength = hairLength;
@@ -133,6 +136,10 @@ public abstract class PersonOfInterest extends Person {
 
     public String getGender() {
         return this.gender;
+    }
+
+    public String getEyeColor() {
+        return this.eyeColor;
     }
 
     /**

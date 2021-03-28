@@ -58,11 +58,6 @@ public class CrimeTrackerUI {
         System.out.println("Goodbye");
     }
 
-    public static void main(String[] args) {
-        CrimeTrackerUI ui = new CrimeTrackerUI();
-        ui.crimeSearch();
-    }
-
     /**
      * displays all options for user to select
      */
@@ -97,14 +92,24 @@ public class CrimeTrackerUI {
      * CrimeTracker method to check validity
      */
     public static void login() {
+        System.out.println("Are you a detective or officer?");
+        String option = scanner.nextLine();
+
         System.out.println("Please enter your username: ");
         String username = scanner.nextLine();
 
         System.out.println("Please enter your password: ");
         String password = scanner.nextLine();
 
-        while (!CrimeTracker.loginAccount(username, password)) // keep asking user for correct login details
-            continue;
+        if (option.equalsIgnoreCase("detective"))
+            while (!CrimeTracker.loginAccountDetective(username, password)) // continue asking user for login details
+                continue;
+        else if (option.equalsIgnoreCase("officer"))
+            while (!CrimeTracker.loginAccountOfficer(username, password)) // continue asking user for login details
+                continue;
+        else
+            while (!CrimeTracker.loginAccountUser(username, password)) // continue asking user for login details
+                continue;
         currentUser = CrimeTracker.getCurrentUser();
     }
 
@@ -148,7 +153,7 @@ public class CrimeTrackerUI {
         System.out.println("Please enter description of crime: ");
         String description = scanner.nextLine();
 
-        System.out.println("Please enter date of crime (follow this format dd/mm/yy hh:mm): ");
+        System.out.println("Please enter date of crime (follow this format dd-mm-yy hh:mm): ");
         String date = scanner.nextLine();
 
         System.out.println("Please enter the address of crime: ");
@@ -158,7 +163,7 @@ public class CrimeTrackerUI {
 
         System.out.println("Please enter how many criminals involved: ");
         int criminalNum = scanner.nextInt();
-
+        scanner.nextLine(); // absorb new space
         while (criminalNum > 0) {
             System.out.println("Enter Criminal #" + criminalNum + " first name: ");
             String firstName = scanner.nextLine();
@@ -216,7 +221,7 @@ public class CrimeTrackerUI {
 
         System.out.println("Please enter how many suspects involved: ");
         int suspectNum = scanner.nextInt();
-
+        scanner.nextLine(); // absorb new space
         while (suspectNum > 0) {
             System.out.println("Enter Suspect #" + suspectNum + " first name: ");
             String firstName = scanner.nextLine();
@@ -228,8 +233,10 @@ public class CrimeTrackerUI {
             String nickName = scanner.nextLine();
             System.out.println("Enter Suspect #" + suspectNum + " age: ");
             int age = scanner.nextInt();
+            scanner.nextLine(); // absorb new space
             System.out.println("Enter Suspect #" + suspectNum + " weight: ");
             int weight = scanner.nextInt();
+            scanner.nextLine(); // absorb new space
             System.out.println("Enter Suspect #" + suspectNum + " height: ");
             String height = scanner.nextLine();
             System.out.println("Enter Suspect #" + suspectNum + " race: ");
@@ -238,6 +245,7 @@ public class CrimeTrackerUI {
             String gender = scanner.nextLine();
             System.out.println("Enter Suspect #" + suspectNum + " shoe size: ");
             double shoeSize = scanner.nextDouble();
+            scanner.nextLine(); // absorb new space
             System.out.println("Enter Suspect #" + suspectNum + " hair color: ");
             String hairColor = scanner.nextLine();
             System.out.println("Enter Suspect #" + suspectNum + " hair length: ");
@@ -252,6 +260,7 @@ public class CrimeTrackerUI {
              */
             System.out.println("Does Suspect #" + criminalNum + " have car? (enter true or false)");
             boolean hasCar = scanner.nextBoolean();
+            scanner.nextLine(); // absorb new space
             System.out.println("Describe Suspect #" + suspectNum + " vehicle: ");
             String carDescription = scanner.nextLine();
             /*
@@ -264,20 +273,66 @@ public class CrimeTrackerUI {
             crime.addSuspect(suspect);
             suspectNum--;
         }
+
         System.out.println("Please enter how many witnesses involved: ");
         int witnessNum = scanner.nextInt();
+        scanner.nextLine(); // absorb new space
+        while (witnessNum > 0) {
+            System.out.println("Enter Witness #" + witnessNum + " first name: ");
+            String firstName = scanner.nextLine();
+            System.out.println("Enter Witness #" + witnessNum + " last name: ");
+            String lastName = scanner.nextLine();
+            System.out.println("Enter Witness #" + witnessNum + " phone number: ");
+            String phoneNumber = scanner.nextLine();
+            System.out.println("Enter Witness #" + witnessNum + " account of events: ");
+            String story = scanner.nextLine();
+            System.out.println("Does Witness #" + witnessNum + " have proof? (enter true or false");
+            boolean proof = scanner.nextBoolean();
+            scanner.nextLine(); // absorb new space
+            System.out.println("Enter Witness #" + witnessNum + " location: ");
+            String location = scanner.nextLine();
+            Witness witness = new Witness(firstName, lastName, phoneNumber, proof, story, location);
+            crime.addWitness(witness);
+            witnessNum--;
+        }
 
         System.out.println("Please enter how many victims involved: ");
         int victimNum = scanner.nextInt();
+        scanner.nextLine(); // absorb new space
+        while (victimNum > 0) {
+            System.out.println("Enter Victim #" + victimNum + " first name: ");
+            String firstName = scanner.nextLine();
+            System.out.println("Enter Victim #" + victimNum + " last name: ");
+            String lastName = scanner.nextLine();
+            System.out.println("Enter Victim #" + victimNum + " phone number: ");
+            String phoneNumber = scanner.nextLine();
+            System.out.println("Enter Victim #" + victimNum + " account of events: ");
+            String story = scanner.nextLine();
+            System.out.println("Enter Victim #" + victimNum + " location: ");
+            String location = scanner.nextLine();
+            System.out.println("Enter Victim #" + victimNum + " description of criminal: ");
+            String criminalDesc = scanner.nextLine();
+            Victim victim = new Victim(firstName, lastName, phoneNumber, location, story, criminalDesc);
+            crime.addVictim(victim);
+            victimNum--;
+        }
 
         System.out.println("Please enter how much pieces of evidence gathered: ");
         int evidenceNum = scanner.nextInt();
-        /*
-         * 
-         * and so on with all variables in Crime add UUID then create new crime add
-         * crime to crime list
-         * 
-         */
+        while (evidenceNum > 0) {
+            System.out.println("Enter Evidence #" + evidenceNum + " type: ");
+            String evidenceType = scanner.nextLine();
+            System.out.println("Enter Evidence #" + evidenceNum + " description: ");
+            String evidenceDescription = scanner.nextLine();
+            System.out.println("Enter Evidence #" + evidenceNum + " amount: ");
+            int amount = scanner.nextInt();
+            scanner.nextLine(); // absorb new space
+            Evidence evidence = new Evidence(evidenceType, evidenceDescription, amount);
+            crime.addEvidence(evidence);
+            evidenceNum--;
+        }
+
+        crimes.addCrime(crime); // adds the crime after filling object with user-desired information
     }
 
     /**
@@ -328,5 +383,12 @@ public class CrimeTrackerUI {
     private static void displayCrime(String id) {
         System.out.println("\n-----------Crime-----------");
         crimeTrack.dispCrime(id);
+    }
+
+    public static void main(String[] args) {
+        CrimeTrackerUI crimeTrackerInterface = new CrimeTrackerUI();
+        crimeTrackerInterface.run();
+        // CrimeTrackerUI ui = new CrimeTrackerUI();
+        // ui.crimeSearch();
     }
 }

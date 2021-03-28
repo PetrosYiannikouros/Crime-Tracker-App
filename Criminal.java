@@ -17,23 +17,25 @@ public class Criminal extends PersonOfInterest {
     }
 
     public Criminal(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
-            String height, String race, String gender, double shoeSize, String naturalHairColor, String hairLength,
-            String facialHairDesc, String clothesDesc, boolean tattoed, boolean hasCar, String carDescription,
-            String licensePlate, boolean inJail) {
-        super(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender, shoeSize, naturalHairColor,
-                hairLength, facialHairDesc, clothesDesc, tattoed, hasCar, carDescription, licensePlate);
+            String height, String race, String gender, String eyeColor, double shoeSize, String naturalHairColor,
+            String hairLength, String facialHairDesc, String clothesDesc, boolean tattoed, boolean hasCar,
+            String carDescription, String licensePlate, boolean inJail) {
+        super(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender, eyeColor, shoeSize,
+                naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar, carDescription,
+                licensePlate);
         this.inJail = inJail;
         this.convictions = new ArrayList<>();
     }
 
     // Helps retrieve actual UUID and not create another random one
     public Criminal(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber, String nickName,
-            int age, int weight, String height, String race, String gender, double shoeSize, String naturalHairColor,
-            String hairLength, String facialHairDesc, String clothesDesc, boolean tattoed, ArrayList<String> tattooes,
-            boolean hasCar, String carDescription, String licensePlate, boolean inJail, ArrayList<String> convictions) {
-        super(id, firstName, lastName, deceased, phoneNumber, nickName, age, weight, height, race, gender, shoeSize,
-                naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, tattooes, hasCar, carDescription,
-                licensePlate);
+            int age, int weight, String height, String race, String gender, String eyeColor, double shoeSize,
+            String naturalHairColor, String hairLength, String facialHairDesc, String clothesDesc, boolean tattoed,
+            ArrayList<String> tattooes, boolean hasCar, String carDescription, String licensePlate, boolean inJail,
+            ArrayList<String> convictions) {
+        super(id, firstName, lastName, deceased, phoneNumber, nickName, age, weight, height, race, gender, eyeColor,
+                shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, tattooes, hasCar,
+                carDescription, licensePlate);
         this.inJail = inJail;
         this.convictions = convictions;
     }

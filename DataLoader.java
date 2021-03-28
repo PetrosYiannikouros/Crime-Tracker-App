@@ -102,6 +102,7 @@ public class DataLoader extends DataConstants {
                 String height = (String) suspectJSON.get(SUSPECT_HEIGHT);
                 String race = (String) suspectJSON.get(SUSPECT_RACE);
                 String gender = (String) suspectJSON.get(SUSPECT_GENDER);
+                String eyeColor = (String) suspectJSON.get(SUSPECT_EYE_COLOR);
                 double shoeSize = ((Double) suspectJSON.get(SUSPECT_SHOE_SIZE)).doubleValue();
                 String naturalHairColor = (String) suspectJSON.get(SUSPECT_NATURAL_HAIR_COLOR);
                 String hairLength = (String) suspectJSON.get(SUSPECT_HAIR_LENGTH);
@@ -114,8 +115,8 @@ public class DataLoader extends DataConstants {
                 String licensePlate = (String) suspectJSON.get(SUSPECT_LICENSE_PLATE_NUM);
                 ArrayList<String> reasons = (ArrayList<String>) suspectJSON.get(SUSPECT_REASONS);
                 suspects.add(new Suspect(idUUID, firstName, lastName, deceased, phoneNumber, nickName, age, weight,
-                        height, race, gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc,
-                        tattoed, tattooList, hasCar, carDescription, licensePlate, reasons));
+                        height, race, gender, eyeColor, shoeSize, naturalHairColor, hairLength, facialHairDesc,
+                        clothesDesc, tattoed, tattooList, hasCar, carDescription, licensePlate, reasons));
             }
             return suspects;
         } catch (Exception e) {
@@ -147,6 +148,7 @@ public class DataLoader extends DataConstants {
                 String height = (String) criminalJSON.get(CRIMINAL_HEIGHT);
                 String race = (String) criminalJSON.get(CRIMINAL_RACE);
                 String gender = (String) criminalJSON.get(CRIMINAL_GENDER);
+                String eyeColor = (String) criminalJSON.get(CRIMINAL_EYE_COLOR);
                 double shoeSize = ((Double) criminalJSON.get(CRIMINAL_SHOE_SIZE)).doubleValue();
                 String naturalHairColor = (String) criminalJSON.get(CRIMINAL_NATURAL_HAIR_COLOR);
                 String hairLength = (String) criminalJSON.get(CRIMINAL_HAIR_LENGTH);
@@ -160,8 +162,8 @@ public class DataLoader extends DataConstants {
                 boolean inJail = ((Boolean) criminalJSON.get(CRIMINAL_IN_JAIL)).booleanValue();
                 ArrayList<String> convictions = (ArrayList<String>) criminalJSON.get(CRIMINAL_CONVICTIONS);
                 criminals.add(new Criminal(idUUID, firstName, lastName, deceased, phoneNumber, nickName, age, weight,
-                        height, race, gender, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc,
-                        tattoed, tattooList, hasCar, carDescription, licensePlate, inJail, convictions));
+                        height, race, gender, eyeColor, shoeSize, naturalHairColor, hairLength, facialHairDesc,
+                        clothesDesc, tattoed, tattooList, hasCar, carDescription, licensePlate, inJail, convictions));
             }
             return criminals;
         } catch (Exception e) {

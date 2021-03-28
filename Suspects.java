@@ -21,12 +21,12 @@ public class Suspects {
     }
 
     public void addSuspect(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
-            String height, String race, String gender, double shoeSize, String naturalHairColor, String hairLength,
-            String facialHairDesc, String clothesDesc, boolean tattoed, boolean hasCar, String carSpecs,
-            String licensePlate) {
+            String height, String race, String gender, String eyeColor, double shoeSize, String naturalHairColor,
+            String hairLength, String facialHairDesc, String clothesDesc, boolean tattoed, boolean hasCar,
+            String carSpecs, String licensePlate) {
         suspectList.add(new Suspect(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender,
-                shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar, carSpecs,
-                licensePlate));
+                eyeColor, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
+                carSpecs, licensePlate));
         DataWriter.saveSuspects();
     }
 
