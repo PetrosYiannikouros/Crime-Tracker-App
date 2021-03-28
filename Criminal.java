@@ -84,4 +84,31 @@ public class Criminal extends PersonOfInterest {
     public void addConvictions(String conviction) {
         convictions.add(conviction);
     }
+
+    public void displayCriminal() {
+        System.out.println("ID: " + getId() + "\n" + "First Name: " + getFirstName() + "\n" + "Last Name: "
+                + getLastName() + "\n" + "Deceased: " + getIsDeceased() + "\n" + "Phone Number: " + getPhoneNumber()
+                + "\n" + "Address: " + getAddress() + "\n" + "Nick Name: " + getNickName() + "\n" + "Age: " + getAge()
+                + "\n" + "Weight: " + getWeight() + "\n" + "Height: " + getHeight() + "\n" + "Race: " + getRace() + "\n"
+                + "Shoe Size: " + getShoeSize() + "\n" + "Hair Color: " + getNaturalHairColor() + "\n" + "Hair Length: "
+                + getHairLength() + "\n" + "Facial Hair: " + getFacialHairDesc() + "\n" + "Clothes: " + getClothesDesc()
+                + "\n" + "Tattoed: " + isTattooed());
+        displayTattoos();
+        System.out.println("Has vehicle: " + hasCar() + "\n" + "Car Description: " + getCarDesc() + "\n"
+                + "License Plate: " + getLicense() + "\n" + "In Jail: " + isInJail());
+        displayConvictions();
+        System.out.println("***************************");
+    }
+
+    public void displayTattoos() {
+        System.out.println("Tattoos:");
+        for (String tattoo : getTattoos())
+            System.out.println(tattoo);
+    }
+
+    public void displayConvictions() {
+        System.out.println("Convictions:");
+        for (String conviction : getConvictions())
+            System.out.println(conviction);
+    }
 }

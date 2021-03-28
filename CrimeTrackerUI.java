@@ -1,13 +1,16 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class CrimeTrackerUI {
     private static final String WELCOME_MESSAGE = "Welcome to Crime Tracker";
-    private String[] menuOptions = { "Login", "Add Crime", "Search Crime", "Search Criminal" };
+    private String[] menuOptions = { "Login", "Add Crime", "Search Criminal", "Search Crime", "Logout" };
     private static Scanner scanner;
     private static CrimeTracker crimeTrack;
     private static User currentUser;
+    private static FileWriter fileWriter;
 
     /**
      * Default construct
@@ -46,16 +49,16 @@ public class CrimeTrackerUI {
                 addCrime();
                 break;
             case (2):
-                promtForPerson();
+                promptForPerson();
                 break;
             case (3):
                 promptForCrime();
                 break;
-            default:
+            case (4):
                 break;
             }
         }
-        System.out.println("Goodbye");
+        System.out.println("Goodbye!");
     }
 
     /**
@@ -102,14 +105,13 @@ public class CrimeTrackerUI {
         String password = scanner.nextLine();
 
         if (option.equalsIgnoreCase("detective"))
-            while (!CrimeTracker.loginAccountDetective(username, password)) // continue asking user for login details
-                continue;
-        else if (option.equalsIgnoreCase("officer"))
-            while (!CrimeTracker.loginAccountOfficer(username, password)) // continue asking user for login details
-                continue;
-        else
-            while (!CrimeTracker.loginAccountUser(username, password)) // continue asking user for login details
-                continue;
+            if (!CrimeTracker.loginAccountDetective(username, password))
+                login();
+            else if (option.equalsIgnoreCase("officer"))
+                if (!CrimeTracker.loginAccountOfficer(username, password))
+                    login();
+                else if (!CrimeTracker.loginAccountUser(username, password))
+                    login();
         currentUser = CrimeTracker.getCurrentUser();
     }
 
@@ -348,13 +350,93 @@ public class CrimeTrackerUI {
     /**
      * prompts user for person
      */
-    public static void promtForPerson() {
+    public static void promptForPerson() {
         /*
          * Maybe ask for type of person, officer, admin, etc...
          */
-        System.out.println("What is the id of the person you wish to track?\n");
-        String id = scanner.nextLine();
+        System.out.println("Would you like to search for criminal by keyword or attributes? (Enter either one)");
+        String answer = scanner.nextLine();
+        if (answer.equalsIgnoreCase("keyword")) {
+            System.out.println("Enter keyword(query) to describe criminal:");
+            String query = scanner.nextLine();
+            ArrayList<Criminal> criminalsFound = Criminals.search(query);
+            if (criminalsFound.size() == 0) {
+                System.out.println("None found. Search again? (yes or no)");
+                String response = scanner.nextLine();
+                if (response.equalsIgnoreCase("yes"))
+                    promptForCrime();
+                else
+                    return;
+            }
+            System.out.println("Criminal(s) found per search " + query + ":");
+            for (Criminal criminal : criminalsFound)
+                criminal.displayCriminal();
+            System.out.println("Search again? (yes or no)");
+            String response = scanner.nextLine();
+            if (response.equalsIgnoreCase("yes"))
+                promptForPerson();
+        } else if (answer.equalsIgnoreCase("attributes")) {
+            System.out.println("Enter age");
+            int age = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("Enter hair color");
+            String hairColor = scanner.nextLine();
+            System.out.println("Enter height");
+            String height = scanner.nextLine();
+            System.out.println("Criminal(s) found per search of attributes:");
+            ArrayList<Criminal> criminalsFound = Criminals.search("", age, hairColor, height);
+            if (criminalsFound.size() == 0) {
+                System.out.println("None found. Search again? (yes or no)");
+                String response = scanner.nextLine();
+                if (response.equalsIgnoreCase("yes"))
+                    promptForCrime();
+                else
+                    return;
+            }
+            for (Criminal criminal : criminalsFound)
+                criminal.displayCriminal();
+            System.out.println("Print out results to text file? (yes or no)");
+            String printToText = scanner.nextLine();
+            if (printToText.equalsIgnoreCase("yes")) {
+                printCriminalsToText(criminalsFound);
+            }
+            System.out.println("Search again? (yes or no)");
+            String response = scanner.nextLine();
+            if (response.equalsIgnoreCase("yes"))
+                promptForPerson();
+        } else {
+            System.out.println("Not a valid selection. Asking again...");
+            promptForPerson();
+        }
+    }
 
+    public static void printCriminalsToText(ArrayList<Criminal> criminalsFound) {
+        try {
+            fileWriter = new FileWriter("./output.txt");
+            for (Criminal criminal : criminalsFound) {
+                fileWriter.write("ID: " + criminal.getId() + "\nFirst Name: " + criminal.getFirstName()
+                        + "\nLast Name: " + criminal.getLastName() + "\nDeceased: " + criminal.getIsDeceased()
+                        + "\nPhone Number: " + criminal.getPhoneNumber() + "\nAddress: " + criminal.getAddress()
+                        + "\nNick Name: " + criminal.getNickName() + "\nAge: " + criminal.getAge() + "\nWeight: "
+                        + criminal.getWeight() + "\nHeight: " + criminal.getHeight() + "\nRace: " + criminal.getRace()
+                        + "\n" + "Shoe Size: " + criminal.getShoeSize() + "\nHair Color: "
+                        + criminal.getNaturalHairColor() + "\nHair Length: " + criminal.getHairLength()
+                        + "\nFacial Hair: " + criminal.getFacialHairDesc() + "\nClothes: " + criminal.getClothesDesc()
+                        + "\nTattoed: " + criminal.isTattooed() + "\nTattoos: ");
+                for (String tattoo : criminal.getTattoos())
+                    fileWriter.write(tattoo + ", ");
+                fileWriter.write("\nHas vehicle: " + criminal.hasCar() + "\nCar Description: " + criminal.getCarDesc()
+                        + "\nLicense Plate: " + criminal.getLicense() + "\nIn Jail: " + criminal.isInJail()
+                        + "\nConvictions: ");
+                for (String conviction : criminal.getConvictions())
+                    fileWriter.write(conviction + ", ");
+                fileWriter.write("\n");
+            }
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Did not print to file");
+        }
     }
 
     /**
