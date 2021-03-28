@@ -171,6 +171,8 @@ public class CrimeTrackerUI {
             String lastName = scanner.nextLine();
             System.out.println("Enter Criminal #" + criminalNum + " phone number: ");
             String phoneNumber = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " address: ");
+            String criminalAddress = scanner.nextLine();
             System.out.println("Enter Criminal #" + criminalNum + " nick name: ");
             String nickName = scanner.nextLine();
             System.out.println("Enter Criminal #" + criminalNum + " age: ");
@@ -183,6 +185,8 @@ public class CrimeTrackerUI {
             String race = scanner.nextLine();
             System.out.println("Enter Criminal #" + criminalNum + " gender: ");
             String gender = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " eye color: ");
+            String eyeColor = scanner.nextLine();
             System.out.println("Enter Criminal #" + criminalNum + " shoe size: ");
             double shoeSize = scanner.nextDouble();
             System.out.println("Enter Criminal #" + criminalNum + " hair color: ");
@@ -211,9 +215,9 @@ public class CrimeTrackerUI {
              */
             System.out.println("Is Criminal #" + criminalNum + " in Prison?");
             boolean inJail = scanner.nextBoolean();
-            Criminal criminal = new Criminal(firstName, lastName, phoneNumber, nickName, age, weight, height, race,
-                    gender, shoeSize, hairColor, hairLength, facialHair, clothesDescription, false, false, "", "",
-                    inJail);
+            Criminal criminal = new Criminal(firstName, lastName, phoneNumber, criminalAddress, nickName, age, weight,
+                    height, race, gender, eyeColor, shoeSize, hairColor, hairLength, facialHair, clothesDescription,
+                    false, false, "", "", inJail);
 
             crime.addCriminal(criminal);
             criminalNum--;
@@ -229,6 +233,8 @@ public class CrimeTrackerUI {
             String lastName = scanner.nextLine();
             System.out.println("Enter Suspect #" + suspectNum + " phone number: ");
             String phoneNumber = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " address: ");
+            String suspectAddress = scanner.nextLine();
             System.out.println("Enter Suspect #" + suspectNum + " nick name: ");
             String nickName = scanner.nextLine();
             System.out.println("Enter Suspect #" + suspectNum + " age: ");
@@ -243,6 +249,8 @@ public class CrimeTrackerUI {
             String race = scanner.nextLine();
             System.out.println("Enter Suspect #" + suspectNum + " gender: ");
             String gender = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " eye color: ");
+            String eyeColor = scanner.nextLine();
             System.out.println("Enter Suspect #" + suspectNum + " shoe size: ");
             double shoeSize = scanner.nextDouble();
             scanner.nextLine(); // absorb new space
@@ -258,7 +266,7 @@ public class CrimeTrackerUI {
              * System.out.println("Is Criminal #" + criminalNum + " tattooed?"); boolean
              * tattooed =
              */
-            System.out.println("Does Suspect #" + criminalNum + " have car? (enter true or false)");
+            System.out.println("Does Suspect #" + suspectNum + " have car? (enter true or false)");
             boolean hasCar = scanner.nextBoolean();
             scanner.nextLine(); // absorb new space
             System.out.println("Describe Suspect #" + suspectNum + " vehicle: ");
@@ -267,8 +275,9 @@ public class CrimeTrackerUI {
              * System.out.println(Enter Criminal #" + criminalNum + " license plate #: ");
              * String licensePlate =
              */
-            Suspect suspect = new Suspect(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender,
-                    shoeSize, hairColor, hairLength, facialHair, clothesDescription, false, hasCar, carDescription, "");
+            Suspect suspect = new Suspect(firstName, lastName, phoneNumber, suspectAddress, nickName, age, weight,
+                    height, race, gender, eyeColor, shoeSize, hairColor, hairLength, facialHair, clothesDescription,
+                    false, hasCar, carDescription, "");
 
             crime.addSuspect(suspect);
             suspectNum--;
@@ -284,14 +293,14 @@ public class CrimeTrackerUI {
             String lastName = scanner.nextLine();
             System.out.println("Enter Witness #" + witnessNum + " phone number: ");
             String phoneNumber = scanner.nextLine();
+            System.out.println("Enter Witness #" + witnessNum + " address: ");
+            String witnessAddress = scanner.nextLine();
             System.out.println("Enter Witness #" + witnessNum + " account of events: ");
             String story = scanner.nextLine();
             System.out.println("Does Witness #" + witnessNum + " have proof? (enter true or false");
             boolean proof = scanner.nextBoolean();
             scanner.nextLine(); // absorb new space
-            System.out.println("Enter Witness #" + witnessNum + " location: ");
-            String location = scanner.nextLine();
-            Witness witness = new Witness(firstName, lastName, phoneNumber, proof, story, location);
+            Witness witness = new Witness(firstName, lastName, phoneNumber, witnessAddress, proof, story);
             crime.addWitness(witness);
             witnessNum--;
         }
@@ -306,19 +315,20 @@ public class CrimeTrackerUI {
             String lastName = scanner.nextLine();
             System.out.println("Enter Victim #" + victimNum + " phone number: ");
             String phoneNumber = scanner.nextLine();
+            System.out.println("Enter Victim #" + victimNum + " address: ");
+            String victimAddress = scanner.nextLine();
             System.out.println("Enter Victim #" + victimNum + " account of events: ");
             String story = scanner.nextLine();
-            System.out.println("Enter Victim #" + victimNum + " location: ");
-            String location = scanner.nextLine();
             System.out.println("Enter Victim #" + victimNum + " description of criminal: ");
             String criminalDesc = scanner.nextLine();
-            Victim victim = new Victim(firstName, lastName, phoneNumber, location, story, criminalDesc);
+            Victim victim = new Victim(firstName, lastName, phoneNumber, victimAddress, story, criminalDesc);
             crime.addVictim(victim);
             victimNum--;
         }
 
         System.out.println("Please enter how much pieces of evidence gathered: ");
         int evidenceNum = scanner.nextInt();
+        scanner.nextLine(); // absorb new space
         while (evidenceNum > 0) {
             System.out.println("Enter Evidence #" + evidenceNum + " type: ");
             String evidenceType = scanner.nextLine();
