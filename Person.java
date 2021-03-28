@@ -11,6 +11,7 @@ public abstract class Person {
     private String lastName;
     private boolean deceased;
     private String phoneNumber;
+    private String address;
     protected List<Integer> caseNums;
 
     /**
@@ -20,12 +21,13 @@ public abstract class Person {
 
     }
 
-    protected Person(String firstName, String lastName, String phoneNumber) {
+    protected Person(String firstName, String lastName, String phoneNumber, String address) {
         this.id = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.deceased = false; // default is not deceased
         this.phoneNumber = phoneNumber;
+        this.address = address;
     }
 
     /**
@@ -37,11 +39,12 @@ public abstract class Person {
      * @param deceased    found in JSON file
      * @param phoneNumber found in JSON file
      */
-    protected Person(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber) {
+    protected Person(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber, String address) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.deceased = deceased;
+        this.address = address;
         this.phoneNumber = phoneNumber;
     }
 
@@ -80,6 +83,10 @@ public abstract class Person {
      */
     public String getPhoneNumber() {
         return this.phoneNumber;
+    }
+
+    public String getAddress() {
+        return this.address;
     }
 
     public UUID getId() {

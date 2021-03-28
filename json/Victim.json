@@ -5,7 +5,7 @@
         "lastName": "Dowd",
         "deceased": false,
         "phoneNumber": "864-123-4567",
-        "location": "5 Harbor Drive",
+        "address": "5 Harbor Drive",
         "story": "Approached by stranger and mugged",
         "criminalDesc": "6ft, white male, kinda ugly with long hair"
     },
@@ -15,7 +15,7 @@
         "lastName": "Whitney",
         "deceased": false,
         "phoneNumber": "864-354-4567",
-        "location": "76 Lake street",
+        "address": "76 Lake street",
         "story": "Saw criminal rummage through my vehicle",
         "criminalDesc": "5ft, white female, kinda cute with long brown hair"
     },
@@ -25,6 +25,7 @@
         "lastName": "Gilly",
         "deceased": true,
         "phoneNumber": "555-383-3988",
+        "address": "2211 Laurel St, Columbia, SC, 29204",
         "story": "Was murdered by perpetrator",
         "criminalDesc": "N/A"
     }

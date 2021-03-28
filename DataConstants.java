@@ -35,6 +35,7 @@ public abstract class DataConstants {
     protected static final String CRIMINAL_LAST_NAME = "lastName";
     protected static final String CRIMINAL_DECEASED = "deceased";
     protected static final String CRIMINAL_PHONE_NUMBER = "phoneNumber";
+    protected static final String CRIMINAL_ADDRESS = "address";
     protected static final String CRIMINAL_CASE_NUMS = "caseNums";
     protected static final String CRIMINAL_NICK_NAME = "nickName";
     protected static final String CRIMINAL_AGE = "age";
@@ -63,7 +64,7 @@ public abstract class DataConstants {
     protected static final String VICTIM_LAST_NAME = "lastName";
     protected static final String VICTIM_DECEASED = "deceased";
     protected static final String VICTIM_PHONE_NUMBER = "phoneNumber";
-    protected static final String VICTIM_LOCATION = "location";
+    protected static final String VICTIM_ADDRESS = "address";
     protected static final String VICTIM_TIME_OF_EVENT = "timeOfEvent";
     protected static final String VICTIM_STORY = "story";
     protected static final String VICTIM_CRIMINAL_DESCRIPTION = "criminalDesc";
@@ -76,10 +77,10 @@ public abstract class DataConstants {
     protected static final String WITNESS_LAST_NAME = "lastName";
     protected static final String WITNESS_DECEASED = "deceased";
     protected static final String WITNESS_PHONE_NUMBER = "phoneNumber";
+    protected static final String WITNESS_ADDRESS = "address";
     protected static final String WITNESS_CASE_NUMS = "caseNums";
     protected static final String WITNESS_PROOF = "proof";
     protected static final String WITNESS_STORY = "story";
-    protected static final String WITNESS_LOCATION = "location";
     protected static final String WITNESS_TIME_OF_EVENT = "timeOfEvent";
 
     // USER
@@ -112,6 +113,7 @@ public abstract class DataConstants {
     protected static final String SUSPECT_LAST_NAME = "lastName";
     protected static final String SUSPECT_DECEASED = "deceased";
     protected static final String SUSPECT_PHONE_NUMBER = "phoneNumber";
+    protected static final String SUSPECT_ADDRESS = "address";
     protected static final String SUSPECT_CASE_NUMS = "caseNums";
     protected static final String SUSPECT_NICK_NAME = "nickName";
     protected static final String SUSPECT_AGE = "age";

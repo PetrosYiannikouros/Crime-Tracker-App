@@ -15,24 +15,25 @@ public class Suspect extends PersonOfInterest {
 
     }
 
-    public Suspect(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
-            String height, String race, String gender, String eyeColor, double shoeSize, String naturalHairColor,
-            String hairLength, String facialHairDesc, String clothesDesc, boolean tattoed, boolean hasCar,
-            String carDescription, String licensePlate) {
-        super(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender, eyeColor, shoeSize,
-                naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar, carDescription,
+    public Suspect(String firstName, String lastName, String phoneNumber, String address, String nickName, int age,
+            int weight, String height, String race, String gender, String eyeColor, double shoeSize,
+            String naturalHairColor, String hairLength, String facialHairDesc, String clothesDesc, boolean tattoed,
+            boolean hasCar, String carDescription, String licensePlate) {
+        super(firstName, lastName, phoneNumber, address, nickName, age, weight, height, race, gender, eyeColor,
+                shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar, carDescription,
                 licensePlate);
         this.reasons = new ArrayList<>();
     }
 
-    public Suspect(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber, String nickName,
-            int age, int weight, String height, String race, String gender, String eyeColor, double shoeSize,
-            String naturalHairColor, String hairLength, String facialHairDesc, String clothesDesc, boolean tattoed,
-            ArrayList<String> tattooes, boolean hasCar, String carDescription, String licensePlate,
+    // for JSON file retrieval
+    public Suspect(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber, String address,
+            String nickName, int age, int weight, String height, String race, String gender, String eyeColor,
+            double shoeSize, String naturalHairColor, String hairLength, String facialHairDesc, String clothesDesc,
+            boolean tattoed, ArrayList<String> tattooes, boolean hasCar, String carDescription, String licensePlate,
             ArrayList<String> reasons) {
-        super(id, firstName, lastName, deceased, phoneNumber, nickName, age, weight, height, race, gender, eyeColor,
-                shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, tattooes, hasCar,
-                carDescription, licensePlate);
+        super(id, firstName, lastName, deceased, phoneNumber, address, nickName, age, weight, height, race, gender,
+                eyeColor, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, tattooes,
+                hasCar, carDescription, licensePlate);
         this.reasons = reasons;
     }
 

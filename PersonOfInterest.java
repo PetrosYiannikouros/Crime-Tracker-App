@@ -28,11 +28,11 @@ public abstract class PersonOfInterest extends Person {
 
     }
 
-    public PersonOfInterest(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
-            String height, String race, String gender, String eyeColor, double shoeSize, String naturalHairColor,
-            String hairLength, String facialHairDesc, String clothesDesc, boolean tattooed, boolean hasCar,
-            String carDescription, String licensePlate) {
-        super(firstName, lastName, phoneNumber);
+    public PersonOfInterest(String firstName, String lastName, String phoneNumber, String address, String nickName,
+            int age, int weight, String height, String race, String gender, String eyeColor, double shoeSize,
+            String naturalHairColor, String hairLength, String facialHairDesc, String clothesDesc, boolean tattooed,
+            boolean hasCar, String carDescription, String licensePlate) {
+        super(firstName, lastName, phoneNumber, address);
         this.nickName = nickName;
         this.age = age;
         this.weight = weight;
@@ -59,10 +59,11 @@ public abstract class PersonOfInterest extends Person {
 
     // Helps retrieve actual UUID and not create another random one
     public PersonOfInterest(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber,
-            String nickName, int age, int weight, String height, String race, String gender, String eyeColor,
-            double shoeSize, String naturalHairColor, String hairLength, String facialHairDesc, String clothesDesc,
-            boolean tattooed, ArrayList<String> tattoos, boolean hasCar, String carDescription, String licensePlate) {
-        super(id, firstName, lastName, deceased, phoneNumber);
+            String address, String nickName, int age, int weight, String height, String race, String gender,
+            String eyeColor, double shoeSize, String naturalHairColor, String hairLength, String facialHairDesc,
+            String clothesDesc, boolean tattooed, ArrayList<String> tattoos, boolean hasCar, String carDescription,
+            String licensePlate) {
+        super(id, firstName, lastName, deceased, phoneNumber, address);
         this.nickName = nickName;
         this.age = age;
         this.weight = weight;

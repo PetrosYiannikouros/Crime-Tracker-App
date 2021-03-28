@@ -5,9 +5,9 @@
         "lastName": "Sheckler",
         "deceased": false,
         "phoneNumber": "765-908-0933",
+        "address": "724 Mills Rd, Columbia, SC, 29206",
         "proof": true,
         "story": "was walking down the street and saw crime",
-        "location": "Jakes on Devine",
         "timeOfEvent": "01-12-2021 01:20"
     },
     {
@@ -16,9 +16,9 @@
         "lastName": "Hawk",
         "deceased": false,
         "phoneNumber": "735-912-0923",
+        "address": "4432 Willingham Dr, Columbia, SC, 29206",
         "proof": false,
         "story": "was in his apartment and saw crime take place",
-        "location": "Harper's",
         "timeOfEvent": "01-10-2020 03:30"
     },
     {
@@ -27,9 +27,9 @@
         "lastName": "Fulton",
         "deceased": false,
         "phoneNumber": "555-4819-927",
+        "address": "4619 Reamer Ave, Columbia, SC, 29206",
         "proof": true,
         "story": "overheard the suspect speak about his financial problems",
-        "location": "Waiting on line in the bank"
     },
     {
         "id": "d91ed2b4-c2e7-48f5-9936-0423a898452d",
@@ -37,8 +37,8 @@
         "lastName": "Jones",
         "deceased": false,
         "phoneNumber": "555-947-1424",
+        "address": "1505 Garden Plz, Columbia, SC, 29204",
         "proof": true,
-        "story": "recognized the suspect's voice",
-        "location": "In an office in the bank (works as teller)"
+        "story": "recognized the suspect's voice"
     }
 ]

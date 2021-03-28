@@ -21,12 +21,12 @@ public class Criminals {
         return criminalList;
     }
 
-    public void addCriminal(String firstName, String lastName, String phoneNumber, String nickName, int age, int weight,
-            String height, String race, String gender, String eyeColor, double shoeSize, String naturalHairColor,
-            String hairLength, String facialHairDesc, String clothesDesc, boolean tattoed, boolean hasCar,
-            String carSpecs, String licensePlate, boolean inJail) {
-        criminalList.add(new Criminal(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender,
-                eyeColor, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
+    public void addCriminal(String firstName, String lastName, String phoneNumber, String address, String nickName,
+            int age, int weight, String height, String race, String gender, String eyeColor, double shoeSize,
+            String naturalHairColor, String hairLength, String facialHairDesc, String clothesDesc, boolean tattoed,
+            boolean hasCar, String carSpecs, String licensePlate, boolean inJail) {
+        criminalList.add(new Criminal(firstName, lastName, phoneNumber, address, nickName, age, weight, height, race,
+                gender, eyeColor, shoeSize, naturalHairColor, hairLength, facialHairDesc, clothesDesc, tattoed, hasCar,
                 carSpecs, licensePlate, inJail));
         DataWriter.saveCriminals();
     }

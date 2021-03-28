@@ -148,6 +148,7 @@ public class DataWriter extends DataConstants {
         criminalDetails.put(CRIMINAL_LAST_NAME, criminal.getLastName());
         criminalDetails.put(CRIMINAL_DECEASED, criminal.getIsDeceased());
         criminalDetails.put(CRIMINAL_PHONE_NUMBER, criminal.getPhoneNumber());
+        criminalDetails.put(CRIMINAL_ADDRESS, criminal.getAddress());
         criminalDetails.put(CRIMINAL_NICK_NAME, criminal.getNickName());
         criminalDetails.put(CRIMINAL_AGE, criminal.getAge());
         criminalDetails.put(CRIMINAL_WEIGHT, criminal.getWeight());
@@ -199,6 +200,7 @@ public class DataWriter extends DataConstants {
         suspectDetails.put(SUSPECT_LAST_NAME, suspect.getLastName());
         suspectDetails.put(SUSPECT_DECEASED, suspect.getIsDeceased());
         suspectDetails.put(SUSPECT_PHONE_NUMBER, suspect.getPhoneNumber());
+        suspectDetails.put(SUSPECT_ADDRESS, suspect.getAddress());
         suspectDetails.put(SUSPECT_CASE_NUMS, suspect.getCases());
         suspectDetails.put(SUSPECT_NICK_NAME, suspect.getNickName());
         suspectDetails.put(SUSPECT_AGE, suspect.getAge());
@@ -250,9 +252,9 @@ public class DataWriter extends DataConstants {
         witnessDetails.put(WITNESS_LAST_NAME, witness.getLastName());
         witnessDetails.put(WITNESS_DECEASED, witness.getIsDeceased());
         witnessDetails.put(WITNESS_PHONE_NUMBER, witness.getPhoneNumber());
+        witnessDetails.put(WITNESS_ADDRESS, witness.getAddress());
         witnessDetails.put(WITNESS_PROOF, witness.hasProof());
         witnessDetails.put(WITNESS_STORY, witness.getStory());
-        witnessDetails.put(WITNESS_LOCATION, witness.getLocation());
 
         return witnessDetails;
     }
@@ -285,7 +287,7 @@ public class DataWriter extends DataConstants {
         victimDetails.put(VICTIM_LAST_NAME, victim.getLastName());
         victimDetails.put(VICTIM_DECEASED, victim.getIsDeceased());
         victimDetails.put(VICTIM_PHONE_NUMBER, victim.getPhoneNumber());
-        victimDetails.put(VICTIM_LOCATION, victim.getLocation());
+        victimDetails.put(VICTIM_ADDRESS, victim.getAddress());
         victimDetails.put(VICTIM_STORY, victim.getStory());
         victimDetails.put(VICTIM_CRIMINAL_DESCRIPTION, victim.getCriminalDesc());
 

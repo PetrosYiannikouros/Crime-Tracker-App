@@ -5,7 +5,6 @@ import java.util.UUID;
  * person
  */
 public class Victim extends Person {
-    private String location;
     private String story;
     private String criminalDesc;
 
@@ -16,27 +15,21 @@ public class Victim extends Person {
 
     }
 
-    public Victim(String firstName, String lastName, String phoneNumber, String location, String story,
+    public Victim(String firstName, String lastName, String phoneNumber, String address, String story,
             String criminalDesc) {
-        super(firstName, lastName, phoneNumber);
-        this.location = location;
+        super(firstName, lastName, phoneNumber, address);
         this.story = story;
         this.criminalDesc = criminalDesc;
     }
 
-    public Victim(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber, String location,
+    public Victim(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber, String address,
             String story, String criminalDesc) {
-        super(id, firstName, lastName, deceased, phoneNumber);
-        this.location = location;
+        super(id, firstName, lastName, deceased, phoneNumber, address);
         this.story = story;
         this.criminalDesc = criminalDesc;
     }
 
     // getters -----------------------------------------------------
-
-    public String getLocation() {
-        return this.location;
-    }
 
     public String getStory() {
         return this.story;

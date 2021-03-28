@@ -26,9 +26,9 @@ public class Victims {
         return victimList;
     }
 
-    public void addVictim(String firstName, String lastName, String phoneNumber, String location, String story,
+    public void addVictim(String firstName, String lastName, String phoneNumber, String address, String story,
             String criminalDesc) {
-        victimList.add(new Victim(firstName, lastName, phoneNumber, location, story, criminalDesc));
+        victimList.add(new Victim(firstName, lastName, phoneNumber, address, story, criminalDesc));
         DataWriter.saveVictims();
     }
 

@@ -6,7 +6,6 @@ import java.util.UUID;
 public class Witness extends Person {
     private boolean proof;
     private String story;
-    private String location;
 
     /**
      * Constructor of witness object
@@ -15,20 +14,17 @@ public class Witness extends Person {
 
     }
 
-    public Witness(String firstName, String lastName, String phoneNumber, boolean proof, String story,
-            String location) {
-        super(firstName, lastName, phoneNumber);
+    public Witness(String firstName, String lastName, String phoneNumber, String address, boolean proof, String story) {
+        super(firstName, lastName, phoneNumber, address);
         this.proof = proof;
         this.story = story;
-        this.location = location;
     }
 
-    public Witness(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber, boolean proof,
-            String story, String location) {
-        super(id, firstName, lastName, deceased, phoneNumber);
+    public Witness(UUID id, String firstName, String lastName, boolean deceased, String phoneNumber, String address,
+            boolean proof, String story) {
+        super(id, firstName, lastName, deceased, phoneNumber, address);
         this.proof = proof;
         this.story = story;
-        this.location = location;
     }
 
     // getters -----------------------------------------------------
@@ -49,14 +45,6 @@ public class Witness extends Person {
         return this.story;
     }
 
-    /**
-     * 
-     * @return
-     */
-    public String getLocation() {
-        return this.location;
-    }
-
     // setters -----------------------------------------------------
 
     /**
@@ -73,13 +61,5 @@ public class Witness extends Person {
      */
     public void setStory(String story) {
         this.story = story;
-    }
-
-    /**
-     * 
-     * @param number
-     */
-    public void setLocation(String location) {
-        this.location = location;
     }
 }

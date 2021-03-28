@@ -30,8 +30,10 @@ public class TestMain {
                 Crimes crimes = Crimes.getInstance();
                 Crime crime = new Crime(100, TypesOfCrimes.PROPERTY, "Theft of X Gaming Console and 20 games",
                                 "03-03-2021 19:00", "1725 Harbinson Blvd", "edf66144-0dcb-40d1-b4f2-6cc1d60b1bc6");
-                Suspect suspect = new Suspect("", "", "", "", 18, 150, "5'9\"", "White", "Male", "Blue", 10, "Brown",
-                                "Shoulder length", "", "Gray hoodie", false, false, "", "");
+                Suspect suspect = new Suspect("", "", "", "", "", 18, 150, "5'9\"", "White", "Male", "Blue", 10,
+                                "Brown", "Shoulder", "", "Gray hoodie", false, true, "Blue mini-van", "");
+                // "", "", "", "", 18, 150, "5'9\"", "White", "Male", "Blue", 10, "Brown",
+                // "Shoulder length", "", "Gray hoodie", false, false, "", ""
                 crime.addSuspect(suspect);
                 Suspects suspects = Suspects.getInstance();
                 suspects.addSuspect(suspect); // can do this in back end as well (Crime class)

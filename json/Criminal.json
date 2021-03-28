@@ -18,6 +18,7 @@
         "firstName": "Bam",
         "tattooList": [],
         "phoneNumber": "555-783-6918",
+        "address": "1901 Main St, Columbia, SC, 29201",
         "licensePlate": "AGW874",
         "id": "11e0230f-d81a-4554-a25b-ae37fa7a0a7f",
         "convictions": [],
@@ -44,6 +45,7 @@
         "firstName": "Steve",
         "tattooList": [],
         "phoneNumber": "555-238-3839",
+        "address": "2612 S Beltline Blvd, Columbia, SC, 29201",
         "licensePlate": "FRK491",
         "id": "887c318e-1f17-407b-984e-c429a46d2231",
         "convictions": [],
@@ -70,6 +72,7 @@
         "firstName": "Burt",
         "tattooList": [],
         "phoneNumber": "555-847-1845",
+        "address": "3015 Richfield Dr, Columbia, SC, 29201",
         "licensePlate": "AIG712",
         "id": "18d5b179-36c6-47ed-84e1-830b4d5e69b7",
         "convictions": [],
@@ -99,6 +102,7 @@
             "flower tattoo on shoulder"
         ],
         "phoneNumber": "555-769-3718",
+        "address": "4408 Wentworth St, Columbia, SC, 29203",
         "licensePlate": "RNO-380",
         "id": "76e5d94c-10f5-401e-a76b-3794dc9dfa1e",
         "convictions": [
@@ -132,6 +136,7 @@
             "skull tattoo on shoulder"
         ],
         "phoneNumber": "555-671-4822",
+        "address": "100 Lorick Cir, Columbia, SC, 29203",
         "licensePlate": "BWP-874",
         "id": "ef8113e7-e9aa-439a-9bbe-97e2745b49cc",
         "convictions": [
@@ -196,6 +201,7 @@
             "Lion on back"
         ],
         "phoneNumber": "555-5734-802",
+        "address": "1535 Lorick Ave, Columbia, SC, 29203",
         "licensePlate": "MWW-472",
         "id": "807f88bf-9e8e-44bf-be16-97a1e12fe6d7",
         "convictions": [
@@ -228,6 +234,7 @@
             "US flag on back"
         ],
         "phoneNumber": "555-8648-9702",
+        "address": "4617 Fernwood Rd, Columbia, SC, 29206",
         "licensePlate": "WRJ-582",
         "id": "565d6396-07da-4013-b576-fd3943c04a09",
         "convictions": [
@@ -257,6 +264,7 @@
         "firstName": "Tobey",
         "tattooList": [],
         "phoneNumber": "555-2524-9247",
+        "address": "4619 Reamer Ave, Columbia, SC, 29206",
         "licensePlate": "Not known or N\/A",
         "id": "a35f3b9e-76ce-49ad-b1d1-d774ba6fec47",
         "convictions": [],
