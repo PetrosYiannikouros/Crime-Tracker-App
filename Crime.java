@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * Stores all details
@@ -246,26 +248,22 @@ public class Crime {
 
         for (int i = 0; i < criminals.size(); ++i) {
             Criminal crimial = criminals.get(i);
-            System.out.println("First Name: " + crimial.getFirstName() + 
-            "\nLast Name: " + crimial.getLastName());
+            System.out.println("First Name: " + crimial.getFirstName() + "\nLast Name: " + crimial.getLastName());
         }
         System.out.println("*****Suspects*****");
         for (int i = 0; i < suspects.size(); ++i) {
             Suspect sus = suspects.get(i);
-            System.out.println("First Name: " + sus.getFirstName() +
-            "\nLast Name: " + sus.getLastName());
+            System.out.println("First Name: " + sus.getFirstName() + "\nLast Name: " + sus.getLastName());
         }
         System.out.println("*****Witnesses*****");
         for (int i = 0; i < witnesses.size(); ++i) {
             Witness wit = witnesses.get(i);
-            System.out.println("First Name: " + wit.getFirstName() +
-            "\nLast Name: " + wit.getLastName());
+            System.out.println("First Name: " + wit.getFirstName() + "\nLast Name: " + wit.getLastName());
         }
         System.out.println("*****Victims*****");
         for (int i = 0; i < victims.size(); ++i) {
             Victim vic = victims.get(i);
-            System.out.println("First Name: " + vic.getFirstName() +
-            "\nLast Name: " + vic.getLastName());
+            System.out.println("First Name: " + vic.getFirstName() + "\nLast Name: " + vic.getLastName());
         }
         System.out.println("*****Evidence*****");
         for (int i = 0; i < evidence.size(); ++i) {
@@ -276,6 +274,54 @@ public class Crime {
             System.out.println("Case Status: Solved");
         } else {
             System.out.println("Case Status: UnSolved");
+        }
+    }
+
+    public void writeCrime() {
+        try {
+            FileWriter fw = new FileWriter("output.txt");
+            fw.write("New Case");
+            fw.write("Case Number: " + getCaseNumber() + "\nType Of Crime: " + getType() + "\nDescription of Crime: "
+                    + getDescription() + "\nDate of Crime: " + getDate() + "\nAddress: " + getAddress()
+                    + "\nAssigned ID: " + getAssignedId() + "\n*****Criminals*****");
+            fw.write("*****Criminals*****");
+            for (int i = 0; i < criminals.size(); ++i) {
+                Criminal crimial = criminals.get(i);
+                fw.write("First Name: " + crimial.getFirstName() + "\nLast Name: " + crimial.getLastName());
+                fw.write("******");
+            }
+            fw.write("*****Suspects*****");
+            for (int i = 0; i < suspects.size(); ++i) {
+                Suspect sus = suspects.get(i);
+                fw.write("First Name: " + sus.getFirstName() + "\nLast Name: " + sus.getLastName());
+                fw.write("******");
+            }
+            fw.write("*****Witnesses*****");
+            for (int i = 0; i < witnesses.size(); ++i) {
+                Witness wit = witnesses.get(i);
+                fw.write("First Name: " + wit.getFirstName() + "\nLast Name: " + wit.getLastName());
+                fw.write("******");
+            }
+            fw.write("*****Victims*****");
+            for (int i = 0; i < victims.size(); ++i) {
+                Victim vic = victims.get(i);
+                fw.write("First Name: " + vic.getFirstName() + "\nLast Name: " + vic.getLastName());
+                fw.write("******");
+            }
+            fw.write("*****Evidence*****");
+            for (int i = 0; i < evidence.size(); ++i) {
+                Evidence evi = evidence.get(i);
+                fw.write(evi.getDescription());
+                fw.write("******");
+            }
+            if (isSolved) {
+                System.out.println("Case Status: Solved");
+            } else {
+                System.out.println("Case Status: UnSolved");
+            }
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

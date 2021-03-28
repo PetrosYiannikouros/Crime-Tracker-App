@@ -6,6 +6,7 @@ import java.util.UUID;
 public class CrimeTracker {
     private static Users users;
     private static User user;
+    private static User currentUser;
 
     private static Administrators admins;
     private static Administrator admin;
@@ -36,6 +37,7 @@ public class CrimeTracker {
             if (user.getUserName().equals(userName)) {
                 if (user.getPassword().equals(password)) {
                     System.out.println("Logging you in...");
+                    currentUser = user;
                     return true;
                 } else {
                     System.out.println("Invalid password for username: " + userName);
@@ -46,7 +48,7 @@ public class CrimeTracker {
         System.out.println("Username not found");
         return false;
     }
-    
+
     /**
      * checks to see if userName already exists amongst users
      * 
@@ -65,6 +67,10 @@ public class CrimeTracker {
             }
         }
         return true;
+    }
+
+    public static User getCurrentUser() {
+        return currentUser;
     }
 
     /**

@@ -1,10 +1,13 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
 
 public class CrimeTrackerUI {
     private static final String WELCOME_MESSAGE = "Welcome to Crime Tracker";
     private String[] menuOptions = { "Login", "Add Crime", "Search Crime", "Search Criminal" };
     private static Scanner scanner;
     private static CrimeTracker crimeTrack;
+    private static User currentUser;
 
     /**
      * Default construct
@@ -102,6 +105,7 @@ public class CrimeTrackerUI {
 
         while (!CrimeTracker.loginAccount(username, password)) // keep asking user for correct login details
             continue;
+        currentUser = CrimeTracker.getCurrentUser();
     }
 
     /**
@@ -109,11 +113,13 @@ public class CrimeTrackerUI {
      * methods
      */
     public static void addCrime() {
+        Crimes crimes = Crimes.getInstance();
+
         System.out.println("Please enter the case number: ");
         String caseNumString = scanner.nextLine();
         int caseNum = Integer.parseInt(caseNumString);
 
-        TypesOfCrimes type;
+        TypesOfCrimes type = TypesOfCrimes.OTHER;
         System.out.println("Enter type of crime: Personal, Property, Inchoate, Statutoru, Financial, Other");
         String typeString = scanner.nextLine();
         switch (typeString.toUpperCase()) {
@@ -145,7 +151,127 @@ public class CrimeTrackerUI {
         System.out.println("Please enter date of crime (follow this format dd/mm/yy hh:mm): ");
         String date = scanner.nextLine();
 
-        System.out.println("Please enter ");
+        System.out.println("Please enter the address of crime: ");
+        String address = scanner.nextLine();
+
+        Crime crime = new Crime(caseNum, type, description, date, address, currentUser.getId().toString());
+
+        System.out.println("Please enter how many criminals involved: ");
+        int criminalNum = scanner.nextInt();
+
+        while (criminalNum > 0) {
+            System.out.println("Enter Criminal #" + criminalNum + " first name: ");
+            String firstName = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " last name: ");
+            String lastName = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " phone number: ");
+            String phoneNumber = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " nick name: ");
+            String nickName = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " age: ");
+            int age = scanner.nextInt();
+            System.out.println("Enter Criminal #" + criminalNum + " weight: ");
+            int weight = scanner.nextInt();
+            System.out.println("Enter Criminal #" + criminalNum + " height: ");
+            String height = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " race: ");
+            String race = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " gender: ");
+            String gender = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " shoe size: ");
+            double shoeSize = scanner.nextDouble();
+            System.out.println("Enter Criminal #" + criminalNum + " hair color: ");
+            String hairColor = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " hair length: ");
+            String hairLength = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " facial hair description: ");
+            String facialHair = scanner.nextLine();
+            System.out.println("Enter Criminal #" + criminalNum + " clothes description: ");
+            String clothesDescription = scanner.nextLine();
+            /*
+             * System.out.println("Is Criminal #" + criminalNum + " tattooed?"); boolean
+             * tattooed =
+             */
+            /*
+             * System.out.println("Does Criminal #" + criminalNum + " have car?"); boolean
+             * hasCar =
+             */
+            /*
+             * System.out.println("Describe criminal#" + criminalNum + " vehicle: "); String
+             * vehicleDescription =
+             */
+            /*
+             * System.out.println(Enter Criminal #" + criminalNum + " license plate #: ");
+             * String licensePlate =
+             */
+            System.out.println("Is Criminal #" + criminalNum + " in Prison?");
+            boolean inJail = scanner.nextBoolean();
+            Criminal criminal = new Criminal(firstName, lastName, phoneNumber, nickName, age, weight, height, race,
+                    gender, shoeSize, hairColor, hairLength, facialHair, clothesDescription, false, false, "", "",
+                    inJail);
+
+            crime.addCriminal(criminal);
+            criminalNum--;
+        }
+
+        System.out.println("Please enter how many suspects involved: ");
+        int suspectNum = scanner.nextInt();
+
+        while (suspectNum > 0) {
+            System.out.println("Enter Suspect #" + suspectNum + " first name: ");
+            String firstName = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " last name: ");
+            String lastName = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " phone number: ");
+            String phoneNumber = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " nick name: ");
+            String nickName = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " age: ");
+            int age = scanner.nextInt();
+            System.out.println("Enter Suspect #" + suspectNum + " weight: ");
+            int weight = scanner.nextInt();
+            System.out.println("Enter Suspect #" + suspectNum + " height: ");
+            String height = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " race: ");
+            String race = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " gender: ");
+            String gender = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " shoe size: ");
+            double shoeSize = scanner.nextDouble();
+            System.out.println("Enter Suspect #" + suspectNum + " hair color: ");
+            String hairColor = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " hair length: ");
+            String hairLength = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " facial hair description: ");
+            String facialHair = scanner.nextLine();
+            System.out.println("Enter Suspect #" + suspectNum + " clothes description: ");
+            String clothesDescription = scanner.nextLine();
+            /*
+             * System.out.println("Is Criminal #" + criminalNum + " tattooed?"); boolean
+             * tattooed =
+             */
+            System.out.println("Does Suspect #" + criminalNum + " have car? (enter true or false)");
+            boolean hasCar = scanner.nextBoolean();
+            System.out.println("Describe Suspect #" + suspectNum + " vehicle: ");
+            String carDescription = scanner.nextLine();
+            /*
+             * System.out.println(Enter Criminal #" + criminalNum + " license plate #: ");
+             * String licensePlate =
+             */
+            Suspect suspect = new Suspect(firstName, lastName, phoneNumber, nickName, age, weight, height, race, gender,
+                    shoeSize, hairColor, hairLength, facialHair, clothesDescription, false, hasCar, carDescription, "");
+
+            crime.addSuspect(suspect);
+            suspectNum--;
+        }
+        System.out.println("Please enter how many witnesses involved: ");
+        int witnessNum = scanner.nextInt();
+
+        System.out.println("Please enter how many victims involved: ");
+        int victimNum = scanner.nextInt();
+
+        System.out.println("Please enter how much pieces of evidence gathered: ");
+        int evidenceNum = scanner.nextInt();
         /*
          * 
          * and so on with all variables in Crime add UUID then create new crime add
@@ -188,7 +314,7 @@ public class CrimeTrackerUI {
         System.out.println("What is the case number of the crime you are trying to search?");
         int caseNum = scanner.nextInt();
         if (CrimeTracker.existingCrime(caseNum)) {
-           // System.out.println("asfga");
+            // System.out.println("asfga");
         } else {
             System.out.println("Case Number doesn't exist");
         }
