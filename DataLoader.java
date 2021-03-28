@@ -223,7 +223,7 @@ public class DataLoader extends DataConstants {
                 boolean proof = ((Boolean) witnessJSON.get(WITNESS_PROOF)).booleanValue();
                 String story = (String) witnessJSON.get(WITNESS_STORY);
                 witnesses.add(new Witness(idUUID, firstName, lastName, deceased, phoneNumber, address, proof, story));
-            }
+                            }
             return witnesses;
         } catch (Exception e) {
             e.printStackTrace();
