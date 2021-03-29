@@ -277,47 +277,93 @@ public class Crime {
         }
     }
 
+    public void printCrime() {
+        System.out.println("Case Number: " + getCaseNumber() + "\nType Of Crime: " + getType()
+                + "\nDescription of Crime: " + getDescription() + "\nDate of Crime: " + getDate() + "\nAddress: "
+                + getAddress() + "\nAssigned ID: " + getAssignedId() + "\n*****Criminals*****");
+
+        for (int i = 0; i < criminals.size(); ++i) {
+            Criminal crimial = criminals.get(i);
+            System.out.println("First Name: " + crimial.getFirstName() + "\nLast Name: " + crimial.getLastName());
+        }
+        System.out.println("*****Suspects*****");
+        for (int i = 0; i < suspects.size(); ++i) {
+            Suspect sus = suspects.get(i);
+            System.out.println("First Name: " + sus.getFirstName() + "\nLast Name: " + sus.getLastName());
+        }
+        System.out.println("*****Witnesses*****");
+        for (int i = 0; i < witnesses.size(); ++i) {
+            Witness wit = witnesses.get(i);
+            System.out.println("First Name: " + wit.getFirstName() + "\nLast Name: " + wit.getLastName());
+        }
+        System.out.println("*****Victims*****");
+        for (int i = 0; i < victims.size(); ++i) {
+            Victim vic = victims.get(i);
+            System.out.println("First Name: " + vic.getFirstName() + "\nLast Name: " + vic.getLastName());
+        }
+        System.out.println("*****Evidence*****");
+        for (int i = 0; i < evidence.size(); ++i) {
+            Evidence evi = evidence.get(i);
+            System.out.println(evi.getDescription());
+        }
+        if (isSolved) {
+            System.out.println("Case Status: Solved");
+        } else {
+            System.out.println("Case Status: UnSolved");
+        }
+    }
+
     public void writeCrime() {
         try {
-            FileWriter fw = new FileWriter("output.txt");
+            FileWriter fw = new FileWriter("./output.txt");
             fw.write("New Case");
             fw.write("Case Number: " + getCaseNumber() + "\nType Of Crime: " + getType() + "\nDescription of Crime: "
                     + getDescription() + "\nDate of Crime: " + getDate() + "\nAddress: " + getAddress()
-                    + "\nAssigned ID: " + getAssignedId() + "\n*****Criminals*****");
-            fw.write("*****Criminals*****");
+                    + "\nAssigned ID: " + getAssignedId());
+            fw.write("\n*****Criminals*****");
             for (int i = 0; i < criminals.size(); ++i) {
                 Criminal crimial = criminals.get(i);
-                fw.write("First Name: " + crimial.getFirstName() + "\nLast Name: " + crimial.getLastName());
-                fw.write("******");
+                fw.write("\nFirst Name: " + crimial.getFirstName() + "\nLast Name: " + crimial.getLastName());
+                if (i < criminals.size() - 1) {
+                    fw.write("\n******");
+                }
             }
-            fw.write("*****Suspects*****");
+            fw.write("\n*****Suspects*****");
             for (int i = 0; i < suspects.size(); ++i) {
                 Suspect sus = suspects.get(i);
-                fw.write("First Name: " + sus.getFirstName() + "\nLast Name: " + sus.getLastName());
-                fw.write("******");
+                fw.write("\nFirst Name: " + sus.getFirstName() + "\nLast Name: " + sus.getLastName());
+                if (i < suspects.size() - 1) {
+                    fw.write("\n**************");
+                }
             }
-            fw.write("*****Witnesses*****");
+            fw.write("\n*****Witnesses*****");
             for (int i = 0; i < witnesses.size(); ++i) {
                 Witness wit = witnesses.get(i);
-                fw.write("First Name: " + wit.getFirstName() + "\nLast Name: " + wit.getLastName());
-                fw.write("******");
+                fw.write("\nFirst Name: " + wit.getFirstName() + "\nLast Name: " + wit.getLastName());
+                if (i < witnesses.size() - 1) {
+                    fw.write("\n**************");
+                }
             }
-            fw.write("*****Victims*****");
+            fw.write("\n*****Victims*****");
             for (int i = 0; i < victims.size(); ++i) {
                 Victim vic = victims.get(i);
-                fw.write("First Name: " + vic.getFirstName() + "\nLast Name: " + vic.getLastName());
-                fw.write("******");
+                fw.write("\nFirst Name: " + vic.getFirstName() + "\nLast Name: " + vic.getLastName());
+                if (i < victims.size() - 1) {
+                    fw.write("\n**************");
+                }
             }
-            fw.write("*****Evidence*****");
+            fw.write("\n*****Evidence*****");
             for (int i = 0; i < evidence.size(); ++i) {
                 Evidence evi = evidence.get(i);
-                fw.write(evi.getDescription());
-                fw.write("******");
+                fw.write("\n" + evi.getDescription());
+                if (i < evidence.size() - 1) {
+                    fw.write("\n**************");
+                }
             }
             if (isSolved) {
-                System.out.println("Case Status: Solved");
+                fw.write("\nCase Status: Solved");
             } else {
-                System.out.println("Case Status: UnSolved");
+                fw.write("\nCase Status: UnSolved");
             }
             fw.close();
         } catch (IOException e) {

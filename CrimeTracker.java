@@ -263,9 +263,24 @@ public class CrimeTracker {
             crime = crimeList.get(i);
             if (crime.getCaseNumber() == (caseNum)) {
                 crime.printCrime();
+                System.out.println("Would you like to write the crime to a txt file?");
+                writeToTxt(caseNum);
                 return true;
             }
         }
         return false;
+    }
+
+    public static void writeToTxt(int caseNum) {
+        if (existingCrime(caseNum)) {
+            crimes = Crimes.getInstance();
+            ArrayList<Crime> crimeList = crimes.getCrimes();
+            for (int i = 0; i < crimes.getCrimes().size(); ++i) {
+                crime = crimeList.get(i);
+                if (crime.getCaseNumber() == (caseNum)) {
+                    crime.writeCrime();
+                }
+            }
+        }
     }
 }

@@ -6,7 +6,8 @@ import java.io.IOException;
 
 public class CrimeTrackerUI {
     private static final String WELCOME_MESSAGE = "Welcome to Crime Tracker";
-    private String[] menuOptions = { "Login", "Add Crime", "Search Criminal", "Search Crime", "Logout" };
+    private String[] menuOptions = { "Login", "Add Crime", "Search Criminal", "Search Crime", "Logout",
+            "Write Crime to File" };
     private static Scanner scanner;
     private static CrimeTracker crimeTrack;
     private static User currentUser;
