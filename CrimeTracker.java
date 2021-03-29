@@ -2,8 +2,12 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.Scanner;
 
 public class CrimeTracker {
+    
+    static Scanner scanner = new Scanner(System.in);
+
     private static Users users;
     private static User user;
     private static User currentUser;
@@ -264,7 +268,10 @@ public class CrimeTracker {
             if (crime.getCaseNumber() == (caseNum)) {
                 crime.printCrime();
                 System.out.println("Would you like to write the crime to a txt file?");
-                writeToTxt(caseNum);
+                String answer = scanner.nextLine();
+                if (answer.equalsIgnoreCase("yes")) {
+                    crime.writeCrime();
+                }
                 return true;
             }
         }
