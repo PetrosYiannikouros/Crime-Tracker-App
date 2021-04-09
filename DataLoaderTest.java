@@ -136,7 +136,7 @@ class DataLoaderTest {
     @Test
     void testGetDetectiveFirstName() {
         detectiveList = DataLoader.loadDetectives();
-        assertEquals("John", officerList.get(0).getFirstName());
+        assertEquals("John", detectiveList.get(0).getFirstName());
     }
 
     // Suspect test sections
