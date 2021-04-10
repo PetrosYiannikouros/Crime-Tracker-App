@@ -43,7 +43,7 @@ public class CrimeTest {
 	@Test
 	void testSearchHasInValid() {
 		Crime crime = Crimes.search(400);
-		assertEquals(null, crime.getDescription());
+		assertEquals(null, crime);
 	}
 		
 	
