@@ -50,7 +50,7 @@ class DataLoaderTest {
                 "2012 Dodge Charger", "NRK-385"));
         criminalList.add(new Criminal("Benjamin", "Lariviere", "555-746-8803", "419 Broadway Street", "Benchode", 23,
                 155, "5'5\"", "White", "Male", "Blue", 8.0, "Black", "Short", "Clean", "Varies", true, false, "No car",
-                "AKR-583", true));
+                "No car", true));
         criminalList.add(new Criminal("Daniel", "Lindquist", "555-840-5240", "230 Emily Drive", "The German", 44, 300,
                 "6'0\'", "White", "Male", "Blue", 10.0, "Blonde", "Short", "Long Beard", "Raggedy", false, true,
                 "2015 Mercedes AMG", "KRW-484", false));
