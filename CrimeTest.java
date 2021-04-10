@@ -29,15 +29,15 @@ public class CrimeTest {
 	
 	
 	@Test
-	void testHaveUserValidFirstItem() {
-		Crime crime = crimes.search(673);
-		assertTrue(crime);
+	void testSearchHasValidFirstItem() {
+		Crime crime = Crimes.search(673);
+		assertEquals("Robbery at gunpoint", crime.getDescription());
 	}
 	
 	@Test
-	void testHaveUserValidLastItem() {
-		boolean hasBob = crimes.search("bwhite");
-		assertTrue(hasBob);
+	void testSearchHasValidLastItem() {
+		Crime crime = Crimes.search(830);
+		assertEquals("Shoplifting conspiracy", crime.getDescription());
 	}
 	
 	@Test
