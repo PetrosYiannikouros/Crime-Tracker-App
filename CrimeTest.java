@@ -41,20 +41,10 @@ public class CrimeTest {
 	}
 	
 	@Test
-	void testHaveUserInValid() {
-		boolean hasJoe = crimes.search("jsmith");
-		assertFalse(hasJoe);
+	void testSearchHasInValid() {
+		Crime crime = Crimes.search(400);
+		assertEquals(null, crime.getDescription());
 	}
+		
 	
-	@Test
-	void testHaveUserEmpty() {
-		boolean hasEmpty = crimes.search("");
-		assertFalse(hasEmpty);
-	}
-	
-	@Test
-	void testHaveUserNull() {
-		boolean hasNull = crimes.search(null);
-		assertFalse(hasNull);
-	}
 }
