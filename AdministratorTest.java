@@ -20,7 +20,7 @@ public class AdministratorTest {
         String department = "Police";
 
         Administrator admin = new Administrator(firstName, lastName, userName, password,
-         precint, department, phoneNumber, email)
+         precinct, department, phoneNumber, email)
         
         assertEquals(id, user.getId());
         assertEquals(firstName, user.getFirstName());
