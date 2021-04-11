@@ -11,22 +11,30 @@ public class AdministratorTest {
 
     @Test
     public void userCreationTest() {
-        UUID id = UUID.randomUUID();
         String firstName = "Landon";
         String lastName = "Dowd";
         String username = "LandonDaBest";
         String password = "198";
         String precinct = "Columiba";
         String department = "Police";
+        String phoneNumber = "864-908-9576";
+        String email = "landowndowd@gmail.com";
 
-        Administrator admin = new Administrator(firstName, lastName, userName, password,
-         precinct, department, phoneNumber, email)
+        Administrator admin = new Administrator(firstName, lastName, username, password,
+         precinct, department, phoneNumber, email);
         
-        assertEquals(id, user.getId());
-        assertEquals(firstName, user.getFirstName());
-        assertEquals(lastName, user.getLastName());
-        assertEquals(username, user.getUserName());
-        assertEquals(password, user.getPassword());
-        assertEquals(precinct, user.getPrecinct());
-        assertEquals(department, user.getDepartment());
+        assertEquals(firstName, admin.getFirstName());
+        assertEquals(lastName, admin.getLastName());
+        assertEquals(username, admin.getUserName());
+        assertEquals(password, admin.getPassword());
+        assertEquals(precinct, admin.getPrecinct());
+        assertEquals(department, admin.getDepartment());
+        assertEquals(phoneNumber, admin.getPhoneNumber());
+        assertEquals(email, admin.getEmail());
+    }
+    
+    @Test
+    public void testDeleteCrime() {
+        
+    }
 }

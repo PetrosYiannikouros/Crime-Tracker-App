@@ -52,7 +52,7 @@ public class Administrator extends User{
      * void method for deleting a crime
      */
     private void deleteCrime() {
-
+        
     }
 
     /**
