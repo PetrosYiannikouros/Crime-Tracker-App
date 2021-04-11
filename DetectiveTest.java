@@ -27,7 +27,17 @@ public class DetectiveTest {
         Detective detective = new Detective(id, firstName, lastName, username, password, precinct, department, 
         yearsServed, rank, badgeNumber, activeCases, solvedCases, caseNumbers);
 
-        
+        assertEquals(id, detective.getId());
+        assertEquals(firstName, detective.getFirstName());
+        assertEquals(lastName, detective.getLastName());
+        assertEquals(username, detective.getUserName());
+        assertEquals(password, detective.getPassword());
+        assertEquals(precinct, detective.getPrecinct());
+        assertEquals(department, detective.getDepartment());
+        assertEquals(yearsServed, detective.getYearsServed());
+        assertEquals(badgeNumber, detective.getBadgeNumber());
+        assertEquals(activeCases, detective.getActiveCases());
+        assertEquals(solvedCases, detective.getSolvedCases());
+        assertEquals(caseNumbers, detective.getCaseNumbers());
     }
-    
 }
