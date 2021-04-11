@@ -25,11 +25,11 @@ public class Detective extends Officer {
 
     public Detective(UUID id, String firstName, String lastName, String userName, String password, String precint,
             String department, int yearsServed, String rank, String badgeNumber, int activeCases, int solvedCases,
-            ArrayList<Integer> caseNumbers) {
+            List<Integer> caseNumbers2) {
         super(id, firstName, lastName, userName, password, precint, department, yearsServed, rank, badgeNumber);
         this.activeCases = activeCases;
         this.solvedCases = solvedCases;
-        this.caseNumbers = caseNumbers;
+        this.caseNumbers = caseNumbers2;
     }
 
     // getter section
