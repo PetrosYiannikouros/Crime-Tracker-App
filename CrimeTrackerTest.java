@@ -21,6 +21,23 @@ class CrimeTrackerTest {
     public void tearDown() {
     }
 
+    // User Test
+    @Test
+    public void testLoginExistingAccountUser() {
+        String userName = "bigMike69";
+        String password = "asedf";
+        boolean isLoggedIn = CrimeTracker.loginAccountUser(userName, password);
+        assertTrue(isLoggedIn);
+    }
+
+    @Test
+    public void testLoginInvalidAccountUser() {
+        String userName = "";
+        String password = "";
+        boolean isLoggedIn = CrimeTracker.loginAccountUser(userName, password);
+        assertFalse(isLoggedIn);
+    }
+
     // Detective Test
     @Test
     public void testLoginExistingAccountDetective() {
