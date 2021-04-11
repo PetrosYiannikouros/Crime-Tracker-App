@@ -15,9 +15,9 @@ public class Detective extends Officer {
     /**
      * Default Constructor
      */
-    public Detective(String firstName, String lastName, String userName, String password, String precint,
+    public Detective(String firstName, String lastName, String username, String password, String precinct,
             String department, int yearsServed, String rank, String badgeNumber, int activeCases, int solvedCases) {
-        super(firstName, lastName, userName, password, precint, department, yearsServed, rank, badgeNumber);
+        super(firstName, lastName, username, password, precinct, department, yearsServed, rank, badgeNumber);
         this.activeCases = activeCases;
         this.solvedCases = solvedCases;
         this.caseNumbers = new ArrayList<>();
