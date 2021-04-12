@@ -34,14 +34,14 @@ public class CriminalTest {
 	// test for adding convictions
 	@Test
 	void testAddConviction() {
-        String conviction = "";
+        	String conviction = "";
 		boolean isConvictionAdded = Criminal.addConviction(conviction);
 		assertTrue(isConvictionAdded);
 	}
 
     	@Test
 	void testNoConvictionAdded() {
-        String conviction = "";
+        	String conviction = "";
 		boolean isConvictionAdded = Criminal.addConviction(conviction);
 		assertFalse(isConvictionAdded);
 	}
