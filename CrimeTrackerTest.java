@@ -1,10 +1,10 @@
 import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.Test;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
 
 class CrimeTrackerTest {
     private CrimeTracker crimeTracker = new CrimeTracker();
@@ -78,5 +78,11 @@ class CrimeTrackerTest {
     public void existingUserName() {
        assertTrue(CrimeTracker.existingUserName("nikkiminaj"));
        assertFalse(CrimeTracker.existingUserName("bigmike69"));
+    }
+
+    @Test
+    public void validEmail() {
+        assertTrue(CrimeTracker.validEmail("shatleymtyler@gmail.com"));
+        assertFalse(CrimeTracker.validEmail("tyler984.com"));
     }
 }
