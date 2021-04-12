@@ -32,7 +32,7 @@ public class EvidenceTest {
 		String description = "hair of suspect";
 		int amount = 5;
 		evidences.addEvidence(type, description, amount);
-		assertEquals("Forensic", evidenceList.get(2).getType());
+		assertEquals("forensic", evidenceList.get(2).getType());
 	}
 
 }
