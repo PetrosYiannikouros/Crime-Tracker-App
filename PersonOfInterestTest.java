@@ -1,3 +1,5 @@
+// Tested by Reece Peters
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -15,8 +17,10 @@ public class PersonOfInterestTest {
 	public void setup() {
 		personOfInterestList.clear();
 		// reset, check
-        		personOfInterestList.add(new PersonOfInterest());
-        		personOfInterestList.add(new PersonOfInterest());
+        		personOfInterestList.add(new PersonOfInterest("Wallace", "Wilcox", "6884354444", "487 Westview Rd.", "W",
+                36, 198, "6'3", "African American", "Male", "brown", 14,
+                "Black", "short", "none", "Black Mask and hoodie", true,
+                false, "", ""));
 		DataWriter.savePersonOfInterests();
 	}
 	
