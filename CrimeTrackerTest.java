@@ -13,6 +13,8 @@ class CrimeTrackerTest {
     private Officers officers = Officers.getInstance();
     private ArrayList<Officer> officerList = officers.getOfficers();
 
+ 
+
     @BeforeEach
     public void setup() {
     }
@@ -70,5 +72,10 @@ class CrimeTrackerTest {
         String password = "";
         boolean isLoggedIn = CrimeTracker.loginAccountOfficer(userName, password);
         assertFalse(isLoggedIn);
+    }
+
+    @Test 
+    public void existingUserName() {
+       assertTrue(CrimeTracker.existingUserName("nikkiminaj"));
     }
 }
