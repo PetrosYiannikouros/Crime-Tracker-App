@@ -1,8 +1,11 @@
+// Tested by Tyler Shatley
+
 import java.util.List;
 import java.util.UUID;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
+
 public class DetectiveTest {
 
     @Test
@@ -24,8 +27,8 @@ public class DetectiveTest {
         caseNumbers.add(100);
         caseNumbers.add(666);
 
-        Detective detective = new Detective(id, firstName, lastName, username, password, precinct, department, 
-        yearsServed, rank, badgeNumber, activeCases, solvedCases, caseNumbers);
+        Detective detective = new Detective(id, firstName, lastName, username, password, precinct, department,
+                yearsServed, rank, badgeNumber, activeCases, solvedCases, caseNumbers);
 
         assertEquals(id, detective.getId());
         assertEquals(firstName, detective.getFirstName());

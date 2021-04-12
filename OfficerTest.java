@@ -1,3 +1,5 @@
+// Tested by Tyler Shatley
+
 import java.util.List;
 import java.util.UUID;
 
@@ -6,10 +8,8 @@ import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
-public class OfficerTest {
-    
 
-    
+public class OfficerTest {
 
     @Test
     public void constructorTest() {
@@ -24,8 +24,8 @@ public class OfficerTest {
         String rank = "cop";
         String badgeNumber = "197583hg3";
 
-        Officer officer = new Officer(id, firstName, lastName, username,
-        password, precinct, department, yearsServed, rank, badgeNumber);
+        Officer officer = new Officer(id, firstName, lastName, username, password, precinct, department, yearsServed,
+                rank, badgeNumber);
 
         assertEquals(id, officer.getId());
         assertEquals(firstName, officer.getFirstName());
