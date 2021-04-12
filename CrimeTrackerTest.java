@@ -77,5 +77,6 @@ class CrimeTrackerTest {
     @Test 
     public void existingUserName() {
        assertTrue(CrimeTracker.existingUserName("nikkiminaj"));
+       assertFalse(CrimeTracker.existingUserName("bigmike69"));
     }
 }
