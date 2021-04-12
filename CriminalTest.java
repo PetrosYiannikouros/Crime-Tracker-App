@@ -20,9 +20,9 @@ public class CriminalTest {
                 List<String> convictions = new ArrayList<>(); 
                 convictions.add("Harassment");
                 convictions.add("Misdimeanor");
-        		criminalList.add(new Criminal("Paul", "Humfrey", "7045555555", "42 Sydney St.", "two toes", 32, 146, "5'4", "white", "male", "blue",
+        	criminalList.add(new Criminal("Paul", "Humfrey", "7045555555", "42 Sydney St.", "two toes", 32, 146, "5'4", "white", "male", "blue",
                 16, "brown", "short", "scruff", "black pants", true, true, "Honda SUV", "l34-a2d", true, convictions));
-        		DataWriter.saveCriminals();
+        	DataWriter.saveCriminals();
 	}
 	
 	@AfterEach
@@ -39,7 +39,7 @@ public class CriminalTest {
 		assertTrue(isConvictionAdded);
 	}
 
-    @Test
+    	@Test
 	void testNoConvictionAdded() {
         String conviction = "";
 		boolean isConvictionAdded = Criminal.addConviction(conviction);
