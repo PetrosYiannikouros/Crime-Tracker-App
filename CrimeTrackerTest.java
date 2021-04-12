@@ -1,3 +1,5 @@
+// Tested by Tyler Shatley and Petros Yiannikouros
+
 import static org.junit.jupiter.api.Assertions.*;
 //import org.junit.Test;
 import java.util.ArrayList;
@@ -7,22 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CrimeTrackerTest {
-    private CrimeTracker crimeTracker = new CrimeTracker();
-    private Detectives detectives = Detectives.getInstance();
-    private ArrayList<Detective> detectiveList = detectives.getDetectives();
-    private Officers officers = Officers.getInstance();
-    private ArrayList<Officer> officerList = officers.getOfficers();
-
- 
-
-    @BeforeEach
-    public void setup() {
-    }
-
-    @AfterEach
-    public void tearDown() {
-    }
-
     // User Test
     @Test
     public void testLoginExistingAccountUser() {
@@ -36,6 +22,14 @@ class CrimeTrackerTest {
     public void testLoginInvalidAccountUser() {
         String userName = "";
         String password = "";
+        boolean isLoggedIn = CrimeTracker.loginAccountUser(userName, password);
+        assertFalse(isLoggedIn);
+    }
+
+    @Test
+    public void testLoginNullAccountUser() {
+        String userName = null;
+        String password = null;
         boolean isLoggedIn = CrimeTracker.loginAccountUser(userName, password);
         assertFalse(isLoggedIn);
     }
@@ -57,6 +51,14 @@ class CrimeTrackerTest {
         assertFalse(isLoggedIn);
     }
 
+    @Test
+    public void testLoginInvalidNullDetective() {
+        String userName = null;
+        String password = null;
+        boolean isLoggedIn = CrimeTracker.loginAccountDetective(userName, password);
+        assertFalse(isLoggedIn);
+    }
+
     // Officer Test
     @Test
     public void testLoginExistingAccountOfficer() {
@@ -74,15 +76,31 @@ class CrimeTrackerTest {
         assertFalse(isLoggedIn);
     }
 
-    @Test 
-    public void existingUserName() {
-       assertTrue(CrimeTracker.existingUserName("nikkiminaj"));
-       assertFalse(CrimeTracker.existingUserName("bigMike69"));
+    @Test
+    public void testLoginNullAccountOfficer() {
+        String userName = null;
+        String password = null;
+        boolean isLoggedIn = CrimeTracker.loginAccountOfficer(userName, password);
+        assertFalse(isLoggedIn);
     }
 
     @Test
-    public void validEmail() {
+    public void testExistingUserName() {
+        assertFalse(CrimeTracker.existingUserName("bigMike69"));
+    }
+
+    @Test
+    public void testNonExistingUserName() {
+        assertTrue(CrimeTracker.existingUserName("nikkiminaj"));
+    }
+
+    @Test
+    public void testValidEmail() {
         assertTrue(CrimeTracker.validEmail("shatleymtyler@gmail.com"));
-        assertFalse(CrimeTracker.validEmail("tyler984.com"));
+    }
+
+    @Test
+    public void testInvalidEmail() {
+        assertTrue(CrimeTracker.validEmail("shatleymtyler@gmail.com"));
     }
 }
